@@ -8,3 +8,4 @@
 {('<meta name="assets-version" content="' ~ $.assets_version ~ '">') | htmlToHead}
 {($assets ~ 'web/main.css?v=' ~ $.assets_version) | cssToHead}
 {($assets ~ 'web/main.js?v=' ~ $.assets_version) | jsToBottom : false}
+<base href="{'site_url' | config}">

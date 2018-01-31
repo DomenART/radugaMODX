@@ -6,55 +6,50 @@
     </div>
     <div class="container">
         <h1 class="pagetitle pagetitle_videos">Видео</h1>
-        <div class="resources-count">Загружено <b>25</b> видео</div>
+        <div class="resources-count">Загружено <b>РУСЛАН, ВЫВЕДИ МЕНЯ!</b> видео</div>
         <div class="videos__favorite favorite">
             <div>
-                <iframe width="530" height="298" src="https://www.youtube.com/embed/etAXXbJ9d3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe width="530" height="298" src="https://www.youtube.com/embed/{$_modx->resource['about_page.video']}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 <div class="box-decor"></div> 
             </div>
             <div>
                 <div class="favorite__title">
-                    Название презентационного<br> видеоролика
+                    {$_modx->resource['about_page.title']}
                 </div>
                 <div class="favorite__subtitle">
-                    <time>14.11.2017</time> - дата съемки
+                    {$_modx->resource['about_page.subtitle']}
                 </div>
                 <div class="favorite__desc">
-                        Краткое описание ролика, Международный конкурс - фестиваль детского юношеского творчества "На берегах Невы"г. Москва; Чемпионат и Первенство ЦФО по современным танцевальным направлениям, г. Орел.
+                    {$_modx->resource['about_page.text']}           
                 </div>
             </div>
         </div>
         <div class="videos__pool">
-            <div>
-                <iframe width="550" height="308" src="https://www.youtube.com/embed/etAXXbJ9d3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <div>
-                <iframe width="550" height="308" src="https://www.youtube.com/embed/etAXXbJ9d3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <div>
-                <iframe width="550" height="308" src="https://www.youtube.com/embed/etAXXbJ9d3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <div>
-                <iframe width="550" height="308" src="https://www.youtube.com/embed/etAXXbJ9d3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <div>
-                <iframe width="550" height="308" src="https://www.youtube.com/embed/etAXXbJ9d3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <div>
-                <iframe width="550" height="308" src="https://www.youtube.com/embed/etAXXbJ9d3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div id="pdopage">
+                <div class="rows">
+                    {'!pdoPage' | snippet : [
+                        'element' => 'pdoResources',
+                        'ajaxMode' => 'button',
+                        'sortby' => 'ASC',
+                        'limit' => 2,
+                        'tplRow' => '@FILE chunks/items/videos-item.tpl',
+                        'tplOuter' => '@INLINE {$rows}'
+                    ]}
+                </div>  
+                {'page.nav' | placeholder}
             </div>
         </div>
         <div class="clearfix">
             <div class="videos__control control-bar">
                 <div class="control-bar__control-buttons control-buttons">
                     <button class="control-btn control-btn_left control-btn_disabled">
-                        <svg class="control-btn__arrow control-btn__arrow_disabled control-btn__arrow_left button-arrow-left" width="24px" height="20px">
-                            <use xlink:href="img/sprite.svg#button-arrow-left"/>
+                        <svg class="control-btn__arrow control-btn__arrow_disabled control-btn__arrow_left btn-arrow-left" width="24px" height="20px">
+                            <use xlink:href="img/sprite.svg#btn-arrow-left"/>
                         </svg>
                     </button>
                     <button class="control-btn control-btn_right">
-                        <svg class="control-btn__arrow control-btn__arrow_right button-arrow-right" width="24px" height="20px">
-                            <use xlink:href="img/sprite.svg#button-arrow-right"/>
+                        <svg class="control-btn__arrow control-btn__arrow_right btn-arrow-right" width="24px" height="20px">
+                            <use xlink:href="img/sprite.svg#btn-arrow-right"/>
                         </svg>
                     </button>
                 </div>

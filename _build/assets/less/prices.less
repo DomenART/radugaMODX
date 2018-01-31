@@ -19,58 +19,59 @@
     position: relative;
 }
 
-.prices__table {
-    width: 100%;
-    border: 2px solid #cccccc;
-    vertical-align: middle;
-    border-collapse: collapse;
-    background: #ffffff;
-    tr {
-        &:nth-of-type(2n+1) {
-            background-color: #f9f9f9;
+.prices__table-box {
+    table {
+        width: 100%;
+        border: 2px solid #cccccc;
+        vertical-align: middle;
+        border-collapse: collapse;
+        background: #ffffff;
+        tr {
+            &:nth-of-type(2n+1) {
+                background-color: #f9f9f9;
+            }
+            &:first-of-type {
+                border-bottom: 2px solid #cccccc;
+            }
         }
-        &:first-of-type {
-            border-bottom: 2px solid #cccccc;
-        }
-    }
-    th {
-        padding: 25px 20px;
-        text-align: center;
-        color: #333333;
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 1.28;
-        letter-spacing: 0.07px;
-        &:nth-child(1) {
-            background-color: #bae8e8;
-            text-transform: uppercase;
-        }
-        &:nth-child(2),
-        &:nth-child(4) {
-            background-color: #bbd8d8;
-        }
-        &:nth-child(3) {
-            background-color: #73e0f5;
-        }
-    }
-    td {
-        padding: 25px;
-        border: 1px solid #d6d6d6;
-        font-size: 14px;
-        &:first-of-type {
-            background-color: rgba(255, 255, 153, 0.2);
+        th {
+            padding: 25px 20px;
             text-align: center;
+            color: #333333;
+            font-size: 14px;
             font-weight: 700;
+            line-height: 1.28;
+            letter-spacing: 0.07px;
+            &:nth-child(1) {
+                background-color: #bae8e8;
+                text-transform: uppercase;
+            }
+            &:nth-child(2),
+            &:nth-child(4) {
+                background-color: #bbd8d8;
+            }
+            &:nth-child(3) {
+                background-color: #73e0f5;
+            }
         }
-        &:last-of-type {
-            text-align: center;
-            color: #243c73;
-            font-size: 18px;
-            font-weight: 700;
-            line-height: 1;
+        td {
+            padding: 25px;
+            border: 1px solid #d6d6d6;
+            font-size: 14px;
+            &:first-of-type {
+                background-color: rgba(255, 255, 153, 0.2);
+                text-align: center;
+                font-weight: 700;
+            }
+            &:last-of-type {
+                text-align: center;
+                color: #243c73;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 1;
+            }
         }
     }
-    
 }
 
 .prices__decor {

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer__menu">
             <div class="footer__contacts-flex">
-                <a href="tel:+7 (920)  217-99-64" class="footer__tel">+7 (920)<span>217-99-64</span></a>
+                <a href="tel:{'site.tel' | config}" class="footer__tel">{'site.tel' | config}</a>
                 <a href="#" class="footer__vk">
                     <svg class="footer-vk" width="26" height="26">
                         <use xlink:href="assets/components/app/web/img/sprite.svg#vkontakte"/>

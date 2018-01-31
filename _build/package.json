@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "normalize.css": "^7.0.0",
-    "scrollmagic": "^2.0.5"
+    "scrollmagic": "^2.0.5",
+    "uikit": "^3.0.0-beta.38"
   }
 }

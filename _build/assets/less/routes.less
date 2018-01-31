@@ -1,11 +1,11 @@
-.directions__favorite {
+.routes__favorite {
     margin-bottom: 195px;
     @media (max-width: @breakpoint-xsmall) {
         margin-bottom: 50px;
     }   
 }
 
-.directions__pool {
+.routes__pool {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
@@ -18,22 +18,22 @@
     }
 }
 
-.direction-item {
+.route-item {
     position: relative;
     &:hover {
-        .direction-item__hovered {
+        .route-item__hovered {
             display: block;
         }
     }
 }
 
-.direction-item__img {
+.route-item__img {
     img {
         display: block;
     }
 }
 
-.play-btn_direction {
+.play-btn_route {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -41,7 +41,7 @@
     transform: translate(-50%,-50%);
 }
 
-.direction-item__title {
+.route-item__title {
     padding: 26px 5px 23px;
     background-color: #252c3f;
     text-align: center;
@@ -51,7 +51,7 @@
     line-height: 1.25;
 }
 
-.direction-item__hovered {
+.route-item__hovered {
     display: none;
     position: absolute;
     top: 0;

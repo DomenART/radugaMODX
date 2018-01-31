@@ -15,9 +15,9 @@ return [
         'file' => 'home',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description'
             ]
         ]
     ],
@@ -25,9 +25,9 @@ return [
         'file' => 'about',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description'
             ]
         ]
     ],
@@ -35,9 +35,9 @@ return [
         'file' => 'contacts',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description'
             ]
         ]
     ],
@@ -45,9 +45,9 @@ return [
         'file' => 'news',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description'
             ]
         ]
     ],
@@ -55,9 +55,11 @@ return [
         'file' => 'article',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description',
+                'image',
+                'favorite'
             ]
         ]
     ],
@@ -65,9 +67,9 @@ return [
         'file' => 'directions',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description'
             ]
         ]
     ],
@@ -75,9 +77,13 @@ return [
         'file' => 'category',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description',
+                'about_page.image',
+                'about_page.title',
+                'about_page.subtitle',
+                'about_page.text'
             ]
         ]
     ],
@@ -85,9 +91,9 @@ return [
         'file' => 'photoalbum',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description'
             ]
         ]
     ],
@@ -95,9 +101,10 @@ return [
         'file' => 'prices',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description',
+                'pricelist_banner'
             ]
         ]
     ],
@@ -105,9 +112,14 @@ return [
         'file' => 'reviews',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description',
+                'about_page.image',
+                'about_page.title',
+                'about_page.subtitle',
+                'about_page.text',
+                'image'
             ]
         ]
     ],
@@ -115,9 +127,14 @@ return [
         'file' => 'videos',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description',
+                'about_page.image',
+                'about_page.title',
+                'about_page.subtitle',
+                'about_page.text',
+                'about_page.video'
             ]
         ]
     ],
@@ -125,9 +142,9 @@ return [
         'file' => 'timetable',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description'
             ]
         ]
     ],
@@ -135,9 +152,9 @@ return [
         'file' => 'prices',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description'
             ]
         ]
     ],
@@ -145,9 +162,10 @@ return [
         'file' => 'tutors',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description',
+                'tutors_slider'
             ]
         ]
     ],
@@ -155,9 +173,9 @@ return [
         'file' => 'contacts',
         'properties' => [
             'tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
+                'seo.title',
+                'seo.keywords',
+                'seo.description'
             ]
         ]
     ]

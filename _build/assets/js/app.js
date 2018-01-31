@@ -16,5 +16,4 @@ import './maps.js';
 import './menu.js';
 import './photo.js';
 import './popup.js';
-import './pricelist.js';
-
+import './uikit.js';

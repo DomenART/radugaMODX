@@ -1,6 +1,6 @@
 {extends 'file:templates/base.tpl'}
 {block 'content'}
-<main class="directions innerpage">
+<main class="routes innerpage">
     <div class="background-title">
         В программе<br>
         обучения
@@ -8,7 +8,7 @@
     <div class="container">
         <div class="box-decor"></div> 
         <h1 class="pagetitle">Направления (h1)</h1>
-        <div class="directions__favorite favorite">
+        <div class="routes__favorite favorite">
             <div>
                 <img src="../img/reviews-intro.jpg" alt="">
             </div>
@@ -24,156 +24,156 @@
                 </div>
             </div>
         </div>
-        <div class="directions__pool">
-            <div class="direction-item">
-                <button type="button" class="play-btn play-btn_direction">
+        <div class="routes__pool">
+            <div class="route-item">
+                <button type="button" class="play-btn play-btn_route">
                     <svg width="17" height="20">
                         <use href="#triangle"/> 
                     </svg>
                 </button>
-                <div class="direction-item__img">
+                <div class="route-item__img">
                     <img src="../img/article-content-image.jpg" alt="">
                 </div>
-                <div class="direction-item__title">
+                <div class="route-item__title">
                     Название направления
                 </div>
-                <div class="direction-item__hovered">
+                <div class="route-item__hovered">
                     Название направления
                     в наведенном состоянии
                 </div>
             </div>
-            <div class="direction-item">
-                <button type="button" class="play-btn play-btn_direction">
+            <div class="route-item">
+                <button type="button" class="play-btn play-btn_route">
                     <svg width="17" height="20">
                         <use href="#triangle"/> 
                     </svg>
                 </button>
-                <div class="direction-item__img">
+                <div class="route-item__img">
                     <img src="../img/article-content-image.jpg" alt="">
                 </div>
-                <div class="direction-item__title">
+                <div class="route-item__title">
                     Название направления
                 </div>
-                <div class="direction-item__hovered">
+                <div class="route-item__hovered">
                     Название направления
                     в наведенном состоянии
                 </div>
             </div>
-            <div class="direction-item">
-                <button type="button" class="play-btn play-btn_direction">
+            <div class="route-item">
+                <button type="button" class="play-btn play-btn_route">
                     <svg width="17" height="20">
                         <use href="#triangle"/> 
                     </svg>
                 </button>
-                <div class="direction-item__img">
+                <div class="route-item__img">
                     <img src="../img/article-content-image.jpg" alt="">
                 </div>
-                <div class="direction-item__title">
+                <div class="route-item__title">
                     Название направления
                 </div>
-                <div class="direction-item__hovered">
+                <div class="route-item__hovered">
                     Название направления
                     в наведенном состоянии
                 </div>
             </div>
-            <div class="direction-item">
-                <button type="button" class="play-btn play-btn_direction">
+            <div class="route-item">
+                <button type="button" class="play-btn play-btn_route">
                     <svg width="17" height="20">
                         <use href="#triangle"/> 
                     </svg>
                 </button>
-                <div class="direction-item__img">
+                <div class="route-item__img">
                     <img src="../img/article-content-image.jpg" alt="">
                 </div>
-                <div class="direction-item__title">
+                <div class="route-item__title">
                     Название направления
                 </div>
-                <div class="direction-item__hovered">
+                <div class="route-item__hovered">
                     Название направления
                     в наведенном состоянии
                 </div>
             </div>
-            <div class="direction-item">
-                <button type="button" class="play-btn play-btn_direction">
+            <div class="route-item">
+                <button type="button" class="play-btn play-btn_route">
                     <svg width="17" height="20">
                         <use href="#triangle"/> 
                     </svg>
                 </button>
-                <div class="direction-item__img">
+                <div class="route-item__img">
                     <img src="../img/article-content-image.jpg" alt="">
                 </div>
-                <div class="direction-item__title">
+                <div class="route-item__title">
                     Название направления
                 </div>
-                <div class="direction-item__hovered">
+                <div class="route-item__hovered">
                     Название направления
                     в наведенном состоянии
                 </div>
             </div>
-            <div class="direction-item">
-                <button type="button" class="play-btn play-btn_direction">
+            <div class="route-item">
+                <button type="button" class="play-btn play-btn_route">
                     <svg width="17" height="20">
                         <use href="#triangle"/> 
                     </svg>
                 </button>
-                <div class="direction-item__img">
+                <div class="route-item__img">
                     <img src="../img/article-content-image.jpg" alt="">
                 </div>
-                <div class="direction-item__title">
+                <div class="route-item__title">
                     Название направления
                 </div>
-                <div class="direction-item__hovered">
+                <div class="route-item__hovered">
                     Название направления
                     в наведенном состоянии
                 </div>
             </div>
-            <div class="direction-item">
-                <button type="button" class="play-btn play-btn_direction">
+            <div class="route-item">
+                <button type="button" class="play-btn play-btn_route">
                     <svg width="17" height="20">
                         <use href="#triangle"/> 
                     </svg>
                 </button>
-                <div class="direction-item__img">
+                <div class="route-item__img">
                     <img src="../img/article-content-image.jpg" alt="">
                 </div>
-                <div class="direction-item__title">
+                <div class="route-item__title">
                     Название направления
                 </div>
-                <div class="direction-item__hovered">
+                <div class="route-item__hovered">
                     Название направления
                     в наведенном состоянии
                 </div>
             </div>
-            <div class="direction-item">
-                <button type="button" class="play-btn play-btn_direction">
+            <div class="route-item">
+                <button type="button" class="play-btn play-btn_route">
                     <svg width="17" height="20">
                         <use href="#triangle"/> 
                     </svg>
                 </button>
-                <div class="direction-item__img">
+                <div class="route-item__img">
                     <img src="../img/article-content-image.jpg" alt="">
                 </div>
-                <div class="direction-item__title">
+                <div class="route-item__title">
                     Название направления
                 </div>
-                <div class="direction-item__hovered">
+                <div class="route-item__hovered">
                     Название направления
                     в наведенном состоянии
                 </div>
             </div>
-            <div class="direction-item">
-                <button type="button" class="play-btn play-btn_direction">
+            <div class="route-item">
+                <button type="button" class="play-btn play-btn_route">
                     <svg width="17" height="20">
                         <use href="#triangle"/> 
                     </svg>
                 </button>
-                <div class="direction-item__img">
+                <div class="route-item__img">
                     <img src="../img/article-content-image.jpg" alt="">
                 </div>
-                <div class="direction-item__title">
+                <div class="route-item__title">
                     Название направления
                 </div>
-                <div class="direction-item__hovered">
+                <div class="route-item__hovered">
                     Название направления
                     в наведенном состоянии
                 </div>

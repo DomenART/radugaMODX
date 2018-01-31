@@ -78,7 +78,14 @@ module.exports = {
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             minimize: env === 'production' ? true : false
-        })
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: env === 'production' ? true : false
+        }),
+        new webpack.DefinePlugin({
+            BUNDLED: true,
+            VERSION: '1.0'
+        }),
     ]
 
 };

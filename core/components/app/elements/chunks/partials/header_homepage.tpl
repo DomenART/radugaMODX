@@ -22,6 +22,6 @@
 	    </a>
 	</li>
 	</ul>
-	<a href="mailto:{'site_email' | config}" class="header__email" title="Электронная почта">{'site_email' | config}</a>
-	<a href="tel:79202179964" class="header__phone" title="Телефон"><span>+7 (920)</span> 217-99-64</a>
+	<a href="mailto:{'site.email' | config}" class="header__email" title="Электронная почта">{'site_email' | config}</a>
+	<a href="tel:{'site.tel' | config}" class="header__phone" title="Телефон">{'site.tel' | config}</a>
 </header>

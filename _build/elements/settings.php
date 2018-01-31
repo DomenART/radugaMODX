@@ -50,51 +50,51 @@ return [
         'area' => 'pdotools_main',
         'namespace' => 'pdotools',
     ],
-    'site_email' => [
-        'key' => 'site_email',
+    'site.email' => [
+        'key' => 'site.email',
         'xtype' => 'textfield',
         'value' => 'radugaotr@mail.ru',
         'area' => 'default',
         'namespace' => 'app',
     ],
-    'site_tel' => [
-        'key' => 'site_tel',
+    'site.tel' => [
+        'key' => 'site.tel',
         'xtype' => 'textfield',
         'value' => '<span>+7 (920)</span>217-99-64',
         'area' => 'default',
         'namespace' => 'app',
     ],
-    'site_vk' => [
-        'key' => 'site_vk',
+    'site.vk' => [
+        'key' => 'site.vk',
         'xtype' => 'textfield',
         'value' => 'google.com',
         'area' => 'default',
         'namespace' => 'app',
     ],
-    'site_instagram' => [
-        'key' => 'site_instagram',
+    'site.instagram' => [
+        'key' => 'site.instagram',
         'xtype' => 'textfield',
         'value' => 'google.com',
         'area' => 'default',
         'namespace' => 'app',
     ],
-    'site_youtube' => [
-        'key' => 'site_youtube',
+    'site.youtube' => [
+        'key' => 'site.youtube',
         'xtype' => 'textfield',
         'value' => 'google.com',
         'area' => 'default',
         'namespace' => 'app',
     ],
-    'address_first' => [
-        'key' => 'address_first',
+    'address.first' => [
+        'key' => 'address.first',
         'xtype' => 'textfield',
         'value' => '<b>с. Новая Усмань,</b><br>
                     ул. Ленина, 228 В <span>(2 этаж)</span>',
         'area' => 'default',
         'namespace' => 'app',
     ],
-    'address_second' => [
-        'key' => 'address_second',
+    'address.second' => [
+        'key' => 'address.second',
         'xtype' => 'textfield',
         'value' => '<b>п. Отрадное,</b><br>
                     ул. 50 лет Октября, д. 83
