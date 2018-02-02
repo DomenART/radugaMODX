@@ -5,24 +5,24 @@ return [
         'type'      => 'textfield',
         'caption'   => 'Заголовок',
         'rank' => 10,
-        'category' => 'SEO'
+        '_category' => 'SEO'
     ),
     'seo.keywords' => array(
         'type'      => 'textfield',
         'caption'   => 'Ключевые слова',
         'rank' => 20,
-        'category' => 'SEO'
+        '_category' => 'SEO'
     ),
     'seo.description' => array(
         'type'      => 'textarea',
         'caption'   => 'Описание',
         'rank' => 30,
-        'category' => 'SEO'
+        '_category' => 'SEO'
     ),
     'image' => array(
         'type' => 'fastuploadtv',
         'caption' => 'Изображение',
-        'category' => 'Изображение',
+        '_category' => 'Изображение',
         'rank' => 20,
         'input_properties' => [
             'path' => 'assets/images/resources/{id}/',
@@ -36,14 +36,14 @@ return [
     'favorite' => array(
         'type' => 'checkbox',
         'caption' => 'Избранное?',
-        'category' => 'Статья',
+        '_category' => 'Статья',
         'elements' => 'Да==1'
     ),
     'tutors_slider' => array(
         'type' => 'migx',
         'caption' => 'Слайдер преподавателей',
         'rank' => 20,
-        'category' => 'Преподаватели',
+        '_category' => 'Преподаватели',
         'input_properties' => [
             'configs' => '',
             'formtabs' => '[
@@ -90,34 +90,34 @@ return [
     'about_page.image' => array(
         'type' => 'fastuploadtv',
         'caption' => 'Изображение',
-        'category' => 'Избранное'
+        '_category' => 'Избранное'
     ),
     'about_page.title' => array(
         'type' => 'textfield',
         'caption' => 'Заголовок',
-        'category' => 'Избранное'
+        '_category' => 'Избранное'
     ),
     'about_page.subtitle' => array(
         'type' => 'textfield',
         'caption' => 'Подзаголовок',
-        'category' => 'Избранное'
+        '_category' => 'Избранное'
     ),
     'about_page.text' => array(
         'type' => 'textarea',
         'caption' => 'Текст',
-        'category' => 'Избранное'
+        '_category' => 'Избранное'
     ),
     'about_page.video' => array(
         'type' => 'textfield',
         'caption' => 'Видео',
-        'category' => 'Избранное',
+        '_category' => 'Избранное',
         'rank' => 1
     ),
     'pricelist_banner' => array(
       'type' => 'migx',
         'caption' => 'Баннеры',
         'rank' => 20,
-        'category' => 'Баннеры',
+        '_category' => 'Баннеры',
         'input_properties' => [
             'configs' => '',
             'formtabs' => '[

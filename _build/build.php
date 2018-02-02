@@ -1,4 +1,5 @@
 <?php
+
 class AppPackage
 {
     /** @var modX $modx */
@@ -7,11 +8,16 @@ class AppPackage
     public $config = [];
     /** @var modPackageBuilder $builder */
     public $builder;
-    protected $_idx = 1;
+
+    protected $_elements = [];
+    protected $_resources = [];
+
     const name = 'App';
     const name_lower = 'app';
-    const version = '1.0.0';
+    const version = '1.0.2';
     const release = 'pl';
+
+
     /**
      * AppPackage constructor.
      *
@@ -26,16 +32,20 @@ class AppPackage
         $this->modx = new modX();
         $this->modx->initialize('mgr');
         $this->modx->getService('error', 'error.modError');
+
         $root = dirname(dirname(__FILE__)) . '/';
         $assets = $root . 'assets/components/' . $this::name_lower . '/';
         $core = $root . 'core/components/' . $this::name_lower . '/';
+
         $this->config = array_merge([
             'log_level' => modX::LOG_LEVEL_INFO,
             'log_target' => 'ECHO',
+
             'root' => $root,
             'build' => $root . '_build/',
             'elements' => $root . '_build/elements/',
             'resolvers' => $root . '_build/resolvers/',
+
             'assets' => $assets,
             'core' => $core,
         ], $config);
@@ -44,8 +54,11 @@ class AppPackage
         if (!XPDO_CLI_MODE) {
             echo '<pre>';
         }
+
         $this->initialize();
     }
+
+
     /**
      * Initialize package builder
      */
@@ -56,6 +69,8 @@ class AppPackage
         $this->builder->registerNamespace($this::name_lower, false, true, '{core_path}components/' . $this::name_lower . '/');
         $this->modx->log(modX::LOG_LEVEL_INFO, 'Created Transport Package and Namespace.');
     }
+
+
     /**
      * Update the model
      */
@@ -71,6 +86,7 @@ class AppPackage
                 ['deleteTop' => true, 'skipDirs' => false, 'extensions' => []]
             );
         }
+
         /** @var xPDOManager $manager */
         $manager = $this->modx->getManager();
         /** @var xPDOGenerator $generator */
@@ -81,6 +97,8 @@ class AppPackage
         );
         $this->modx->log(modX::LOG_LEVEL_INFO, 'Model updated');
     }
+
+
     /**
      * Install nodejs and update assets
      */
@@ -97,6 +115,8 @@ class AppPackage
         $output = shell_exec('cd ' . $this->config['build'] . ' && npm run build 2>&1');
         $this->modx->log(xPDO::LOG_LEVEL_INFO, 'Compile scripts and styles ' . trim($output));
     }
+
+
     /**
      * Add settings
      */
@@ -106,6 +126,7 @@ class AppPackage
         $settings = include($this->config['elements'] . 'settings.php');
         if (!is_array($settings)) {
             $this->modx->log(modX::LOG_LEVEL_ERROR, 'Could not package in settings');
+
             return;
         }
         $attributes = [
@@ -114,6 +135,7 @@ class AppPackage
             xPDOTransport::UPDATE_OBJECT => true,
             xPDOTransport::RELATED_OBJECTS => false,
         ];
+        $output = [];
         foreach ($settings as $name => $data) {
             /** @var modSystemSetting $setting */
             $setting = $this->modx->newObject('modSystemSetting');
@@ -121,11 +143,15 @@ class AppPackage
                 'key' => 'app_' . $name,
                 'namespace' => $this::name_lower,
             ], $data), '', true, true);
-            $vehicle = $this->builder->createVehicle($setting, $attributes);
-            $this->builder->putVehicle($vehicle);
+            $output[] = [
+                'object' => $setting,
+                'attributes' => $attributes
+            ];
         }
-        $this->modx->log(modX::LOG_LEVEL_INFO, 'Packaged in ' . count($settings) . ' System Settings');
+        return $output;
     }
+
+
     /**
      * @param $filename
      *
@@ -135,8 +161,11 @@ class AppPackage
     {
         $file = trim(file_get_contents($filename));
         preg_match('#\<\?php(.*)#is', $file, $data);
+
         return rtrim(rtrim(trim($data[1]), '?>'));
     }
+
+
     /**
      * @param array $data
      * @param string $uri
@@ -147,15 +176,9 @@ class AppPackage
     protected function _addResource(array $data, $uri, $parent = false)
     {
         $file = $data['context_key'] . '/' . $uri;
-        if($parent) {
-            $data['properties']['parent'] = $parent;
-        }
+
         /** @var modResource $resource */
-        if($resource = $this->modx->getObject('modResource', [ 'uri' => $data['uri']?$data['uri']:$uri ])) {
-            $data['id'] = $resource->id;
-        } else {
-            $resource = $this->modx->newObject('modResource');
-        }
+        $resource = $this->modx->newObject('modResource');
         $resource->fromArray(array_merge([
             'parent' => 0,
             'published' => true,
@@ -172,27 +195,38 @@ class AppPackage
                 ? "{include 'file:resources/{$file}.tpl'}"
                 : '',
         ], $data), '', true, true);
+
         if (!empty($data['groups'])) {
             foreach ($data['groups'] as $group) {
                 $resource->joinGroup($group);
             }
         }
-        $resources[] = $resource;
-        if (!empty($data['resources'])) {
+
+        if($parent) {
+            $resource->addOne($parent);
+        }
+
+        $this->_resources[] = $resource;
+
+        if(empty($data['resources'])) {
+            return [$resource];
+        } else {
             $menuindex = 0;
+            $resources = [];
             foreach ($data['resources'] as $alias => $item) {
-                // $item['id'] = $this->_idx++;
                 $item['alias'] = $alias;
                 $item['context_key'] = $data['context_key'];
                 $item['menuindex'] = $menuindex++;
                 $resources = array_merge(
                     $resources,
-                    $this->_addResource($item, $uri . '/' . $alias, $uri)
+                    $this->_addResource($item, $uri . '/' . $alias, $resource)
                 );
             }
+            return $resources;
         }
-        return $resources;
     }
+
+
     /**
      * Add resources
      */
@@ -202,19 +236,32 @@ class AppPackage
         $resources = include($this->config['elements'] . 'resources.php');
         if (!is_array($resources)) {
             $this->modx->log(modX::LOG_LEVEL_ERROR, 'Could not package in Resources');
+
             return;
         }
         $attributes = [
-            xPDOTransport::UNIQUE_KEY => 'id',
-            xPDOTransport::PRESERVE_KEYS => true,
+            xPDOTransport::UNIQUE_KEY => 'uri',
+            xPDOTransport::PRESERVE_KEYS => false,
             xPDOTransport::UPDATE_OBJECT => true,
-            xPDOTransport::RELATED_OBJECTS => false,
+            xPDOTransport::RELATED_OBJECTS => true,
+            xPDOTransport::RELATED_OBJECT_ATTRIBUTES => [
+                'Parent' => [
+                    xPDOTransport::PRESERVE_KEYS => false,
+                    xPDOTransport::UPDATE_OBJECT => true,
+                    xPDOTransport::UNIQUE_KEY => 'uri'
+                ],
+                'Template' => [
+                    xPDOTransport::PRESERVE_KEYS => false,
+                    xPDOTransport::UPDATE_OBJECT => true,
+                    xPDOTransport::UNIQUE_KEY => 'templatename'
+                ]
+            ],
         ];
+
         $objects = [];
         foreach ($resources as $context => $items) {
             $menuindex = 0;
             foreach ($items as $alias => $item) {
-                // $item['id'] = $this->_idx++;
                 $item['alias'] = $alias;
                 $item['context_key'] = $context;
                 $item['menuindex'] = $menuindex++;
@@ -224,13 +271,20 @@ class AppPackage
                 );
             }
         }
+        
+        $output = [];
         /** @var modResource $resource */
         foreach ($objects as $resource) {
-            $vehicle = $this->builder->createVehicle($resource, $attributes);
-            $this->builder->putVehicle($vehicle);
+            $tmp = [
+                'object' => $resource,
+                'attributes' => $attributes
+            ];
+            $output[] = $tmp;
         }
-        $this->modx->log(modX::LOG_LEVEL_INFO, 'Packaged in ' . count($objects) . ' Resources');
+        return $output;
     }
+
+
     /**
      * Add plugins
      */
@@ -240,8 +294,10 @@ class AppPackage
         $plugins = include($this->config['elements'] . 'plugins.php');
         if (!is_array($plugins)) {
             $this->modx->log(modX::LOG_LEVEL_ERROR, 'Could not package in Plugins');
+
             return;
         }
+
         $attributes = [
             xPDOTransport::UNIQUE_KEY => 'name',
             xPDOTransport::PRESERVE_KEYS => false,
@@ -255,6 +311,8 @@ class AppPackage
                 ],
             ],
         ];
+
+        $output = [];
         foreach ($plugins as $name => $data) {
             /** @var modPlugin $plugin */
             $plugin = $this->modx->newObject('modPlugin');
@@ -267,6 +325,7 @@ class AppPackage
                 'source' => 1,
                 'static_file' => 'core/components/' . $this::name_lower . '/elements/plugins/' . $data['file'] . '.php',
             ], '', true, true);
+
             $events = [];
             if (!empty($data['events'])) {
                 foreach ($data['events'] as $event_name => $event_data) {
@@ -283,11 +342,15 @@ class AppPackage
             if (!empty($events)) {
                 $plugin->addMany($events);
             }
-            $vehicle = $this->builder->createVehicle($plugin, $attributes);
-            $this->builder->putVehicle($vehicle);
+            $output[] = [
+                'object' => $plugin,
+                'attributes' => $attributes
+            ];
         }
-        $this->modx->log(modX::LOG_LEVEL_INFO, 'Packaged in ' . count($plugins) . ' Plugins');
+        return $output;
     }
+
+
     /**
      * Add templates
      */
@@ -297,30 +360,68 @@ class AppPackage
         $templates = include($this->config['elements'] . 'templates.php');
         if (!is_array($templates)) {
             $this->modx->log(modX::LOG_LEVEL_ERROR, 'Could not package in Templates');
+
             return;
         }
+
         $attributes = [
             xPDOTransport::UNIQUE_KEY => 'templatename',
             xPDOTransport::PRESERVE_KEYS => false,
-            xPDOTransport::UPDATE_OBJECT => true,
-            xPDOTransport::RELATED_OBJECTS => false,
+            xPDOTransport::UPDATE_OBJECT => true
         ];
+
+        $output = [];
         foreach ($templates as $name => $data) {
             /** @var modTemplate $template */
             $template = $this->modx->newObject('modTemplate');
-            $template->fromArray([
+            $template->fromArray(array_merge([
                 'templatename' => $name,
-                'description' => $data['description'],
                 'content' => file_exists($this->config['core'] . "elements/templates/{$data['file']}.tpl")
                     ? "{include 'file:templates/{$data['file']}.tpl'}"
-                    : '',
-                'properties' => $data['properties']
-            ], '', true, true);
-            $vehicle = $this->builder->createVehicle($template, $attributes);
-            $this->builder->putVehicle($vehicle);
+                    : ''
+            ],$data), '', true, true);
+            $output[$name] = [
+                'object' => $template,
+                'attributes' => $attributes
+            ];
         }
-        $this->modx->log(modX::LOG_LEVEL_INFO, 'Packaged in ' . count($templates) . ' Templates');
+        return $output;
     }
+
+
+    /**
+     * Add template modCategory
+     */
+    protected function categories()
+    {
+        /** @noinspection PhpIncludeInspection */
+        $categories = include($this->config['elements'] . 'categories.php');
+        if (!is_array($categories)) {
+            $this->modx->log(modX::LOG_LEVEL_ERROR, 'Could not package in modCategory');
+
+            return;
+        }
+        $attributes = [
+            xPDOTransport::UNIQUE_KEY => 'category',
+            xPDOTransport::PRESERVE_KEYS => false,
+            xPDOTransport::UPDATE_OBJECT => true,
+        ];
+        $output = [];
+        foreach ($categories as $name => $data) {
+            /** @var modCategory $category */
+            $category = $this->modx->newObject('modCategory');
+            $category->fromArray(array_merge([
+                'category' => $name
+            ], $data), '', true, true);
+            $output[$name] = [
+                'object' => $category,
+                'attributes' => $attributes
+            ];
+        }
+        return $output;
+    }
+
+
     /**
      * Add template Vars
      */
@@ -330,42 +431,46 @@ class AppPackage
         $tmplvars = include($this->config['elements'] . 'tmplvars.php');
         if (!is_array($tmplvars)) {
             $this->modx->log(modX::LOG_LEVEL_ERROR, 'Could not package in TemplateVars');
+
             return;
         }
         $attributes = [
             xPDOTransport::UNIQUE_KEY => 'name',
-            xPDOTransport::PRESERVE_KEYS => true,
+            xPDOTransport::PRESERVE_KEYS => false,
             xPDOTransport::UPDATE_OBJECT => true,
             xPDOTransport::RELATED_OBJECTS => true,
             xPDOTransport::RELATED_OBJECT_ATTRIBUTES => [
                 'Category' => [
-                    xPDOTransport::UNIQUE_KEY => 'Category',
-                    xPDOTransport::PRESERVE_KEYS => true,
-                    xPDOTransport::UPDATE_OBJECT => false,
-                    xPDOTransport::RELATED_OBJECTS => true
+                    xPDOTransport::UNIQUE_KEY => 'category',
+                    xPDOTransport::PRESERVE_KEYS => false,
+                    xPDOTransport::UPDATE_OBJECT => true,
                 ]
             ],
         ];
+        $output = [];
         foreach ($tmplvars as $name => $data) {
-            if(isset($data['category']) && is_string($data['category'])) {
-                if(!$category = $this->modx->getObject('modCategory', ['category' => $data['category']])) {
-                    $category = $this->modx->newObject('modCategory', [
-                        'category' => $data['category']
-                    ]);
-                    $category->save();
-                }
-                $data['category'] = $category->id;
-            }
             /** @var modTemplateVar $tv */
             $tv = $this->modx->newObject('modTemplateVar');
             $tv->fromArray(array_merge([
                 'name' => $name
             ], $data), '', true, true);
-            $vehicle = $this->builder->createVehicle($tv, $attributes);
-            $this->builder->putVehicle($vehicle);
+            
+            if (
+                $tv->_category &&
+                $category = $this->_elements['categories'][$tv->_category]['object']
+            ) {
+                $tv->addOne($category);
+            }
+
+            $output[$name] = [
+                'object' => $tv,
+                'attributes' => $attributes
+            ];
         }
-        $this->modx->log(modX::LOG_LEVEL_INFO, 'Packaged in ' . count($tmplvars) . ' TemplateVars');
+        return $output;
     }
+
+
     /**
      *  Install package
      */
@@ -374,6 +479,7 @@ class AppPackage
         $signature = $this->builder->getSignature();
         $sig = explode('-', $signature);
         $versionSignature = explode('.', $sig[1]);
+
         /** @var modTransportPackage $package */
         if (!$package = $this->modx->getObject('transport.modTransportPackage', ['signature' => $signature])) {
             $package = $this->modx->newObject('transport.modTransportPackage');
@@ -405,6 +511,8 @@ class AppPackage
             $this->modx->runProcessor('system/clearcache');
         }
     }
+
+
     /**
      * @param bool $install
      *
@@ -415,6 +523,7 @@ class AppPackage
         ob_start();
         $this->model();
         $this->assets();
+
         // Add elements
         $elements = scandir($this->config['elements']);
         foreach ($elements as $element) {
@@ -423,9 +532,76 @@ class AppPackage
             }
             $name = preg_replace('#\.php$#', '', $element);
             if (method_exists($this, $name)) {
-                $this->{$name}();
+                $this->_elements[$name] = $this->{$name}();
             }
         }
+
+        // set resource templates
+        foreach ($this->_resources as $resource) {
+            if(
+                $resource->_template && 
+                $object = $this->_elements['templates'][$resource->_template]['object']
+            ) {
+                $resource->addOne($object);
+            }
+        }
+
+        // link tmplvars to templates
+        $tmplvartemplates = [];
+        foreach ($this->_elements['templates'] as $name => $template) {
+            if(empty($template['object']->_tmplvars)) continue;
+
+            $attributes = [
+                xPDOTransport::UNIQUE_KEY => array('tmplvarid', 'templateid'),
+                xPDOTransport::PRESERVE_KEYS => false,
+                xPDOTransport::UPDATE_OBJECT => true,
+                xPDOTransport::RELATED_OBJECTS => true,
+                xPDOTransport::RELATED_OBJECT_ATTRIBUTES => [
+                    'TemplateVar' => [
+                        xPDOTransport::UNIQUE_KEY => 'name',
+                        xPDOTransport::PRESERVE_KEYS => false,
+                        xPDOTransport::UPDATE_OBJECT => false,
+                        xPDOTransport::RELATED_OBJECTS => true,
+                        xPDOTransport::RELATED_OBJECT_ATTRIBUTES => [
+                            'Category' => [
+                                xPDOTransport::UNIQUE_KEY => 'category',
+                                xPDOTransport::PRESERVE_KEYS => false,
+                                xPDOTransport::UPDATE_OBJECT => false,
+                            ]
+                        ],
+                    ],
+                    'Template' => [
+                        xPDOTransport::UNIQUE_KEY => 'templatename',
+                        xPDOTransport::PRESERVE_KEYS => false,
+                        xPDOTransport::UPDATE_OBJECT => false,
+                        xPDOTransport::RELATED_OBJECTS => false,
+                    ],
+                ],
+            ];
+            
+            foreach ($template['object']->_tmplvars as $tmplvar) {
+                if(empty($this->_elements['tmplvars'][$tmplvar]['object'])) continue;
+
+                $tmplvartemplate = $this->modx->newObject('modTemplateVarTemplate');
+                $tmplvartemplate->addOne($template['object']);
+                $tmplvartemplate->addOne($this->_elements['tmplvars'][$tmplvar]['object']);
+                $tmplvartemplates[] = [
+                    'object' => $tmplvartemplate,
+                    'attributes' => $attributes
+                ];
+            }
+        }
+        $this->_elements['tmplvartemplates'] = $tmplvartemplates;
+
+        // Add vehicles
+        foreach ($this->_elements as $name => $rows) {
+            foreach ($rows as $row) {
+                $vehicle = $this->builder->createVehicle($row['object'], $row['attributes']);
+                $this->builder->putVehicle($vehicle);
+            }
+            $this->modx->log(modX::LOG_LEVEL_INFO, 'Packaged in ' . count($rows) . ' ' . $name);
+        }
+
         // Create main vehicle
         $vehicle = $this->builder->createVehicle([
             'source' => $this->config['core'],
@@ -437,6 +613,7 @@ class AppPackage
             'source' => $this->config['assets'],
             'target' => "return MODX_ASSETS_PATH . 'components/';",
         ]);
+
         // Add resolvers into vehicle
         $resolvers = scandir($this->config['resolvers']);
         foreach ($resolvers as $resolver) {
@@ -448,20 +625,26 @@ class AppPackage
             }
         }
         $this->builder->putVehicle($vehicle);
+
         $this->builder->setPackageAttributes([
             'changelog' => file_get_contents($this->config['core'] . 'docs/changelog.txt'),
             'license' => file_get_contents($this->config['core'] . 'docs/license.txt'),
             'readme' => file_get_contents($this->config['core'] . 'docs/readme.txt'),
         ]);
         $this->modx->log(modX::LOG_LEVEL_INFO, 'Added package attributes and setup options.');
+
         $this->modx->log(modX::LOG_LEVEL_INFO, 'Packing up transport package zip...');
         $this->builder->pack();
+
         if ($install) {
             $this->install();
         }
+
         return $this->builder;
     }
+
 }
+
 $core = dirname(dirname(dirname(dirname(__FILE__)))) . '/config.core.php';
 if (!file_exists($core)) {
     exit('Could not load config core!');
@@ -470,7 +653,10 @@ if (!file_exists($core)) {
 require $core;
 $install = new AppPackage(MODX_CORE_PATH);
 $builder = $install->process(true);
+$signature = $builder->getSignature();
+
+$install->modx->log(modX::LOG_LEVEL_INFO, 'Download archive: ' . $install->modx->getOption('site_url') . 'core/packages/' . $signature . '.transport.zip');
+
 if (!empty($_GET['download'])) {
-    $signature = $builder->getSignature();
     echo '<script>document.location.href = "/core/packages/' . $signature . '.transport.zip' . '";</script>';
 }

@@ -5,23 +5,20 @@ return [
         'index' => [
             'pagetitle' => 'Главная',
             'hidemenu' => false,
-            'properties' => [
-                'template' => 'home'
-            ]
+            '_template' => 'home'
         ],
         'service' => [
             'pagetitle' => 'Service',
             'hidemenu' => true,
             'published' => false,
+            '_template' => 'baseTemplate',
             'resources' => [
                 '404' => [
                     'pagetitle' => '404',
                     'hidemenu' => true,
                     'uri' => '404',
                     'uri_override' => true,
-                    'properties' => [
-                        'template' => 'baseTemplate'
-                    ]
+                    '_template' => 'baseTemplate'
                 ],
                 'sitemap.xml' => [
                     'pagetitle' => 'Sitemap',
@@ -31,31 +28,24 @@ return [
                     'uri_override' => true,
                 ],
             ],
-            'properties' => [
-                'template' => 'baseTemplate'
-            ]
         ],
         'about' => [
             'pagetitle' => 'Об ансамбле',
             'hidemenu' => false,
-            'properties' => [
-                'template' => 'about'
-            ]
+            '_template' => 'about'
         ],
         'timetable' => [
             'pagetitle' => 'Расписание',
             'hidemenu' => false,
-            'properties' => [
-                'template' => 'timetable'
-            ]
+            '_template' => 'timetable'
         ],
         'news' => [
             'pagetitle' => 'Новости',
             'class_key' => 'TicketsSection',
             'hide_children_in_tree' => 1,
             'hidemenu' => false,
+            '_template' => 'news',
             'properties' => [
-                'template' => 'news',
                 'tickets' => [
                     'template' => 'article',
                     'uri' => '%alias%ext',
@@ -69,42 +59,32 @@ return [
                     'pagetitle' => 'Типовая текстовая страница №1',
                     'class_key' => 'Ticket',
                     'hidemenu' => true,
-                    'properties' => [
-                        'template' => 'article'
-                    ]
+                    '_template' => 'article'
                 ],
                 'article-2' => [
                     'pagetitle' => 'Типовая текстовая страница №2',
                     'class_key' => 'Ticket',
                     'hidemenu' => true,
-                    'properties' => [
-                        'template' => 'article'
-                    ]
+                    '_template' => 'article'
                 ],
                 'article-3' => [
                     'pagetitle' => 'Типовая текстовая страница №3',
                     'class_key' => 'Ticket',
                     'hidemenu' => true,
-                    'properties' => [
-                        'template' => 'article'
-                    ]
+                    '_template' => 'article'
                 ],
                 'article-4' => [
                     'pagetitle' => 'Типовая текстовая страница №4',
                     'class_key' => 'Ticket',
                     'hidemenu' => true,
-                    'properties' => [
-                        'template' => 'article'
-                    ]
+                    '_template' => 'article'
                 ],
             ],
         ],
         'prices' => [
             'pagetitle' => 'Цены и акции',
             'hidemenu' => false,
-            'properties' => [
-                'template' => 'prices'
-            ],
+            '_template' => 'prices',
             'resources' => [
                 'otradnoe' => [
                     'pagetitle' => 'Отрадное',
@@ -121,8 +101,8 @@ return [
             'class_key' => 'TicketsSection',
             'hide_children_in_tree' => 1,
             'hidemenu' => false,
+            '_template' => 'photoalbum',
             'properties' => [
-                'template' => 'photoalbum',
                 'tickets' => [
                     'template' => 'category',
                     'disable_jevix' => true,
@@ -166,8 +146,8 @@ return [
             'class_key' => 'TicketsSection',
             'hide_children_in_tree' => 1,
             'hidemenu' => false,
+            '_template' => 'videos',
             'properties' => [
-                'template' => 'videos',
                 'tickets' => [
                     'template' => 'baseTemplate',
                     'disable_jevix' => true,
@@ -197,24 +177,17 @@ return [
         'reviews' => [
             'pagetitle' => 'Отзывы',
             'hidemenu' => false,
-            'class_key' => 'modDocument',
-            'properties' => [
-                'template' => 'reviews'
-            ]
+            '_template' => 'reviews'
         ],
         'contacts' => [
             'pagetitle' => 'Контакты',
             'hidemenu' => false,
-            'properties' => [
-                'template' => 'contacts'
-            ]
+            '_template' => 'contacts'
         ],
         'tutors' => [
             'pagetitle' => 'Преподаватели',
             'hidemenu' => false,
-            'properties' => [
-                'template' => 'tutors'
-            ]
+            '_template' => 'tutors'
         ]
     ],
 ];
