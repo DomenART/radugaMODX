@@ -22,7 +22,14 @@ return [
         '_tmplvars' => [
             'seo.title',
             'seo.keywords',
-            'seo.description'
+            'seo.description',
+            'about_live.heading',
+            'about_live.text',
+            'about_rewards.heading',
+            'about_rewards.slider',
+            'about_tutors.heading',
+            'about_tutors.slider',
+            'about_parents.heading'
         ]
     ],
     'contacts' => [
@@ -136,7 +143,7 @@ return [
             'seo.title',
             'seo.keywords',
             'seo.description',
-            'tutors_slider'
+            'tutors.slider'
         ]
     ],
     'contacts' => [

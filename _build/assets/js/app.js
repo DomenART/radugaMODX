@@ -7,7 +7,7 @@
 // import Icons from 'uikit/dist/js/uikit-icons';
 // UIkit.use(Icons);
 
-
+import $ from "jquery";
 import './homepage.js';
 import './maps.js';
 import './adaptation.js';

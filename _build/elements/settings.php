@@ -33,7 +33,7 @@ return [
         'key' => 'link_tag_scheme',
         'xtype' => 'textfield',
         'value' => 'abs',
-        'area' => 'site',
+        'area' => 'social',
         'namespace' => 'core',
     ],
     'pdotools_elements_path' => [
@@ -50,51 +50,30 @@ return [
         'area' => 'pdotools_main',
         'namespace' => 'pdotools',
     ],
-    'site.email' => [
-        'key' => 'site.email',
-        'xtype' => 'textfield',
-        'value' => 'radugaotr@mail.ru',
-        'area' => 'default',
-        'namespace' => 'app',
-    ],
-    'site.tel' => [
-        'key' => 'site.tel',
-        'xtype' => 'textfield',
-        'value' => '<span>+7 (920)</span>217-99-64',
-        'area' => 'default',
-        'namespace' => 'app',
-    ],
-    'site.vk' => [
-        'key' => 'site.vk',
+    'social.instagram' => [
+        'key' => 'social.instagram',
         'xtype' => 'textfield',
         'value' => 'google.com',
         'area' => 'default',
         'namespace' => 'app',
     ],
-    'site.instagram' => [
-        'key' => 'site.instagram',
+    'social.youtube' => [
+        'key' => 'social.youtube',
         'xtype' => 'textfield',
         'value' => 'google.com',
         'area' => 'default',
         'namespace' => 'app',
     ],
-    'site.youtube' => [
-        'key' => 'site.youtube',
-        'xtype' => 'textfield',
-        'value' => 'google.com',
-        'area' => 'default',
-        'namespace' => 'app',
-    ],
-    'address.first' => [
-        'key' => 'address.first',
+    'contacts.address_first' => [
+        'key' => 'contacts.address_first',
         'xtype' => 'textfield',
         'value' => '<b>с. Новая Усмань,</b><br>
                     ул. Ленина, 228 В <span>(2 этаж)</span>',
         'area' => 'default',
         'namespace' => 'app',
     ],
-    'address.second' => [
-        'key' => 'address.second',
+    'contacts.address_second' => [
+        'key' => 'contacts.address_second',
         'xtype' => 'textfield',
         'value' => '<b>п. Отрадное,</b><br>
                     ул. 50 лет Октября, д. 83
@@ -103,5 +82,26 @@ return [
                     <span>(здание Администрации)</span>',
         'area' => 'default',
         'namespace' => 'app',
-    ]
+    ],
+    'contacts.email' => [
+        'key' => 'contacts.email',
+        'xtype' => 'textfield',
+        'value' => 'radugaotr@mail.ru',
+        'area' => 'default',
+        'namespace' => 'app',
+    ],
+    'contacts.tel' => [
+        'key' => 'contacts.tel',
+        'xtype' => 'textfield',
+        'value' => '<span>+7 (920)</span>217-99-64',
+        'area' => 'default',
+        'namespace' => 'app',
+    ],
+    'contacts.vk' => [
+        'key' => 'contacts.vk',
+        'xtype' => 'textfield',
+        'value' => 'google.com',
+        'area' => 'default',
+        'namespace' => 'app',
+    ],
 ];
