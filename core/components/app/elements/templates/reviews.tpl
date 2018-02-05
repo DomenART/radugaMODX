@@ -42,4 +42,7 @@
         </div>
     </div>
 </main>
+<div class="container">
+    {include 'file:chunks/partials/aside.tpl'}
+</div>
 {/block}

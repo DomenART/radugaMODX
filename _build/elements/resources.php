@@ -18,7 +18,7 @@ return [
                     'hidemenu' => true,
                     'uri' => '404',
                     'uri_override' => true,
-                    '_template' => 'baseTemplate'
+                    'template' => '0'
                 ],
                 'sitemap.xml' => [
                     'pagetitle' => 'Sitemap',
@@ -47,7 +47,7 @@ return [
             '_template' => 'news',
             'properties' => [
                 'tickets' => [
-                    'template' => 'article',
+                    '_template' => 'article',
                     'uri' => '%alias%ext',
                     'disable_jevix' => true,
                     'process_tags' => true,
@@ -104,7 +104,7 @@ return [
             '_template' => 'photoalbum',
             'properties' => [
                 'tickets' => [
-                    'template' => 'category',
+                    '_template' => 'category',
                     'disable_jevix' => true,
                     'process_tags' => true,
                     'uri' => '%alias%ext'
@@ -149,7 +149,7 @@ return [
             '_template' => 'videos',
             'properties' => [
                 'tickets' => [
-                    'template' => 'baseTemplate',
+                    '_template' => 'baseTemplate',
                     'disable_jevix' => true,
                     'process_tags' => true,
                     'uri' => '%alias%ext'
@@ -188,6 +188,39 @@ return [
             'pagetitle' => 'Преподаватели',
             'hidemenu' => false,
             '_template' => 'tutors'
+        ],
+        'routes' => [
+            'pagetitle' => 'Направления',
+            'class_key' => 'TicketsSection',
+            'hide_children_in_tree' => 1,
+            'hidemenu' => false,
+            '_template' => 'routes',
+            'properties' => [
+                'tickets' => [
+                    'template' => 'baseTemplate',
+                    'disable_jevix' => true,
+                    'process_tags' => true,
+                    'uri' => '%alias%ext'
+                ]
+            ],
+            'resources' => [
+                'route-1' => [
+                    'pagetitle' => 'Название направления №1',
+                    'class_key' => 'Ticket'
+                ],
+                'route-2' => [
+                    'pagetitle' => 'Название направления №2',
+                    'class_key' => 'Ticket'
+                ],
+                'route-3' => [
+                    'pagetitle' => 'Название направления №3',
+                    'class_key' => 'Ticket'
+                ],
+                'route-4' => [
+                    'pagetitle' => 'Название направления №4',
+                    'class_key' => 'Ticket'
+                ]
+            ]
         ]
-    ],
+    ]
 ];

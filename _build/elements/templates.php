@@ -58,14 +58,6 @@ return [
             'favorite'
         ]
     ],
-    'directions' => [
-        'file' => 'directions',
-        '_tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
-        ]
-    ],
     'category' => [
         'file' => 'category',
         '_tmplvars' => [
@@ -104,8 +96,7 @@ return [
             'about_page.image',
             'about_page.title',
             'about_page.subtitle',
-            'about_page.text',
-            'image'
+            'about_page.text'
         ]
     ],
     'videos' => [
@@ -129,14 +120,6 @@ return [
             'seo.description'
         ]
     ],
-    'prices' => [
-        'file' => 'prices',
-        '_tmplvars' => [
-            'seo.title',
-            'seo.keywords',
-            'seo.description'
-        ]
-    ],
     'tutors' => [
         'file' => 'tutors',
         '_tmplvars' => [
@@ -152,6 +135,18 @@ return [
             'seo.title',
             'seo.keywords',
             'seo.description'
+        ]
+    ],
+    'routes' => [
+        'file' => 'routes',
+        '_tmplvars' => [
+            'seo.title',
+            'seo.keywords',
+            'seo.description',
+            'about_page.image',
+            'about_page.title',
+            'about_page.subtitle',
+            'about_page.text'
         ]
     ]
 ];

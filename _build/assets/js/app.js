@@ -17,3 +17,4 @@ import './menu.js';
 import './photo.js';
 import './popup.js';
 import './uikit.js';
+import './youtube.js';
