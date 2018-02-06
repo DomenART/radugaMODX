@@ -54,7 +54,7 @@ return [
             'seo.title',
             'seo.keywords',
             'seo.description',
-            'image',
+            'article.image',
             'favorite'
         ]
     ],
@@ -97,6 +97,13 @@ return [
             'about_page.title',
             'about_page.subtitle',
             'about_page.text'
+        ]
+    ],
+    'review' => [
+        'file' => 'review',
+        '_tmplvars' => [
+            'review.social',
+            'review.photo'
         ]
     ],
     'videos' => [

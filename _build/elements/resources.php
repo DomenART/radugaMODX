@@ -104,7 +104,7 @@ return [
             '_template' => 'photoalbum',
             'properties' => [
                 'tickets' => [
-                    '_template' => 'category',
+                    'template' => 'category',
                     'disable_jevix' => true,
                     'process_tags' => true,
                     'uri' => '%alias%ext'
@@ -113,31 +113,38 @@ return [
             'resources' => [
                 'category-1' => [
                     'pagetitle' => 'Категория №1',
-                    'class_key' => 'Ticket'
+                    'class_key' => 'Ticket',
+                    '_template' => 'category'
                 ],
                 'category-2' => [
                     'pagetitle' => 'Категория №2',
-                    'class_key' => 'Ticket'
+                    'class_key' => 'Ticket',
+                    '_template' => 'category'
                 ],
                 'category-3' => [
                     'pagetitle' => 'Категория №3',
-                    'class_key' => 'Ticket'
+                    'class_key' => 'Ticket',
+                    '_template' => 'category'
                 ],
                 'category-4' => [
                     'pagetitle' => 'Категория №4',
-                    'class_key' => 'Ticket'
+                    'class_key' => 'Ticket',
+                    '_template' => 'category'
                 ],
                 'category-5' => [
                     'pagetitle' => 'Категория №5',
-                    'class_key' => 'Ticket'
+                    'class_key' => 'Ticket',
+                    '_template' => 'category'
                 ],
                 'category-6 '=> [
                     'pagetitle' => 'Категория №6',
-                    'class_key' => 'Ticket'
+                    'class_key' => 'Ticket',
+                    '_template' => 'category'
                 ],
                 'category-7' => [
                     'pagetitle' => 'Категория №7',
-                    'class_key' => 'Ticket'
+                    'class_key' => 'Ticket',
+                    '_template' => 'category'
                 ]
             ]
         ],
@@ -149,7 +156,7 @@ return [
             '_template' => 'videos',
             'properties' => [
                 'tickets' => [
-                    '_template' => 'baseTemplate',
+                    'template' => 0,
                     'disable_jevix' => true,
                     'process_tags' => true,
                     'uri' => '%alias%ext'
@@ -176,8 +183,40 @@ return [
         ],
         'reviews' => [
             'pagetitle' => 'Отзывы',
+            'class_key' => 'TicketsSection',
+            'hide_children_in_tree' => 1,
             'hidemenu' => false,
-            '_template' => 'reviews'
+            '_template' => 'reviews',
+            'properties' => [
+                'tickets' => [
+                    'template' => 'review',
+                    'disable_jevix' => true,
+                    'process_tags' => true,
+                    'uri' => '%alias%ext'
+                ]
+            ],
+            'resources' => [
+                'review-1' => [
+                    'pagetitle' => 'Фамилия Имя Отчество №1',
+                    'class_key' => 'Ticket',
+                    '_template' => 'review'
+                ],
+                'review-2' => [
+                    'pagetitle' => 'Фамилия Имя Отчество №2',
+                    'class_key' => 'Ticket',
+                    '_template' => 'review'
+                ],
+                'review-3' => [
+                    'pagetitle' => 'Фамилия Имя Отчество №3',
+                    'class_key' => 'Ticket',
+                    '_template' => 'review'
+                ],
+                'review-4' => [
+                    'pagetitle' => 'Фамилия Имя Отчество №4',
+                    'class_key' => 'Ticket',
+                    '_template' => 'review'
+                ]
+            ]
         ],
         'contacts' => [
             'pagetitle' => 'Контакты',

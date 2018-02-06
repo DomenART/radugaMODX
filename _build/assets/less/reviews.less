@@ -37,33 +37,32 @@
 
 .review-item__social-link {
     margin-right: 27px;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
     &:last-of-type {
         margin-right: 0;
     }
-}
-
-.review-item__social-link {
-    svg {
-        fill: #cccccc;
-        &:hover {
-            fill: lime;;
-        }
+    &[href*="vk.com"] {
+        background: url('../img/sprite.svg#vkontakte-link') 50% 50% no-repeat;
+    }
+    &[href*="google.com"] {
+        background:  url('../img/sprite.svg#google-link') 50% 50% no-repeat;
+    }
+    &[href*="ok.ru"] {
+        background: url('../img/sprite.svg#odnoklassniki-link') 50% 50%  no-repeat;
+    }
+    &[href*="twitter.com"] {
+        background: url('../img/sprite.svg#twitter-link') 50% 50% no-repeat;
+    }
+    &[href*="facebook.com"] {
+        background: url('../img/sprite.svg#facebook-link') 50% 50% no-repeat;
     }
 }
 
-#twitter:hover {
-    fill: #00a1ed;
-}
-
-#vkontakte:hover {
-    fill: #48759f;
-}
-
-#odnoklassniki:hover {
-    fill: #f59238;
-}
-
 .review-item__photo {
+    width: 120px;
+    height: 120px;
     min-width: 120px;
     min-height: 120px;
     margin-right: 21px;

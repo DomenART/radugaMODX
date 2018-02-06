@@ -7,12 +7,12 @@
     <div class="container">
         <h1 class="pagetitle">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
         <ul uk-switcher hidden>
-            {foreach $_modx->resource.tutors_slider | fromJSON as $row}
+            {foreach $_modx->resource['tutors.slider']| fromJSON as $row}
                 <li></li>
             {/foreach}
         </ul>
         <ul class="uk-switcher">
-            {foreach $_modx->resource.tutors_slider | fromJSON as $row}
+            {foreach $_modx->resource['tutors.slider']| fromJSON as $row}
                 <li>
                     <div class="tutors__tutor-box tutor-box">
                         <div>

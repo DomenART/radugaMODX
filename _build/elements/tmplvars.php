@@ -19,7 +19,7 @@ return [
         'rank' => 30,
         '_category' => 'SEO'
     ),
-    'image' => array(
+    'article.image' => array(
         'type' => 'fastuploadtv',
         'caption' => 'Изображение',
         '_category' => 'Изображение',
@@ -304,4 +304,39 @@ return [
         '_category' => 'Родителям',
         'rank' => 1
     ),
+    'review.photo' => array(
+        'type' => 'fastuploadtv',
+        'caption' => 'Фото',
+        '_category' => 'Отзыв',
+        'rank' => 1
+    ),
+    'review.social' => array(
+      'type' => 'migx',
+      'caption' => 'Список ссылок',
+      'rank' => 2,
+      '_category' => 'Отзыв',
+      'input_properties' => [
+          'configs' => '',
+          'formtabs' => '[
+            {
+              "caption": "Заголовок",
+              "fields": [
+                {
+                  "field": "link",
+                  "caption": "Ссылка",
+                  "inputTVtype": "text"
+                }
+              ]
+            }
+          ]',
+          'columns' => '[{
+            "header": "Ссылка",
+            "dataIndex": "link"
+          }]',
+          'btntext' => '',
+          'previewurl' => '',
+          'jsonvarkey' => '',
+          'autoResourceFolders' => 'false',
+      ]
+  ),
 ];

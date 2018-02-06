@@ -1,7 +1,7 @@
 <article class="review-item">
     <header class="review-item__header">
         <div class="review-item__photo">
-            <img src="{$image}" alt="">
+            <img src="{$_pls['review.photo']}" alt="">
         </div>
         <div>
             <div class="review-item__date">
@@ -11,21 +11,9 @@
                 {$pagetitle}
             </div>
             <div class="review-item__social">
-                <a href="#" class="review-item__social-link">
-                    <svg width="27" height="15">
-                        <use href="#twitter"></use>
-                    </svg>
-                </a>
-                <a href="#" class="review-item__social-link">
-                    <svg width="18" height="18">
-                        <use href="#google"></use>
-                    </svg>
-                </a>
-                <a href="#" class="review-item__social-link">
-                    <svg width="10" height="18">
-                        <use href="#odnoklassniki"></use>
-                    </svg>
-                </a>
+                {foreach $_pls['review.social'] as $row}
+                <a href="{$row['link']}" class="review-item__social-link"></a>
+                {/foreach}
             </div>
         </div>
     </header>

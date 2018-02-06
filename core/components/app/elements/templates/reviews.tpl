@@ -19,26 +19,19 @@
                     {$_modx->resource['about_page.subtitle']}
                 </div>
                 <div class="favorite__desc">
-                    {$_modx->resource['about_page.text']}        
+                    {$_modx->resource['about_page.text']}
                 </div>
             </div>
         </div>
         <div class="reviews__pool">
-            <div id="pdopage">
-                <div class="rows">
-                    {'!pdoPage' | snippet : [
-                        'element' => 'pdoResources',
-                        'ajaxMode' => 'button',
-                        'sortby' => 'ASC',
-                        'limit' => 2,
-                        'includeTVs' => 'image',
-                        'tvPrefix' => '',
-                        'tplRow' => '@FILE chunks/items/review-item.tpl',
-                        'tplOuter' => '@INLINE {$rows}'
-                    ]}
-                </div>  
-                {'page.nav' | placeholder}
-            </div>
+            {'!pdoResources' | snippet : [
+                'tpl' => '@FILE chunks/items/review-item.tpl',
+                'sortdir' => 'ASC',
+                'sortby' => 'id',
+                'includeTVs' => 'review.photo,review.social',
+                'includeContent' => 1,
+                'tvPrefix' => ''
+            ]}
         </div>
     </div>
 </main>
