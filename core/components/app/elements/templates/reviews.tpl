@@ -9,7 +9,7 @@
         <div class="favorite reviews__favorite">
             <div>
                 <img src="{$_modx->resource['about_page.image']}" alt="">
-                <div class="box-decor"></div> 
+                <div class="box-decor"></div>
             </div>
             <div>
                 <div class="favorite__title">
