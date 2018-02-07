@@ -1,4 +1,4 @@
-<div class="container"> 
+<div class="container">
     <aside class="innerpage-aside">
         <div class="innerpage-aside__first">
             <div class="innerpage-aside__decor"></div>
@@ -19,13 +19,13 @@
                         <svg class="map-pin-icon" width="16" height="24">
                             <use xlink:href="assets/components/app/web/img/sprite.svg#map-pin"/>
                         </svg>
-                        {'address_first' | config}
+                        {'contacts.address_first' | config}
                     </div>
                     <div class="address-text address-text_aside">
                         <svg class="map-pin-icon" width="16" height="24">
                             <use xlink:href="assets/components/app/web/img/sprite.svg#map-pin"/>
                         </svg>
-                        {'address_second' | config}
+                        {'contacts.address_second' | config}
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
         <div class="innerpage-aside__fourth">
             <div class="vk-group">
                 <h3 class="vk-group__title">МЫ ВКонтакте</h3>
-                <img src="assets/components/app/web/img/psevdo-vk.jpg" alt="" style="max-width: 100%;">                
+                <img src="assets/components/app/web/img/psevdo-vk.jpg" alt="" style="max-width: 100%;">
             </div>
         </div>
     </aside>

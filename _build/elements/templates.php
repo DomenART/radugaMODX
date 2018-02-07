@@ -14,7 +14,11 @@ return [
         '_tmplvars' => [
             'seo.title',
             'seo.keywords',
-            'seo.description'
+            'seo.description',
+            'ensemble.heading',
+            'ensemble.list',
+            'ensemble.video',
+            'ensemble.text'
         ]
     ],
     'about' => [

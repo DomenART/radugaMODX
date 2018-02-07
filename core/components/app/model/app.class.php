@@ -81,7 +81,7 @@ class App
     {
         extract($scriptProperties);
         switch ($event->name) {
-            case 'pdoToolsOnFenomInit':
+                       case 'pdoToolsOnFenomInit':
                 /** @var Fenom|FenomX $fenom */
                 $fenom->addAllowedFunctions([
                     'array_keys',
@@ -89,14 +89,18 @@ class App
                 ]);
                 $fenom->addAccessorSmart('en', 'en', Fenom::ACCESSOR_PROPERTY);
                 $fenom->en = $this->modx->getOption('cultureKey') == 'en';
-
                 $fenom->addAccessorSmart('assets_version', 'assets_version', Fenom::ACCESSOR_PROPERTY);
                 $fenom->assets_version = $this::assets_version;
-
+                $fenom->addAccessorSmart('assets_url', 'assets_url', Fenom::ACCESSOR_PROPERTY);
+                $fenom->assets_url = $this->config['assetsUrl'];
                 $fenom->addModifier('uri2id', function ($input) {
                     return $this->modx->findResource($input);
                 });
+                $fenom->addModifier('productsCount', function ($input) {
+                    return $input;
+                });
                 break;
+
 
             case 'OnHandleRequest':
                 if ($this->modx->context->key == 'mgr') {

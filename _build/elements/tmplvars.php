@@ -338,5 +338,52 @@ return [
           'jsonvarkey' => '',
           'autoResourceFolders' => 'false',
       ]
-  ),
+    ),
+    'ensemble.heading' => array(
+        'type' => 'textfield',
+        'caption' => 'Заголовок',
+        '_category' => 'Об ансамбле',
+        'rank' => 1
+    ),
+    'ensemble.list' => array(
+      'type' => 'migx',
+      'caption' => 'Список достижений',
+      'rank' => 2,
+      '_category' => 'Об ансамбле',
+      'input_properties' => [
+          'configs' => '',
+          'formtabs' => '[
+            {
+              "caption": "Заголовок",
+              "fields": [
+                {
+                  "field": "item",
+                  "caption": "Достижение",
+                  "inputTVtype": "text"
+                }
+              ]
+            }
+          ]',
+          'columns' => '[{
+            "header": "Достижение",
+            "dataIndex": "item"
+          }]',
+          'btntext' => '',
+          'previewurl' => '',
+          'jsonvarkey' => '',
+          'autoResourceFolders' => 'false',
+        ]
+    ),
+    'ensemble.video' => array(
+        'type' => 'textfield',
+        'caption' => 'Ссылка на видео',
+        '_category' => 'Об ансамбле',
+        'rank' => 3
+    ),
+    'ensemble.text' => array(
+        'type' => 'textarea',
+        'caption' => 'Дополнительный текст',
+        '_category' => 'Об ансамбле',
+        'rank' => 4
+    ),
 ];

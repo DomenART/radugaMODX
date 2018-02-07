@@ -12,29 +12,29 @@
             <div class="intro__logo">
                 <span>детский хореографический ансамбль</span>
                 <svg class="svg-logo" width="330" height="160">
-                    <use xlink:href="assets/components/app/web/img/sprite.svg#logo" />
+                    <use xlink:href="{$.assets_url}web/img/sprite.svg#logo" />
                 </svg>
             </div>
             <nav class="intro-nav">
                 <ul class="intro-nav__major">
                     <li>
-                        <a href="#">Об Ансамбле</a>
+                        <a href="{'about' | uri2id | url}">Об Ансамбле</a>
                     </li>
                     <li aria-hidden="true">
                         <svg class="intro-nav__dot-vertical" width="5" height="20">
-                            <use xlink:href="assets/components/app/web/img/sprite.svg#three-circles" />
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#three-circles" />
                         </svg>
                     </li>
                     <li>
-                        <a href="#">Контакты</a>
+                        <a href="{'contacts' | uri2id | url}">Контакты</a>
                     </li>
                 </ul>
                 <ul class="intro-nav__minor">
                     <li>
-                        <a href="#">Направления</a>
+                        <a href="{'routes' | uri2id | url}">Направления</a>
                     </li>
                     <li>
-                        <a href="#">Расписание</a>
+                        <a href="{'timetable' | uri2id | url}">Расписание</a>
                     </li>
                     <li>
                         <a href="#">Тренировки&nbsp;с&nbsp;родителями</a>
@@ -42,124 +42,75 @@
                 </ul>
             </nav>
         </div>
-        <div class="enroll" hidden>
-            <button type="button" class="form-close js-close"></button>
-            <div class="enroll__title">
-                Записаться<br>
-                на урок
-            </div>
-            <form id="enroll" action="" method="post" class="js-form">
-                <div>
-                    <input type="text" class="input" name="name" placeholder="Имя:">
-                </div>
-                <div>
-                    <input type="tel" class="input" name="tel" pattern="^[ 0-9]+$" minlength="8" placeholder="Телефон*:" required>
-                </div>
-                <div>
-                    <textarea class="textarea" placeholder="Сообщение*:" required></textarea>
-                </div>
-                <div class="enroll__agreement">
-                    <input type="checkbox" class="check" name="agreement" id="agreement" hidden required checked>
-                    <label for="agreement" class="check-lovely"></label>
-                    <label for="agreement" class="agreement-text">
-                        Прочитал(-а) пользовательское соглашение 
-                        и соглашаюсь на <a href="#">обработку своих <br>персональных данных</a>
-                    </label>
-                </div>
-                <button type="submit" class="btn-more submit">
-                    <span>Записаться</span>
-                    <svg class="btn-more__arrow" width="38" height="20">
-                        <use xlink:href="assets/components/app/web/img/sprite.svg#button-arrow-right"/>
-                    </svg>
-                </button>
-                <div class="agreement__tip">
-                    Поля, отмеченные *, обязательны для заполнения
-                </div>
-            </form>
-            <div class="enroll-success" hidden>
-                <div class="enroll-success__major-text">
-                    Ваше сообщение успешно отправлено,
-                </div>
-                <div class="enroll-success__minor-text">
-                    в ближайшее время мы свяжемся с вами.
-                </div>
-                <div class="enroll-success__logo"></div>
-            </div>
-        </div>
     </section>
     <section class="ensemble">
         <h2 class="ensemble__background-title">Об ансамбле</h2>
         <div class="container">
             <div class="ensemble__heading">
-                Хореографический ансамбль "Радуга" создан в 2005 году. За короткое время мы успели побывать на международных фестивалях:  
+                {$_modx->resource['ensemble.heading']}
             </div>
             <div class="ensemble__grid">
                 <div>
                     <ul class="ensemble__list lovely-list lovely-list_homepage">
-                        <li>Всероссийский Рейтинговый фестиваль - конкурс <b>"Сделано в России"</b>
-                            г. Санкт-Петербург;</li>
-                        <li>Международный конкурс - фестиваль детского
-                            и юношеского творчества <b>"Московское время"</b>
-                            г. Москва;</li>
-                        <li>Международный конкурс - фестиваль детского юношеского творчества <b>"На берегах Невы"</b>
-                            г. Москва;</li>
-                        <li>Чемпионат и Первенство ЦФО по современным танцевальным направлениям, г. Орел.</li> 
-                    </ul> 
-                    <a href="#" class="btn-more btn-more_ensemble">
-                        <span>Подробнее</span> 
+                        {foreach $_modx->resource['ensemble.list']| fromJSON as $row}
+                        <li>{$row['item']}</li>
+                        {/foreach}
+                    </ul>
+                    <a href="{'about' | uri2id | url}" class="btn-more btn-more_ensemble">
+                        <span>Подробнее</span>
                         <svg class="btn-more__arrow " width="38" height="20">
-                            <use xlink:href="assets/components/app/web/img/sprite.svg#button-arrow-right"/>
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-right"/>
                         </svg>
                     </a>
                 </div>
                 <div>
-                    <iframe width="560" height="315"  class="ensemble__video"src="https://www.youtube.com/embed/etAXXbJ9d3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe width="560" height="315" class="ensemble__video" src="https://www.youtube.com/embed/{$_modx->resource['ensemble.video']}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     <div class="ensemble__about">
-                        В хореографическом ансамбле дети приобщаются к искусству танца, знакомясь с классическим балетом; источниками танцевальной культуры; самобытностью национальных танцев мира, связанных с жизненным укладом народов; современной музыкой; эстрадным танцем и др. 
+                        {$_modx->resource['ensemble.text']}
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
-        <div class="link-box js-ensemble-links">       
+        <div class="link-box js-ensemble-links">
             <div>
-                <a href="#" class="link-object link-object_first">
-                    <img src="assets/components/app/web/img/home-tutor.jpg" class="js-ensemble-tutors-image" alt="">
+                <a href="{'tutors' | uri2id | url}" class="link-object link-object_first">
+                    <img src="{$.assets_url}web/img/home-tutor.jpg" class="js-ensemble-tutors-image" alt="">
                     <span class="link-object__title js-ensemble-tutors-title">
-                        Категория
-                        <svg width="4" height="28"> 
-                            <use xlink:href="assets/components/app/web/assets/components/app/web/img/sprite.svg#four-circles"/>
+                        Преподаватели
+                        <svg width="4" height="28">
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                     </span>
                 </a>
-            </div>    
+            </div>
             <div>
-                <a href="#" class="link-object link-object_second">
+                <a href="{'photoalbum' | uri2id | url}" class="link-object link-object_second">
                     <img src="assets/components/app/web/img/home-album.jpg" class="js-ensemble-photoalbum-image" alt="">
                     <span class="link-object__title js-ensemble-photoalbum-title">
-                        Категория
-                        <svg width="4" height="28"> 
-                            <use xlink:href="assets/components/app/web/assets/components/app/web/img/sprite.svg#four-circles"/>
-                        </svg>
-                    </span>
-                </a>
-            </div> 
-            <div>
-                <a href="#" class="link-object link-object_third">
-                    <img src="assets/components/app/web/img/home-video.jpg" class="js-ensemble-videos-image" alt="">
-                    <span class="link-object__title js-ensemble-videos-title">
-                        Категория
+                        Фотоальбом
                         <svg width="4" height="28">
-                            <use xlink:href="assets/components/app/web/img/sprite.svg#four-circles"/>
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                     </span>
                 </a>
-            </div>   
+            </div>
+            <div>
+                <a href="{'videos' | uri2id | url}" class="link-object link-object_third">
+                    <img src="{$.assets_url}web/img/home-video.jpg" class="js-ensemble-videos-image" alt="">
+                    <span class="link-object__title js-ensemble-videos-title">
+                        Видео
+                        <svg width="4" height="28">
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
         </div>
     </section>
     <section class="program">
         <div class="container">
             <div class="program__dancegirl">
-                <img src="assets/components/app/web/img/dancegirl.png" alt="">
+                <img src="{$.assets_url}web/img/dancegirl.png" alt="">
             </div>
             <h2 class="program__title">В <span>нашей</span> программе обучения</h2>
             <div class="programm__intro clearfix">
@@ -175,7 +126,7 @@
             </ul>
         </div>
         <div class="program__costumedgirl clearfix">
-            <img src="assets/components/app/web/img/costumedgirl.jpg">
+            <img src="{$.assets_url}web/img/costumedgirl.jpg">
         </div>
         <div class="container">
             <div class="program-features program-features_homepage">
@@ -206,71 +157,24 @@
     <div class="container">
         <div class="social-grid">
             <section class="reviews">
-                <header class="reviews__heading"> 
+                <header class="reviews__heading">
                     <h2 class="reviews__title">О нас говорят:</h2>
-                    <a href="#" class="reviews__all">Все отзывы</a>
+                    <a href="{'reviews' | uri2id | url}" class="reviews__all">Все отзывы</a>
                 </header>
-                <div class="home-reviews-item">
-                    <div class="home-reviews-item__photo">
-                        <img src="assets/components/app/web/img/review-photo.jpg" alt="">
-                    </div>
-                    <div class="home-reviews-item__caption">
-                        <div class="home-reviews-item__name">
-                            от кого отзыв
-                        </div>
-                        <div class="home-reviews-item__text">
-                            В хореографическом ансамбле дети приобщаются к искусству танца, знакомясь с классическим балетом; источниками танцевальной культуры; самобытностью национальных танцев мира, связанных с жизненным укладом народов; современной музыкой...
-                        </div>
-                        <a href="#" class="link-control link-control_right">
-                            <span>Показать полностью</span>
-                            <svg width="28" height="14" class="link-control__arrow">
-                                <use xlink:href="assets/components/app/web/img/sprite.svg#link-arrow-right"/>
-                            </svg>
-                        </a>      
-                    </div>
-                </div>
-                <div class="home-reviews-item">
-                    <div class="home-reviews-item__photo">
-                        <img src="assets/components/app/web/img/review-photo-1.jpg" alt="">
-                    </div>
-                    <div class="home-reviews-item__caption">
-                        <div class="home-reviews-item__name">
-                            от кого отзыв
-                        </div>
-                        <div class="home-reviews-item__text">
-                            В хореографическом ансамбле дети приобщаются к искусству танца, знакомясь с классическим балетом; источниками танцевальной культуры; самобытностью национальных танцев мира, связанных с жизненным укладом народов; современной музыкой...
-                        </div>
-                        <a href="#" class="link-control link-control_right">
-                            <span>Показать полностью</span>
-                            <svg width="28" height="14" class="link-control__arrow">
-                                <use xlink:href="assets/components/app/web/img/sprite.svg#link-arrow-right"/>
-                            </svg>
-                        </a>       
-                    </div>
-                </div>
-                <div class="home-reviews-item">
-                    <div class="home-reviews-item__photo">
-                        <img src="assets/components/app/web/img/review-photo-2.jpg" alt="">
-                    </div>
-                    <div class="home-reviews-item__caption">
-                        <div class="reviews-item__name">
-                            от кого отзыв
-                        </div>
-                        <div class="home-reviews-item__text">
-                            В хореографическом ансамбле дети приобщаются к искусству танца, знакомясь с классическим балетом; источниками танцевальной культуры; самобытностью национальных танцев мира, связанных с жизненным укладом народов; современной музыкой...
-                        </div>
-                        <a href="#" class="link-control link-control_right">
-                            <span>Показать полностью</span>
-                            <svg width="28" height="14" class="link-control__arrow">
-                                <use href="assets/components/app/web/img/sprite.svg#link-arrow-right"/>
-                            </svg>
-                        </a>       
-                    </div>
-                </div>
+                {'!pdoResources' | snippet : [
+                    'parents' => 'reviews' | uri2id,
+                    'limit' => 3,
+                    'tpl' => '@FILE chunks/items/review-item_home.tpl',
+                    'sortdir' => 'ASC',
+                    'sortby' => 'RAND()',
+                    'includeTVs' => 'review.photo',
+                    'includeContent' => 1,
+                    'tvPrefix' => ''
+                ]}
             </section>
             <div class="vk-group">
                 <h3 class="vk-group__title">МЫ ВКонтакте</h3>
-                <img src="assets/components/app/web/img/psevdo-vk.jpg" alt="" style="max-width: 100%;">                
+                <img src="{$.assets_url}web/img/psevdo-vk.jpg" alt="" style="max-width: 100%;">
             </div>
         </div>
         <section class="parents clearfix">
@@ -281,7 +185,7 @@
                 <div class="parents-box__grid parents-box__grid_homepage">
                     <div class="parents-item">
                         <div class="parents-item__image">
-                            <img src="assets/components/app/web/img/fitness.png" alt="">
+                            <img src="{$.assets_url}web/img/fitness.png" alt="">
                         </div>
                         <div class="parent-item__title">
                             Фитнес
@@ -289,7 +193,7 @@
                     </div>
                     <div class="parents-item">
                         <div class="parents-item__image">
-                            <img src="assets/components/app/web/img/ioga.png" alt=""> 
+                            <img src="{$.assets_url}web/img/ioga.png" alt="">
                         </div>
                         <div class="parent-item__title">
                             Стрейч - йога
@@ -297,7 +201,7 @@
                     </div>
                     <div class="parents-item">
                         <div class="parents-item__image">
-                            <img src="assets/components/app/web/img/ballet.png" alt=""> 
+                            <img src="{$.assets_url}web/img/ballet.png" alt="">
                         </div>
                         <div class="parent-item__title">
                             Боди - балет
@@ -305,7 +209,7 @@
                     </div>
                     <div class="parents-item">
                         <div class="parents-item__image">
-                            <img src="assets/components/app/web/img/dances.png" alt="">
+                            <img src="{$.assets_url}web/img/dances.png" alt="">
                         </div>
                         <div class="parent-item__title">
                             бальные танцы
@@ -318,7 +222,7 @@
                 <a href="#" class="btn-more js-parents-button-more">
                     <span>Записаться</span>
                     <svg class="btn-more__arrow" width="38" height="20">
-                        <use xlink:href="assets/components/app/web/img/sprite.svg#button-arrow-right"/>
+                        <use xlink:href="{$.assets_url}/web/img/sprite.svg#button-arrow-right"/>
                     </svg>
                 </a>
             </div>
@@ -342,5 +246,5 @@
             </div>
         </section>
     </div>
-</main> 
+</main>
 {/block}
