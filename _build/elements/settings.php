@@ -93,7 +93,7 @@ return [
     'contacts.tel' => [
         'key' => 'contacts.tel',
         'xtype' => 'textfield',
-        'value' => '<span>+7 (920)</span>217-99-64',
+        'value' => '<span>+7 (920)</span>&nbsp;217-99-64',
         'area' => 'default',
         'namespace' => 'app',
     ],

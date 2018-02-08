@@ -3,7 +3,7 @@
         <div class="footer__menu">
             <div class="footer__contacts-flex">
                 <a href="tel:{'site.tel' | config}" class="footer__tel">{'site.tel' | config}</a>
-                <a href="#" class="footer__vk">
+                <a href="{'social.vk' | config}" class="footer__vk">
                     <svg class="footer-vk" width="26" height="26">
                         <use xlink:href="assets/components/app/web/img/sprite.svg#vkontakte"/>
                     </svg>      
@@ -15,8 +15,8 @@
                 <a href="#" class="footer__confidence">Политика конфиденциальности</a>
             </div>
             <div class="footer__links-flex">
-                <a href="#" class="footer__contacts">Контакты</a>
-                <a href="#">Карта сайта</a>
+                <a href="{'contacts' | uri2id | url}" class="footer__contacts">Контакты</a>
+                <a href="{'sitemap' | uri2id | url}">Карта сайта</a>
             </div>
         </div>
         <div class="footer__bottom">

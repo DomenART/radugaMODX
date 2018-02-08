@@ -159,5 +159,21 @@ return [
             'about_page.subtitle',
             'about_page.text'
         ]
+    ],
+    'sitemap' => [
+        'file' => 'sitemap',
+        '_tmplvars' => [
+            'seo.title',
+            'seo.keywords',
+            'seo.description'
+        ]
+    ],
+    '404' => [
+        'file' => '404',
+        '_tmplvars' => [
+            'seo.title',
+            'seo.keywords',
+            'seo.description'
+        ]
     ]
 ];

@@ -18,14 +18,12 @@ return [
                     'hidemenu' => true,
                     'uri' => '404',
                     'uri_override' => true,
-                    'template' => '0'
+                    '_template' => '404'
                 ],
-                'sitemap.xml' => [
-                    'pagetitle' => 'Sitemap',
-                    'template' => 0,
-                    'hidemenu' => true,
-                    'uri' => 'sitemap.xml',
-                    'uri_override' => true,
+                'sitemap' => [
+                    'pagetitle' => 'Карта сайта',
+                    '_template' => 'sitemap',
+                    'hidemenu' => true
                 ],
             ],
         ],
