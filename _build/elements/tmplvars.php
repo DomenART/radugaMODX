@@ -151,12 +151,6 @@ return [
         '_category' => 'Наша жизнь',
         'rank' => 1
     ),
-    'about_live.text' => array(
-        'type' => 'textarea',
-        'caption' => 'Текст о нашей жизни',
-        '_category' => 'Наша жизнь',
-        'rank' => 2
-    ),
     'about_rewards.heading' => array(
         'type' => 'textfield',
         'caption' => 'Заголовок "Мы гордимся"',

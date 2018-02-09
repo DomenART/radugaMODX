@@ -28,7 +28,6 @@ return [
             'seo.keywords',
             'seo.description',
             'about_live.heading',
-            'about_live.text',
             'about_rewards.heading',
             'about_rewards.slider',
             'about_tutors.heading',
