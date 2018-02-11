@@ -58,13 +58,14 @@
                     </ul>
                     <a href="{'about' | uri2id | url}" class="btn-more btn-more_ensemble">
                         <span>Подробнее</span>
-                        <svg class="btn-more__arrow " width="38" height="20">
+                        <svg class="btn-more__arrow " width="20" height="20">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-right"/>
                         </svg>
                     </a>
                 </div>
                 <div>
-                    <iframe width="560" height="315" class="ensemble__video" src="https://www.youtube.com/embed/{$_modx->resource['ensemble.video']}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe width="560" height="315" class="ensemble__video" src="https://www.youtube.com/embed/{$_modx->resource['ensemble.video']}?controls=0&fs=0&rel=0&showinfo=0"
+                    frameborder="0" allowfullscreen></iframe>
                     <div class="ensemble__about">
                         {$_modx->resource['ensemble.text']}
                     </div>
@@ -74,8 +75,8 @@
         <div class="link-box js-ensemble-links">
             <div>
                 <a href="{'tutors' | uri2id | url}" class="link-object link-object_first">
-                    <img src="{$.assets_url}web/img/home-tutor.jpg" class="js-ensemble-tutors-image" alt="">
-                    <span class="link-object__title js-ensemble-tutors-title">
+                    <img src="{$.assets_url}web/img/home-tutor.jpg" class="ensemble__tutors-image" alt="">
+                    <span class="link-object__title ensemble__tutors-title">
                         Преподаватели
                         <svg width="4" height="28">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
@@ -85,8 +86,8 @@
             </div>
             <div>
                 <a href="{'photoalbum' | uri2id | url}" class="link-object link-object_second">
-                    <img src="assets/components/app/web/img/home-album.jpg" class="js-ensemble-photoalbum-image" alt="">
-                    <span class="link-object__title js-ensemble-photoalbum-title">
+                    <img src="assets/components/app/web/img/home-album.jpg" class="ensemble__photoalbum-image" alt="">
+                    <span class="link-object__title ensemble__photoalbum-title">
                         Фотоальбом
                         <svg width="4" height="28">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
@@ -96,8 +97,8 @@
             </div>
             <div>
                 <a href="{'videos' | uri2id | url}" class="link-object link-object_third">
-                    <img src="{$.assets_url}web/img/home-video.jpg" class="js-ensemble-videos-image" alt="">
-                    <span class="link-object__title js-ensemble-videos-title">
+                    <img src="{$.assets_url}web/img/home-video.jpg" class="ensemble__videos-image" alt="">
+                    <span class="link-object__title ensemble__videos-title">
                         Видео
                         <svg width="4" height="28">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
@@ -219,12 +220,12 @@
                 <div class="parents-box__more">
                     + индивидуальные тренировки по всем направлениям
                 </div>
-                <a href="#" class="btn-more js-parents-button-more">
+                <button type="button" class="btn-more js-enroll-btn js-parents-button-more">
                     <span>Записаться</span>
-                    <svg class="btn-more__arrow" width="38" height="20">
-                        <use xlink:href="{$.assets_url}/web/img/sprite.svg#button-arrow-right"/>
+                    <svg class="btn-more__arrow " width="20" height="20">
+                        <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-right"/>
                     </svg>
-                </a>
+                </button>
             </div>
         </section>
     </div>

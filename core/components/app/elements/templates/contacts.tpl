@@ -1,7 +1,7 @@
 {extends 'file:templates/base.tpl'}
 {block 'content'}
 <main class="contacts innerpage">
-    <div class="background-title">
+    <div class="background-title" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">
         Наша команда
     </div>
     <div class="container">
@@ -14,11 +14,11 @@
             <div class="contacts__items">
                 <div class="contacts-item contacts-item_phone">
                     <div class="contacts-item__heading">Звоните</div>
-                    <a href="tel:{'site_tel' | config}" class="contacts-item__phone" title="Телефон">{'site_tel' | config}</a>
+                    <span class="contacts-item__phone" title="Телефон">{'contacts.tel' | config}</span>
                 </div>
                 <div class="contacts-item contacts-item_email">
                     <div class="contacts-item__heading contacts-item__heading_email">Пишите</div>
-                    <a href="mailto:{'site_email' | config}" class="contacts-item__email" title="Электронная почта">{'site_email' | config}</a>
+                    <a href="mailto:{'contacts.email' | config}" class="contacts-item__email" title="Электронная почта">{'contacts.email' | config}</a>
                 </div>
                 <div class="contacts-item">
                     <div class="contacts-item__heading">Приходите</div>
@@ -26,21 +26,21 @@
                         <svg class="map-pin-icon" width="16" height="24">
                             <use xlink:href="assets/components/app/web/img/sprite.svg#map-pin"/>
                         </svg>
-                        {'address_first' | config}
+                        {'contacts.address_first' | config}
                     </div>
                 </div>
                 <div class="contacts-item">
                     <div class="contacts-item__heading"></div>
                     <div class="address-text">
-                        <svg class="map-pin-icon    " width="16" height="24">
+                        <svg class="map-pin-icon" width="16" height="24">
                             <use xlink:href="assets/components/app/web/img/sprite.svg#map-pin"/>
                         </svg>
-                        {'address_second' | config}
+                        {'contacts.address_second' | config}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
-{include 'file:chunks/partials/aside.tpl'}
+{include 'file:chunks/partials/aside_contacts.tpl'}
 {/block}

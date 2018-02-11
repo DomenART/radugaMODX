@@ -1,7 +1,7 @@
 {extends 'file:templates/base.tpl'}
 {block 'content'}
 <main class="routes innerpage">
-    <div class="background-title">
+    <div class="background-title" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">
         В программе<br>
         обучения
     </div>
@@ -34,7 +34,5 @@
         </div>
     </div>
 </main>
-<div class="container">
-    {include 'file:chunks/partials/aside.tpl'}
-</div>
+{include 'file:chunks/partials/aside.tpl'}
 {/block}

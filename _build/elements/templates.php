@@ -115,7 +115,6 @@ return [
             'seo.title',
             'seo.keywords',
             'seo.description',
-            'about_page.image',
             'about_page.title',
             'about_page.subtitle',
             'about_page.text',

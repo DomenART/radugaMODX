@@ -13,8 +13,8 @@
             <input type="tel" class="input input_register" name="tel" pattern="^[0-9]+$" minlength="8" placeholder="Телефон*:" required>
             <button type="submit" class="btn-more submit btn-more_register">
                 <span>Записаться</span>
-                <svg class="btn-more__arrow" width="25" height="19">
-                    <use href="assets/components/app/web/img/sprite.svg#button-more-arrow"/>
+                <svg class="btn-more__arrow " width="20" height="20">
+                    <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-right"/>
                 </svg>
             </button>
         </div>

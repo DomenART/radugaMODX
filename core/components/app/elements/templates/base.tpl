@@ -22,5 +22,6 @@
                 <use xlink:href="assets/components/app/web/img/sprite.svg#to-top"/>
             </svg>
         </div>
+        {include 'file:chunks/popups/enroll-popup.tpl'}
     </body>
 </html>

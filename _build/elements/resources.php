@@ -187,10 +187,10 @@ return [
             '_template' => 'reviews',
             'properties' => [
                 'tickets' => [
-                    'template' => 'review',
                     'disable_jevix' => true,
                     'process_tags' => true,
-                    'uri' => '%alias%ext'
+                    'uri' => '%alias%ext',
+                    'richtext' => true
                 ]
             ],
             'resources' => [

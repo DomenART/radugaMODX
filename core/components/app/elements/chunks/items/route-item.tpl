@@ -5,7 +5,7 @@
         </svg>
     </button>
     <div class="route-item__bg">
-        <div id="player">
+        <div id="player"></div>
     </div>
     </div>
     <div class="route-item__title">

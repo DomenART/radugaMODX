@@ -5,14 +5,14 @@
         </div>
         <div>
             <div class="review-item__date">
-                <time>{$publishedon | date_format: "%m.%Y"}</time>
+                <time>{$publishedon | date_format: "%B"} {$publishedon | date_format: "%Y"}</time>
             </div>
             <div class="review-item__name">
                 {$pagetitle}
             </div>
             <div class="review-item__social">
                 {foreach $_pls['review.social'] as $row}
-                <a href="{$row['link']}" class="review-item__social-link"></a>
+                <a href="{$row['link']}" class="review-item__social-link" target="_blank"></a>
                 {/foreach}
             </div>
         </div>

@@ -2,7 +2,9 @@
 {block 'header'}{/block}
 {block 'content'}
 <main class="sitemap innerpage">
-    <div class="background-title">Весь сайт<br> на одной странице</div>
+    <div class="background-title" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">
+        Весь сайт<br> на одной странице
+    </div>
         <div class="container">
             <h1 class="pagetitle pagetitle_sitemap">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
             {'pdoMenu' | snippet : [

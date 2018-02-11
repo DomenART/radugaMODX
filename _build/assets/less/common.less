@@ -131,10 +131,10 @@ h6 {
 }
 
 .header {
-    position: fixed;
-    top: 25px;
-    right: 135px;
-    z-index: 10;
+    position: absolute;
+    top: 15px;
+    right: 117px;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,11 +149,19 @@ h6 {
     }
 }
 
-.header-social {
+.header_fixed {
+    position: fixed;
+    top: 0;
+}
+
+.header__social {
+    height: 57px;
     padding: 0;
     margin: 0;
     display: flex;
     li {
+        display: flex;
+        align-items: center;
         list-style: none;
         margin: 0 2px;
     }
@@ -178,7 +186,6 @@ h6 {
         }
         &:active,
         &:hover {
-            background: transparent;
             svg {
                 fill: #ffffff;
                 &.svg-vkontakte {
@@ -195,16 +202,27 @@ h6 {
     }
 }
 
+.header__social_fixed {
+    background-color: #4b4b4b;
+}
+
 .header__email {
+    display: flex;
+    align-items: center;
+    height: 57px;
     color: #000000;
     font-size: 16px;
     letter-spacing: 3.2px;
     text-decoration: none;
-    border-bottom: 1px dashed #ccc;
-    margin-left: 46px;
-    padding: 3px 0;
+    margin-left: 33px;
+    padding: 0 10px;
     line-height: 1;
     text-decoration: none;
+    span {
+        display: block;
+        padding-bottom: 3px;
+        border-bottom: 1px dashed #000;
+    }
     &:focus {
         outline: none;
         background: #00ffff;
@@ -213,9 +231,7 @@ h6 {
     }
     &:hover,
     &:active {
-        background: transparent;
         border-bottom-color: #ccc;
-        color: #000;
         text-decoration: none;
     }
     @media (max-width: @breakpoint-small) {
@@ -223,12 +239,28 @@ h6 {
     }
 }
 
+.header__email_fixed {
+    color: #ffffff;
+    background-color: #4b4b4b;
+    span {
+        border-bottom-color: #ccc;
+    }
+    &:hover {
+        color: #ffffff;
+    }
+}
+
 .header__phone {
+    display: flex;
+    align-items: center;
+    height: 57px;
     color: #000000;
     font-family: @font-alt;
     font-size: 24px;
     text-decoration: none;
-    margin-left: 87px;
+    margin-left: 50px;
+    padding: 0 30px;
+    cursor: default;
     span {
         font-size: 14px;
     }
@@ -239,12 +271,18 @@ h6 {
     }
     &:hover,
     &:active {
-        background: transparent;
-        color: #000000;
         text-decoration: none;
     }
     @media (max-width: @breakpoint-small) {
         margin-left: 0;
+    }
+}
+
+.header__phone_fixed {
+    color: #ffffff;
+    background-color: #299798;
+    &:hover {
+        color: #ffffff;
     }
 }
 
@@ -273,6 +311,48 @@ h6 {
     }
 }
 
+.header-menu {
+    position: absolute;
+    top: 23.5%;
+    left: 9.1%;
+    z-index: 10;
+    box-shadow: 0 0 0 8px #009696;
+    border: 2px solid rgba(51, 170, 171, 0.5);
+    background-color: #299798;
+    @media (max-width: @breakpoint-large) {
+        left: 4%;
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        top: 26px;
+        left: 19px;
+        z-index: 2000;
+        padding: 0;
+        transform: none;
+        box-shadow: 0 0 0 4px #009696;
+    }
+}
+
+.header-menu-fixed {
+    position: fixed;
+    z-index: 1000;
+    background-color: #243c73;
+    box-shadow: 0 0 0 8px #243c73;
+    .header-menu__decor {
+        border-color: #243c73;
+    }
+}
+
+.header-menu__decor {
+    height: 20px;
+    position: absolute;
+    top: -38%;
+    left: 48%;
+    z-index: 10;
+    border-right: 4px dotted #299798;
+    @media (max-width: @breakpoint-xsmall) {
+        height: 10px;
+    }
+}
 
 .menu-bar {
     display: flex;
@@ -282,8 +362,8 @@ h6 {
   //  height: 695px;
     height: auto;
     position: absolute;
-    top: 45%;
-    left: 9%;
+    top: 41.5%;
+    left: 8.5%;
     z-index: 10;
     overflow: hidden;
     background-color: #243c73;
@@ -303,7 +383,7 @@ h6 {
     height: auto;
     position: fixed;
     top: 0;
-    z-index: 1000;
+    z-index: 2500;
     .menu-bar__threshold,
     .menu-bar__title,
     .menu-bar__divider {
@@ -323,7 +403,7 @@ h6 {
 .menu-bar__threshold {
     display: flex;
     align-items: center;
-    height: 52px;
+    height: 60px;
     text-align: center;
     color: #ffffff;
     font-size: 12px;
@@ -339,7 +419,7 @@ h6 {
         position: absolute;
         top: 31px;
         right: 10px;
-        z-index: 900;
+        z-index: 2000;
         padding: 0 2px;
         background-color: #243c73;
         font-size: 11px;
@@ -352,7 +432,7 @@ h6 {
 }
 
 .menu-bar__divider {
-    width: 20px;
+    width: 25px;
     position: relative;
     top: -5px;
     border-bottom: 4px dotted #98cc07;
@@ -377,7 +457,7 @@ h6 {
 .menu-bar__title-text {
     width: 356px;
     position: absolute;
-    top: 43%;
+    top: 42%;
     left: -115%;
     transform: rotate(-90deg);
     color: #ffffff;
@@ -399,6 +479,9 @@ h6 {
     opacity: 0;
     transition-duration: 1s;
     transition-property: opacity;
+    @media (max-width: @breakpoint-xsmall) {
+        opacity: 1;
+    }
 }
 
 .menu-bar__logo {
@@ -412,7 +495,7 @@ h6 {
         top: 23px;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 900;
+        z-index: 2000;
         svg {
             width: 112px;
             height: 53px;
@@ -453,7 +536,7 @@ h6 {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 800;
+    z-index: 2000;
     padding: 71px 0;
     background: #1e2433 url('../img/bg-menu.png') 50% 140% no-repeat;
     //background-size: cover;
@@ -615,7 +698,7 @@ h6 {
             transition-property: transform;
         }
         &::after {
-            height: 14px;
+            height: 20px;
             opacity: 1;
             transition-duration: 0.2s;
         }
@@ -682,16 +765,16 @@ h6 {
         background-color: #299798;
         transition: background-color 0.5s;
         &::before {
-            width: 10px;
+            width: 18px;
             opacity: 1;
             transition: width, opacity 0.5s;
         }
         .control-btn__arrow_left {
-            transform: translate(-15px, -50%);
+            transform: translate(-22px, -50%);
             fill: #fff;
         }
         .control-btn__arrow_right {
-            transform: translate(15px, -50%);
+            transform: translate(22px, -50%);
             fill: #fff;
         }
     }
@@ -864,14 +947,7 @@ input, textarea {
     }
 }
 
-.enroll_modal {
-    position: absolute;
-    top: 79px;
-    right: 101px;
-    background-color: #ffffff;
-}
-
-.enroll {
+.enroll{
     max-width: 360px;
     box-sizing: border-box;
     padding: 41px 26px 24px 32px;
@@ -1072,7 +1148,7 @@ button.enroll__submit {
     max-width: 290px;
     box-sizing: border-box;
     position: relative;
-    padding: 22px;
+    padding: 22px 30px 22px 10px;
     border: 0;
     background-color: #299798;
     text-align: center;
@@ -1092,8 +1168,8 @@ button.enroll__submit {
         color: #fefefe;
         span {
             &::after {
-                width: 18px;
-                right: -30px;
+                width: 23px;
+                right: -37px;
                 opacity: 1 ;
                 transition-duration: 0.5s;
                 transition-property: opacity, right;
@@ -1101,7 +1177,7 @@ button.enroll__submit {
         }
         .btn-more__arrow {
             opacity: 1;
-            transform: translate(7.1px, -50%);
+            transform: translate(14px, -50%);
             transition-duration: 0.5s;
         }
     }
@@ -1114,7 +1190,7 @@ button.enroll__submit {
             position: absolute;
             top: 50%;
             right: -20px;
-            transform: translate(-50%, -4px);
+            transform: translate(-50%, -2px);
             border-top: 4px dotted #fff;
             opacity: 0;
             transition-duration: 0.5s;
@@ -1126,6 +1202,7 @@ button.enroll__submit {
         top: 50%;
         transform: translate(0, -50%);
         fill: #fff;
+        margin-left: 5px;
         opacity: 0.5;
         transition-duration: 0.5s;
     }
@@ -1135,7 +1212,7 @@ button.enroll__submit {
         padding: 22px 46px;
         span {
             &::after {
-                transform: translate(-50%, -4px);
+                transform: translate(-50%, -2px);
             }
         }
     }
@@ -1671,8 +1748,21 @@ button.enroll__submit {
     font-size: 13px;
     font-weight: 700;
     line-height: 1;
+    cursor: pointer;
+    &::after {
+        content: '';
+        width: 0;
+        border-top: 3px dotted #a5c0c0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: width 0.5s;
+    }
     &:hover {
         color: darken(#a5c0c0, 20%);
+        &::after {
+            width: 20px;
+        }
         span {
             /*
             padding-right: 0;
@@ -1680,13 +1770,14 @@ button.enroll__submit {
             transition-duration: 1s;
             */
             &::after {
-                display: none;
+                opacity: 0;
+              //  transition: opacity 0.5s 0.5s;
             }
         }
         .link-control__arrow {
             opacity: 1;
-            transition-property: opacity,transform;
-            transition-duration: 0.5s;
+            transform: translate(9px, -50%);
+            transition: opacity 0.5s,transform 0.5s;
         }
     }
     span {
@@ -1697,6 +1788,7 @@ button.enroll__submit {
         transition-property: padding-right;
         transition-duration: 0.5s;
         &::after {
+            opacity: 1;
             content: '';
             width: 3px;
             height: 3px;
@@ -1705,6 +1797,7 @@ button.enroll__submit {
             border-radius: 50%;
             background-color: #a5c0c0;
             transform: translateY(-50%);
+            transition: opacity 0.5s 0.1s;
         }
     }
     .link-control__arrow {
@@ -1713,8 +1806,7 @@ button.enroll__submit {
         top: 50%;
         transform: translate(0, -50%);
         opacity: 0;
-        transition-property: opacity,transform;
-        transition-duration: 0.5s;
+        transition: opacity 0.5s,transform 0.5s;
     }
 }
 
@@ -1725,9 +1817,10 @@ button.enroll__submit {
         }
     }
     span {
-        padding-right: 10px;
+        //padding-right: 10px;
         &::after {
-            right: 0;
+            //right: 0;
+            right: -10px;
         }
     }
     .link-control__arrow_right {
@@ -1981,4 +2074,8 @@ a.footer__tel {
     fill: #e3e3e3;
     margin-right: 5px;
     transform: translateY(-2px);
+}
+
+.appereance{
+    animation: 0.5s appereance normal 1;
 }

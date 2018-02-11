@@ -1,12 +1,12 @@
 {extends 'file:templates/base.tpl'}
 {block 'content'}
 <main class="about innerpage">
-    <div class="background-title background-title_about">информация</div>
+    <div class="background-title background-title_about" uk-scrollspy="cls: uk-animation-slide-right">информация</div>
     <div class="about__intro">
         <div class="container">
             <h1 class="pagetitle pagetitle_about">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
             <div class="about__introtext">
-                {$introtext}
+                {$_modx->resource.introtext}
                 <div class="box-decor box-decor_about-intro"></div>
             </div>
             <div class="about__age">
@@ -16,7 +16,7 @@
         </div>
     </div>
     <section class="about__live clearfix">
-        <div class="background-title background-title_live">Наша жизнь</div>
+        <div class="background-title background-title_live" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">Наша жизнь</div>
         <div class="container">
             <div class="box-decor box-decor_about-live"></div>
             <h2 class="section-title">{$_modx->resource['about_live.heading']}</h2>
@@ -36,18 +36,18 @@
                 </div>
             </div>
             <div class="about__live-decor">
-                <img src="../img/about-live-1.jpg" alt="">
-                <img src="../img/about-live-2.jpg" alt="">
+                <img src="{$.assets_url}web/img/about-live-1.jpg" alt="">
+                <img src="{$.assets_url}web/img/about-live-2.jpg" alt="">
             </div>
         </div>
     </section>
     <section class="about__reward">
-        <div class="background-title background-title_reward">мы гордимся</div>
+        <div class="background-title background-title_reward" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">мы гордимся</div>
         <div class="container">
             <div class="box-decor box-decor_about-rewards"></div> 
             <h2 class="section-title section-title_rewards">{$_modx->resource['about_rewards.heading']}</h2>
             <div class="reward-box">
-                <ul class="uk-switcher">
+                <ul class="uk-switcher reward-box__content">
                     {foreach $_modx->resource['about_rewards.slider'] | fromJSON as $row}
                     <li>
                         <div class="reward-box__year">{$row['year']}</div>
@@ -66,7 +66,7 @@
                     {/foreach}
                 </ul>  
                 <div class="reward-box__control">
-                    <ul class="reward-box__control-list" uk-switcher="connect: .reward-box ul">
+                    <ul class="reward-box__control-list" uk-switcher="connect: .reward-box__content">
                         {foreach $_modx->resource['about_rewards.slider'] | fromJSON as $row}
                         <li></li>
                         {/foreach}
@@ -76,7 +76,7 @@
         </div>
     </section>
     <section class="about__tutors">
-        <div class="background-title background-title_tutors">Наша команда</div>
+        <div class="background-title background-title_tutors" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">Наша команда</div>
         <div class="container">
             <h2 class="section-title section-title_tutors">{$_modx->resource['about_tutors.heading']}</h2>
             <ul uk-switcher hidden>
@@ -101,13 +101,13 @@
                             </div>
                             <div class="control-buttons">
                                 <button class="control-btn control-btn_left" uk-switcher-item="previous">
-                                    <svg class="control-btn__arrow  control-btn__arrow_left button-arrow-left" width="24" height="20">
-                                        <use xlink:href="assets/components/app/web/img/sprite.svg#button-arrow-left"/>
+                                    <svg class="control-btn__arrow control-btn__arrow_left button-arrow-left" width="20" height="20">
+                                        <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-left"/>
                                     </svg>
                                 </button>
                                 <button class="control-btn control-btn_right" uk-switcher-item="next">
-                                    <svg class="control-btn__arrow control-btn__arrow_right button-arrow-right" width="24" height="20">
-                                        <use xlink:href="assets/components/app/web/img/sprite.svg#button-arrow-right"/>
+                                    <svg class="control-btn__arrow control-btn__arrow_right button-arrow-right" width="20" height="20">
+                                        <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-right"/>
                                     </svg>
                                 </button>
                             </div>
@@ -130,7 +130,7 @@
         </div>
     </section>
     <section class="about__parents clearfix">
-        <div class="background-title background-title_parents">Родителям</div>
+        <div class="background-title background-title_parents" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">Родителям</div>
         <div class="container">
             <div class="box-decor box-decor_about-parents"></div>
             <h2 class="section-title section-title_parents">{$_modx->resource['about_parents.heading']}</h2>
@@ -183,7 +183,5 @@
         ]}
     </div>
 </main>
-<div class="container">
-    {include 'file:chunks/partials/aside_about.tpl'}
-</div>
+{include 'file:chunks/partials/aside_about.tpl'}
 {/block}

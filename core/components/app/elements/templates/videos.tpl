@@ -1,7 +1,7 @@
 {extends 'file:templates/base.tpl'}
 {block 'content'}
 <main class="videos innerpage">
-    <div class="background-title">
+    <div class="background-title" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">
         информация
     </div>
     <div class="container">
@@ -43,7 +43,7 @@
             <div class="videos__control control-bar">
                 <div class="control-bar__control-buttons control-buttons">
                     <button class="control-btn control-btn_left control-btn_disabled">
-                        <svg class="control-btn__arrow control-btn__arrow_disabled control-btn__arrow_left btn-arrow-left" width="24px" height="20px">
+                        <svg class="control-btn__arrow control-btn__arrow_disabled control-btn__arrow_left btn-arrow-left" width="24" height="20">
                             <use xlink:href="img/sprite.svg#btn-arrow-left"/>
                         </svg>
                     </button>
@@ -71,7 +71,5 @@
         </div>
     </div>
 </main>
-<div class="container">
-    {include 'file:chunks/partials/aside.tpl'}
-</div>
+{include 'file:chunks/partials/aside.tpl'}
 {/block}

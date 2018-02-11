@@ -1,7 +1,7 @@
 {extends 'file:templates/base.tpl'}
 {block 'content'}
 <main class="category innerpage">
-    <div class="background-title">
+    <div class="background-title" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">
         Фотоальбом
     </div>
     <div class="container">
@@ -27,7 +27,9 @@
         <div class="category__pool">
             {'!ms2Gallery' | snippet : [
                 'tplRow' => '@FILE chunks/items/photo-item.tpl',
-                'tplOuter' => '@INLINE {$rows}'
+                'tplOuter' => '@INLINE {$rows}',
+                'includeOriginal' => true,
+                'includeThumbs' => '370x310'
             ]}
         </div>
     </div>
@@ -39,7 +41,7 @@
             </div>
             <div class="photo-popup__desc">
                 <div class="photo-popup__counter">
-                    <span>{$photo.rank + 1}}</span> 
+                    <span>{$photo.rank + 1}</span> 
                     из 
                     <span>{$total}</span>
                 </div>
@@ -66,7 +68,7 @@
                     <div class="photo-popup__share-text">
                         Поделись с друзьями:
                     </div>
-                    <div class="photo-popup__share-bar ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter" data-size="s"></div>                                               
+                    <div class="photo-popup__share-bar ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter" data-size="s"></div>                                             
                 </div>
             </div>
             {if $prev?}

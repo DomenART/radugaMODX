@@ -1,5 +1,5 @@
 <div class="photo-item" data-id="{$id}">
-    <img src="{$_pls['370x370']}" alt="">
+    <img src="{$_pls['370x310']}" alt="">
     <div class="photo-item__hovered">
         <div class="photo-item__title">
             {$name}

@@ -1,7 +1,7 @@
 {extends 'file:templates/base.tpl'}
 {block 'content'}
 <main class="article innerpage_article">
-    <div class="background-title">
+    <div class="background-title" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">
         Новости
     </div>
     <div class="container">

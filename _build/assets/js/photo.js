@@ -3,12 +3,12 @@ let category = document.querySelector('.category');
 let photos = document.querySelectorAll('.play-btn');
 
 if (category) {
-    let popup = document.querySelector('.popup');
+    let photoPopup = document.querySelector('.photo-popup');
     let photoControls = document.querySelectorAll('.photo-popup__control');
     let photoImage = document.querySelector('.photo-popup__img');
     photos.forEach(element => {
         element.addEventListener('click', function() {
-            popup.classList.remove('hidden');
+            photoPopup.parentNode.classList.remove('hidden');
         });
     });
     if (window.matchMedia('(max-width: 639px)').matches) {

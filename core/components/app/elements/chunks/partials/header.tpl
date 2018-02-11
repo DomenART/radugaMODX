@@ -1,5 +1,5 @@
 <header class="header">
-	<ul class="header-social">
+	<ul class="header__social">
 		<li>
 			<a href="{'social.vk' | url}" aria-label="Страница Вконтакте">
 			<svg class="svg-vkontakte" width="26" height="26">
@@ -22,6 +22,6 @@
 			</a>
 		</li>
 	</ul>
-	<a href="mailto:{'contacts.email' | config}" class="header__email" title="Электронная почта">{'contacts.email' | config}</a>
-	<a href="tel:{'contacts.tel' | config}" class="header__phone" title="Телефон">{'contacts.tel' | config}</a>
+	<a href="mailto:{'contacts.email' | config}" class="header__email" title="Электронная почта"><span>{'contacts.email' | config}</span></a>
+	<span class="header__phone" title="Телефон">{'contacts.tel' | config}</span>
 </header>

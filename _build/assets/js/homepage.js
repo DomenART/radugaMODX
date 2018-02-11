@@ -47,10 +47,6 @@ if (homepage) {
                     } else {
                         introMajorDivider.style.animation = '1s slide-up forwards'; 
                     }
-                    introMajorDivider.addEventListener('animationend', function() {
-                        introMajorDivider.style.animation = '';
-                        introMajorDivider.style.opacity = '1';
-                    })
                 }, 2000);
                 setTimeout(function() {
                     introMajorLast.style.animation = '1s slide-ltr forwards';
@@ -73,12 +69,12 @@ if (homepage) {
     let ensembleLinks = document.querySelector('.js-ensemble-links');
  
     if (ensembleLinks) {
-        let tutorsImage = ensembleLinks.querySelector('.js-ensemble-tutors-image');
-        let tutorsTitle = ensembleLinks.querySelector('.js-ensemble-tutors-title');
-        let photoalbumImage = ensembleLinks.querySelector('.js-ensemble-photoalbum-image');
-        let photoalbumTitle = ensembleLinks.querySelector('.js-ensemble-photoalbum-title');
-        let videosImage = ensembleLinks.querySelector('.js-ensemble-videos-image');
-        let videosTitle = ensembleLinks.querySelector('.js-ensemble-videos-title');
+        let tutorsImage = ensembleLinks.querySelector('.ensemble__tutors-image');
+        let tutorsTitle = ensembleLinks.querySelector('.ensemble__tutors-title');
+        let photoalbumImage = ensembleLinks.querySelector('.ensemble__photoalbum-image');
+        let photoalbumTitle = ensembleLinks.querySelector('.ensemble__photoalbum-title');
+        let videosImage = ensembleLinks.querySelector('.ensemble__videos-image');
+        let videosTitle = ensembleLinks.querySelector('.ensemble__videos-title');
  
         window.addEventListener('scroll', function() {
             let ensembleLinksCoords = ensembleLinks.getBoundingClientRect();

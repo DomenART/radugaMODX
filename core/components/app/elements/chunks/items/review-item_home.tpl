@@ -9,11 +9,11 @@
         <div class="home-reviews-item__text">
             {$content}
         </div>
-        <a href="#" class="link-control link-control_right">
+        <span class="link-control link-control_right">
             <span>Показать полностью</span>
-            <svg width="28" height="14" class="link-control__arrow">
-                <use xlink:href="assets/components/app/web/img/sprite.svg#link-arrow-right"/>
+            <svg class="link-control__arrow" width="28" height="14">
+                <use xlink:href="{$.assets_url}/web/img/sprite.svg#button-arrow-right"/>
             </svg>
-        </a>
+        </span>
     </div>
 </article>

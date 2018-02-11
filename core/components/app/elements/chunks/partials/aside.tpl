@@ -2,7 +2,13 @@
     <aside class="innerpage-aside">
         <div class="innerpage-aside__first">
             <div class="innerpage-aside__decor"></div>
-            {include 'file:chunks/forms/enroll.tpl'}
+            <div class="enroll">
+                {'!AjaxForm@Form' | snippet : [
+                    'emailSubject'  => 'Запись на урок',
+                    'validate'      => 'nomail:blank,tel:required',
+                    'form'          => '@FILE chunks/forms/enroll.tpl'
+                ]}
+            </div>
         </div>
         <div class="innerpage-aside__second">
             <div class="address">

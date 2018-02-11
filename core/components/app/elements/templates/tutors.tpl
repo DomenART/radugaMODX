@@ -1,7 +1,7 @@
 {extends 'file:templates/base.tpl'}
 {block 'content'}
 <main class="tutors innerpage">
-    <div class="background-title">
+    <div class="background-title" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">
         Наша команда
     </div>
     <div class="container">
@@ -22,13 +22,13 @@
                             </div>
                             <div class="control-buttons">
                                 <button class="control-btn control-btn_left" uk-switcher-item="previous">
-                                    <svg class="control-btn__arrow control-btn__arrow_disabled control-btn__arrow_left button-arrow-left" width="24" height="20">
-                                        <use xlink:href="assets/components/app/web/img/sprite.svg#button-arrow-left"/>
+                                    <svg class="control-btn__arrow control-btn__arrow_left button-arrow-left" width="20" height="20">
+                                        <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-left"/>
                                     </svg>
                                 </button>
                                 <button class="control-btn control-btn_right" uk-switcher-item="next">
-                                    <svg class="control-btn__arrow control-btn__arrow_right button-arrow-right" width="24" height="20">
-                                        <use xlink:href="assets/components/app/web/img/sprite.svg#button-arrow-right"/>
+                                    <svg class="control-btn__arrow control-btn__arrow_right button-arrow-right" width="20" height="20">
+                                        <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-right"/>
                                     </svg>
                                 </button>
                             </div>
