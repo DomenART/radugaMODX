@@ -1,9 +1,9 @@
 //Фиксация и стилизация синего блока меню
 var homepage = document.querySelector('.homepage');
 var innerpage = document.querySelector('.innerpage');
-let menuBar = document.querySelector('.menu-bar');
-let menuBarButton = document.querySelector('.menu-bar-button');
-var menuBarLogo = document.querySelector('.menu-bar__logo');
+let menuBar = document.querySelector('.menubar');
+let menuBarButton = document.querySelector('.menubar-button');
+var menuBarLogo = document.querySelector('.menubar__logo');
 let menu = document.querySelector('.menu');
 var menuButtons = document.querySelectorAll('.button-menu');
 let menuShow = document.querySelectorAll('.button-menu__show');
@@ -11,151 +11,80 @@ let menuHide = document.querySelectorAll('.button-menu__hide');
 let menuHeaderButton = document.querySelector('.header-menu');
 let menuHeaderDecor = document.querySelector('.header-menu__decor');
 let homepageHeader = document.querySelector('.intro__container');
-var menuBarFixed;
+var menuBarGlued;
 
 if (homepage) {
     //фиксация меню при прокрутке
     window.addEventListener('scroll', function() {
         if (window.pageYOffset >= homepageHeader.offsetHeight) {
             if (!window.matchMedia('(max-width: 639px)').matches) {
-                menuBar.classList.add('menu-bar-fixed');
+                menuBar.classList.add('menubar_menu');
             }
-            return menuBarFixed = true;
+            return menuBarGlued = true;
         } else {
-            if (!menu.classList.contains('menu-opened')) {
-                menuBar.classList.remove('menu-bar-fixed');
-                return menuBarFixed = false;
+            if (!menu.classList.contains('menu_opened')) {
+                menuBar.classList.remove('menubar_menu');
+                return menuBarGlued = false;
             }
         }
     });
      //обработка переключения меню кнопками
     menuButtons.forEach(element => {    
         element.addEventListener('click', function() {
-            if (!menu.classList.contains('menu-opened')) {
-                menu.classList.add('menu-opened');
+            if (!menu.classList.contains('menu_opened')) {
                 menu.classList.remove('hidden');
+                menu.classList.add('menu_opened');
+                menu.classList.remove('menu-anim-close');
+                menu.classList.add('menu-anim-open');
+                menuBar.classList.add('menubar_menu');
                 menuButtons.forEach(element => {
-                    element.classList.add('button-menu-opened');
+                    element.classList.add('button-menu_opened');
                 });
-                menuBar.classList.add('menu-bar-fixed');
             } else {
-                menu.classList.remove('menu-opened');
-                menu.classList.add('hidden');
+                setTimeout(function(){
+                     menu.classList.add('hidden');
+                }, 500)
+                menu.classList.remove('menu_opened');
+                menu.classList.remove('menu-anim-open');
+                menu.classList.add('menu-anim-close');
                 menuButtons.forEach(element => {
-                    element.classList.remove('button-menu-opened');
+                    element.classList.remove('button-menu_opened');
                 });
-                if (!menuBarFixed) {
-                    menuBar.classList.remove('menu-bar-fixed');
+                if (!menuBarGlued) {
+                    menuBar.classList.remove('menubar_menu');
                 }
             }
         });
     });
 }
 
+
+
 if (innerpage) {
-    //фиксация меню при прокрутке
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset >= (document.documentElement.clientHeight)) {
-            menuBarLogo.classList.remove('hidden');
-            menuBarButton.classList.remove('hidden');
-            menuBar.classList.add('menu-bar-fixed');
-            return menuBarFixed = true;
-        } else {
-            if (!menu.classList.contains('menu-opened')) {
-                menuBar.classList.remove('menu-bar-fixed');
-                menuBarLogo.classList.add('hidden');
-                menuBarButton.classList.add('hidden');
-                return menuBarFixed = false;
-            }
-        }
-    });
     //обработка переключения меню кнопками
     menuButtons.forEach(element => {    
         element.addEventListener('click', function() {
-            if (!menu.classList.contains('menu-opened')) {
-                menu.classList.add('menu-opened');
+            if (!menu.classList.contains('menu_opened')) {
                 menu.classList.remove('hidden');
+                menu.classList.add('menu_opened');
+                menu.classList.remove('menu-anim-close');
+                menu.classList.add('menu-anim-open');
                 menuButtons.forEach(element => {
-                    element.classList.add('button-menu-opened');
+                    element.classList.add('button-menu_opened');
                 });
-                menuBar.classList.add('menu-bar-fixed');
-                menuBarLogo.classList.remove('hidden');
-                menuBarButton.classList.remove('hidden');
+               menuHeaderButton.classList.add('header-menu_fixed');
             } else {
+                setTimeout(function(){
+                     menu.classList.add('hidden');
+                }, 500)
                 menu.classList.remove('menu-opened');
-                menu.classList.add('hidden');
+                menu.classList.remove('menu-anim-open');
+                menu.classList.add('menu-anim-close');
                 menuButtons.forEach(element => {
-                    element.classList.remove('button-menu-opened');
+                    element.classList.remove('button-menu_opened');
                 });
-                if (!menuBarFixed) {
-                    menuBar.classList.remove('menu-bar-fixed');
-                    menuBarLogo.classList.add('hidden');
-                    menuBarButton.classList.add('hidden');
-                }
+                menuHeaderButton.classList.remove('header-menu_fixed');
             }
         });
     });
 }
-
-
-
-
-
-
-    /*
-     else {
-            if (!menu.classList.contains('menu-opened')) {
-                menuBar.classList.remove('menu-bar-fixed');         
-            }   
-            
-    (!window.matchMedia('(max-width: 639px)').matches) {
-
-    }
-    */
-
-
-
-
-
-/*
-//Работа меню
-menuButtons.forEach(element => {    
-    element.addEventListener('click', function() {
-        menu.classList.toggle('menu-opened');
-        menuButtons.forEach(element => {
-            element.classList.toggle('button-menu-opened');
-        });
-        if (menu.classList.contains('menu-opened')) {
-            menuShow.forEach(element => {
-                element.hidden = true;
-            });
-            menuHide.forEach(element => {
-                element.hidden = false;
-            });
-            if (window.matchMedia('(max-width: 639px)').matches) {
-                menuHeaderButton.hidden = false;
-                menuBarLogo.style.position = 'fixed';
-                menuBarThreshold.style.position = 'fixed';
-            }
-            menuBar.classList.add('menu-bar-fixed');
-            menuHeaderDecor.hidden = true;
-        } else {
-            menuShow.forEach(element => {
-                element.hidden = false;
-            });
-            menuHide.forEach(element => {
-                element.hidden = true;
-            });
-            menuHeaderButton.hidden = false;          
-            if ((window.pageYOffset < homepageHeader.offsetHeight) || (window.matchMedia('(max-width: 639px)').matches)) {
-                menuBar.classList.remove('menu-bar-fixed');
-            }
-            if (window.matchMedia('(max-width: 639px)').matches) {
-                menuBarLogo.style.position = 'absolute';
-                menuBarThreshold.style.position = 'absolute';
-            }
-            menuHeaderDecor.hidden = false;
-        }
-    });
-});
-*/

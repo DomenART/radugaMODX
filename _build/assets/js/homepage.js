@@ -3,29 +3,29 @@ import ScrollMagic from 'scrollmagic';
 //Включить анимации первого экрана главной
 
 var homepage = document.querySelector('.homepage');
-var menuBar = document.querySelector('.menu-bar');
-var menuBarLogo = document.querySelector('.menu-bar__logo');
+var menuBar = document.querySelector('.menubar');
+var menuBarLogo = document.querySelector('.menubar__logo');
 var menuHeaderButton = document.querySelector('.header-menu');
 
 if (homepage) {
     
     window.addEventListener('load', function() {
         let introLogo = document.querySelector('.intro__logo');
-        let menuBarText = document.querySelector('.menu-bar__title-text');
+        let menuBarText = document.querySelector('.menubar__title-text');
         let introMajorFirst = document.querySelector('.intro-nav__major li:first-child');
         let introMajorDivider = document.querySelector('.intro-nav__dot-vertical');
         let introMajorLast = document.querySelector('.intro-nav__major li:last-child');
         let introMenuItems = document.querySelectorAll('.intro-nav__minor li');
-        let menuBarThresholdInner = document.querySelector('.menu-bar__threshold');
-        let menuBarDivider = document.querySelector('.menu-bar__divider');
+        let menuBarThresholdInner = document.querySelector('.menubar__threshold');
+        let menuBarDivider = document.querySelector('.menubar__divider');
  
         introLogo.style.animation = '1s appereance forwards';
         introLogo.addEventListener('animationend', function() {
-            if ((!menuBar.classList.contains('menu-bar-fixed')) && (!window.matchMedia('(max-width: 639px)').matches)) {
+            if ((!menuBar.classList.contains('menubar-fixed')) && (!window.matchMedia('(max-width: 639px)').matches)) {
                 menuBar.style.opacity = '1';
-                menuBar.style.animation = '2s menu-bar-appereance';
+                menuBar.style.animation = '2s menubar-appereance';
                     setTimeout(function() {
-                        menuBar.style.animation = '2s menu-bar-rotate 0.5s';
+                        menuBar.style.animation = '2s menubar-rotate 0.5s';
                         menuBarText.style.animation = '1s appereance 2s forwards';
                         menuBarText.addEventListener('animationend', function(){
                             menuBarText.style.opacity = '1';

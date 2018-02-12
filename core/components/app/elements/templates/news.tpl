@@ -21,7 +21,7 @@
                         'ajaxMode' => 'button',
                         'sortby' => 'ASC',
                         'limit' => 2,
-                        'includeTVs' => 'image',
+                        'includeTVs' => 'article.image',
                         'tvPrefix' => '',
                         'tplRow' => '@FILE  chunks/items/article-item.tpl',
                         'tplOuter' => '@INLINE {$rows}'

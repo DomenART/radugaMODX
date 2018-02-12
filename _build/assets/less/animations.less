@@ -120,20 +120,20 @@
     }
 }
 
-@keyframes menu-slide {
+@keyframes menu-open {
     0% {
-        width: 0;
+        transform: scale(0);
     }
     100% {
-        width: 655px;
+        transform: scale(1);
     }
 }
 
-@keyframes menu-block-slide {
+@keyframes menu-close {
     0% {
-        width: 0;
+        transform: scale(1);
     }
     100% {
-        width: 240px;
+        transform: scale(0);
     }
-} 
+}

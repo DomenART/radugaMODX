@@ -9,7 +9,7 @@
             {include 'file:chunks/partials/header.tpl'}
         {/block}
         {block 'menubar'}
-            {include 'file:chunks/partials/menubar.tpl'}
+            {include 'file:chunks/partials/menubar_innerpage.tpl'}
         {/block}    
         {block 'content'}
             {$_modx->resource.content}
@@ -23,5 +23,6 @@
             </svg>
         </div>
         {include 'file:chunks/popups/enroll-popup.tpl'}
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     </body>
 </html>
