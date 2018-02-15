@@ -18,7 +18,7 @@
                 'sortby' => 'menuindex',
                 'tpl_1' => '@FILE chunks/link-objects/link-object_first.tpl',
                 'tpl_2' => '@FILE chunks/link-objects/link-object_second.tpl',
-                'tpl_3' => '@FILE chunks/link-objects/link-object_third.tpl',
+                'tpl_3' => '@FILE chunks/link-objects/link-object_third.tpl'
             ]}    
         </div>
         <div class="container">

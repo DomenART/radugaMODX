@@ -23,12 +23,12 @@
                             <div class="control-buttons">
                                 <button class="control-btn control-btn_left" uk-switcher-item="previous">
                                     <svg class="control-btn__arrow control-btn__arrow_left button-arrow-left" width="20" height="20">
-                                        <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-left"/>
+                                        <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-left"/>
                                     </svg>
                                 </button>
                                 <button class="control-btn control-btn_right" uk-switcher-item="next">
                                     <svg class="control-btn__arrow control-btn__arrow_right button-arrow-right" width="20" height="20">
-                                        <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-right"/>
+                                        <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
                                     </svg>
                                 </button>
                             </div>

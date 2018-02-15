@@ -24,7 +24,7 @@
                         'element' => 'pdoResources',
                         'sortby' => 'id',
                         'sortdir' => 'DESC',
-                        'limit' => 2,
+                        'limit' => 20,
                         'includeTVs' => '',
                         'includeContent' => 1,
                         'tvPrefix' => '',

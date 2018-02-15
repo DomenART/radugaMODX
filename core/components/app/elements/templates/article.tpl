@@ -31,7 +31,7 @@
             </div>
             <div class="article__content">
                 <div class="article__image">
-                    <img src="{$_modx->resource['image']}" alt="">
+                    <img src="{$_modx->resource['article.image']}" alt="">
                 </div>
                 <div class="article__aside">
                     <div class="article__social">
