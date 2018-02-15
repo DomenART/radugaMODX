@@ -59,7 +59,7 @@
                     <a href="{'about' | uri2id | url}" class="btn-more btn-more_ensemble">
                         <span>Подробнее</span>
                         <svg class="btn-more__arrow " width="20" height="20">
-                            <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-right"/>
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
                         </svg>
                     </a>
                 </div>
@@ -78,7 +78,7 @@
                     <img src="{$.assets_url}web/img/home-tutor.jpg" class="ensemble__tutors-image" alt="">
                     <span class="link-object__title ensemble__tutors-title">
                         Преподаватели
-                        <svg width="4" height="28">
+                        <svg width="4" height="28" class="link-object__border">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                     </span>
@@ -89,7 +89,7 @@
                     <img src="assets/components/app/web/img/home-album.jpg" class="ensemble__photoalbum-image" alt="">
                     <span class="link-object__title ensemble__photoalbum-title">
                         Фотоальбом
-                        <svg width="4" height="28">
+                        <svg width="4" height="28" class="link-object__border">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                     </span>
@@ -100,7 +100,7 @@
                     <img src="{$.assets_url}web/img/home-video.jpg" class="ensemble__videos-image" alt="">
                     <span class="link-object__title ensemble__videos-title">
                         Видео
-                        <svg width="4" height="28">
+                        <svg width="4" height="28" class="link-object__border">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                     </span>
@@ -223,7 +223,7 @@
                 <button type="button" class="btn-more js-enroll-btn js-parents-button-more">
                     <span>Записаться</span>
                     <svg class="btn-more__arrow " width="20" height="20">
-                        <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-right"/>
+                        <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
                     </svg>
                 </button>
             </div>

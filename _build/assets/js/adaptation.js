@@ -2,7 +2,6 @@
 if (window.matchMedia('(max-width: 639px)').matches) {
     let homepage = document.querySelector('.homepage');
     let innerpage = document.querySelector('.innerpage');
-    let homepageHeader = document.querySelector('.intro__container');
     let menu = document.querySelector('.menu');
     let menuHeaderButton = document.querySelector('.header-menu');
     let menuButtons = document.querySelectorAll('.button-menu');
@@ -20,6 +19,9 @@ if (window.matchMedia('(max-width: 639px)').matches) {
     let menuBarFixed;
 
     if (homepage) {
+        let homepageHeader = document.querySelector('.intro__container');
+        menu.appendChild(menuBarThreshold);
+        menu.appendChild(menuBarLogo);  
         introContainer.appendChild(menuBarThreshold);
         introContainer.appendChild(menuBarLogo);  
         programList.parentNode.insertBefore(programList, programIntro);
@@ -34,6 +36,9 @@ if (window.matchMedia('(max-width: 639px)').matches) {
     }
 
     if (innerpage) {
+        menu.appendChild(menuBarThreshold);
+        menu.appendChild(menuBarLogo);  
+        /*
         window.addEventListener('scroll', function() {
             if (window.pageYOffset >= document.documentElement.clientHeight) {
                 menuHeaderButton.classList.add('header-menu_fixed');
@@ -41,6 +46,7 @@ if (window.matchMedia('(max-width: 639px)').matches) {
                 menuHeaderButton.classList.remove('header-menu_fixed');
             }
         });
+        */
     }
 
     menuBarThreshold.appendChild(menuBarDivider);
@@ -49,7 +55,7 @@ if (window.matchMedia('(max-width: 639px)').matches) {
         element.addEventListener('click', function() {
             if (!menu.classList.contains('menu_opened')) {
                 menuBarLogo.classList.add('menubar__logo_fixed');
-                menuBarThreshold.classList.add('menu-bar__threshold_fixed');
+                menuBarThreshold.classList.add('menubar__threshold_fixed');
             } else {
                 menuBarLogo.classList.remove('menubar__logo_fixed');
                 menuBarThreshold.classList.remove('menubar__threshold_fixed');

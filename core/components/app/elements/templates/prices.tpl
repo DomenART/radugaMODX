@@ -1,9 +1,6 @@
 {extends 'file:templates/base.tpl'}
 {block 'content'}
 <main class="prices innerpage">
-    <div class="background-title" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">
-        Цены и акции 
-    </div>
     <div class="container">
         <div class="box-decor"></div>
         <h1 class="pagetitle pagetitle_prices">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
@@ -12,15 +9,6 @@
                 {$row['banner']}
             </div>
         {/foreach}
-        <!--
-        <div class="tab-bar">
-            <div class="tab-bar__item tab-bar__item_disabled js-price-control-usman">
-                <span>Новая Усмань</span>
-            </div>
-            <div class="tab-bar__item tab-bar__item_active js-price-control-otradnoe">
-                <span>Отрадное</span>
-            </div>
-        </div> -->
         <div class="tab-bar" uk-switcher>
             <div class="tab-bar__item  js-price-control-usman">
                 <span>Новая Усмань</span>
@@ -37,7 +25,5 @@
         </div>
     </div> 
 </main>
-<div class="container">
-    {include 'file:chunks/partials/aside.tpl'}
-</div>
+{include 'file:chunks/partials/aside.tpl'}
 {/block}

@@ -1,26 +1,26 @@
 {extends 'file:templates/base.tpl'}
 {block 'content'}
-<main class="article innerpage_article">
+<main class="article innerpage innerpage_article">
     <div class="background-title" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">
         Новости
     </div>
     <div class="container">
         {'pdoNeighbors' | snippet : [
             'tplPrev' => '@INLINE  
-                <a href="/{$uri}" class="link-control link-control_left">
-                    <svg width="26" height="17" class="link-control__arrow link-control__arrow_left link-control__arrow_disabled">
-                        <use xlink:href="assets/components/app/web/img/sprite.svg#link-arrow-left"/>
+                <a href="/{$uri}" class="control-link control-link_left">
+                    <svg width="20" height="20" class="control-link__arrow control-link__arrow_left control-link__arrow_disabled">
+                        <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-left"/>
                     </svg>
-                    <span>Предыдущая</span>
+                    Предыдущая
                 </a>',
             'tplNext' => '@INLINE  
-                <a href="/{$uri}" class="link-control link-control_right">
-                    <span>Следующая</span>
-                    <svg width="26" height="17" class="link-control__arrow link-control__arrow_right">
-                        <use xlink:href="assets/components/app/web/img/sprite.svg#link-arrow-right"/>
+                <a href="/{$uri}" class="control-link control-link_right">
+                    Следующая
+                    <svg width="20" height="20" class="control-link__arrow control-link__arrow_right">
+                        <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
                     </svg>
                 </a>',
-            'tplWrapper' => '@INLINE <div class="link-control_article control-links">{$prev}{$next}</div>'
+            'tplWrapper' => '@INLINE <div class="link-control_article">{$prev}{$next}</div>'
         ]}
         <article>
             <div class="article__heading">
@@ -37,13 +37,13 @@
                     <div class="article__social">
                         <div class="likes likes_aside">
                             <svg class="like-icon" width="24" height="21">
-                                <use xlink:href="assets/components/app/web/img/sprite.svg#like"/> 
+                                <use xlink:href="{$.assets_url}web/img/sprite.svg#like"/> 
                             </svg>
                             147
                         </div>
                         <div class="comments">
                             <svg class="comment-icon" width="28" height="22">
-                                <use xlink:href="assets/components/app/web/img/sprite.svg#comment"/> 
+                                <use xlink:href="{$.assets_url}web/img/sprite.svg#comment"/> 
                             </svg>
                             12
                         </div>
@@ -72,33 +72,33 @@
             <div class="article-control__social">
                 <div class="likes likes_control">
                     <svg width="24" height="21" class="like-icon">
-                        <use xlink:href="assets/components/app/web/img/sprite.svg#like"/>
+                        <use xlink:href="{$.assets_url}web/img/sprite.svg#like"/>
                     </svg>
                     147
                 </div>
                 <div class="comments">
                     <svg width="28" height="22" class="comment-icon"> 
-                        <use xlink:href="assets/components/app/web/img/sprite.svg#comment"/> 
+                        <use xlink:href="{$.assets_url}web/img/sprite.svg#comment"/> 
                     </svg>
                     12
                 </div>
             </div>
             {'pdoNeighbors' | snippet : [
                 'tplPrev' => '@INLINE  
-                    <a href="#" class="link-control link-control_left">
-                        <svg width="26" height="17" class="link-control__arrow link-control__arrow_left">
-                            <use xlink:href="assets/components/app/web/img/sprite.svg#link-arrow-left"/>
+                    <a href="/{#uri}" class="control-link control-link_left">
+                        <svg width="20" height="20" class="control-link__arrow control-link__arrow_left">
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-left"/>
                         </svg>
-                        <span>Предыдущая</span>
+                        Предыдущая
                     </a>',
                 'tplNext' => '@INLINE  
-                    <a href="#" class="link-control link-control_right">
-                        <span>Следующая</span>
-                        <svg width="26" height="17" class="link-control__arrow link-control__arrow_right">
-                            <use xlink:href="assets/components/app/web/img/sprite.svg#link-arrow-right"/>
+                    <a href="/{$uri}" class="control-link control-link_right">
+                        Следующая
+                        <svg width="20" height="20" class="control-link__arrow control-link__arrow_right">
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
                         </svg>
                     </a>',
-                'tplWrapper' => '@INLINE <div class="article-control__neighbors control-links">{$prev}{$next}</div>'
+                'tplWrapper' => '@INLINE <div class="article-control__neighbors">{$prev}{$next}</div>'
             ]}
         </div>
         <section class="readmore">

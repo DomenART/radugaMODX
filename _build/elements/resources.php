@@ -154,28 +154,10 @@ return [
             '_template' => 'videos',
             'properties' => [
                 'tickets' => [
-                    'template' => 0,
+                    '_template' => 'video',
                     'disable_jevix' => true,
                     'process_tags' => true,
                     'uri' => '%alias%ext'
-                ]
-            ],
-            'resources' => [
-                'video-1' => [
-                    'pagetitle' => 'Видео №1',
-                    'class_key' => 'Ticket'
-                ],
-                'video-2' => [
-                    'pagetitle' => 'Видео №2',
-                    'class_key' => 'Ticket'
-                ],
-                'video-3' => [
-                    'pagetitle' => 'Видео №3',
-                    'class_key' => 'Ticket'
-                ],
-                'video-4' => [
-                    'pagetitle' => 'Видео №4',
-                    'class_key' => 'Ticket'
                 ]
             ]
         ],

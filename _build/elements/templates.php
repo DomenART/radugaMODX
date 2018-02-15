@@ -121,6 +121,12 @@ return [
             'about_page.video'
         ]
     ],
+    'video' => [
+        'file' => 'video',
+        '_tmplvars' => [
+            'favorite'
+        ]
+    ],
     'timetable' => [
         'file' => 'timetable',
         '_tmplvars' => [

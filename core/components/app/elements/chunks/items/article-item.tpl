@@ -1,6 +1,6 @@
 <a href="{$uri}" class="article-item">
     <span class="article-item__date">
-        <time>{$publishedon | date_format: "%d.%m.%Y"}</time>
+        <time>{$publishedon | date_format: "%d %B %Y"}</time>
     </span>
     <span class="article-item__title">
         {$pagetitle}

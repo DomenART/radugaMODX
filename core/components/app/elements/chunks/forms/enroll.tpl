@@ -23,7 +23,7 @@
     <button type="submit" class="enroll__submit btn-more submit">
         <span>Записаться</span>
         <svg class="btn-more__arrow " width="20" height="20">
-            <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-right"/>
+            <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
         </svg>
     </button>
     <div class="agreement__tip">
