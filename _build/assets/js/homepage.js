@@ -1,15 +1,14 @@
 import ScrollMagic from 'scrollmagic';
 
 //Включить анимации первого экрана главной
-
+let preloader = document.querySelector('.preloader');
 var homepage = document.querySelector('.homepage');
 var menuBar = document.querySelector('.menubar');
 var menuBarLogo = document.querySelector('.menubar__logo');
 var menuHeaderButton = document.querySelector('.header-menu');
 
 if (homepage) {
-    
-    window.addEventListener('load', function() {
+    preloader.addEventListener('animationend', function() {
         let introLogo = document.querySelector('.intro__logo');
         let menuBarText = document.querySelector('.menubar__title-text');
         let introMajorFirst = document.querySelector('.intro-nav__major li:first-child');
@@ -67,7 +66,7 @@ if (homepage) {
 
     //анимации главной
     let ensembleLinks = document.querySelector('.js-ensemble-links');
- 
+    
     if (ensembleLinks) {
         let tutorsImage = ensembleLinks.querySelector('.ensemble__tutors-image');
         let tutorsTitle = ensembleLinks.querySelector('.ensemble__tutors-title');
@@ -146,7 +145,8 @@ if (homepage) {
     //Линии
     let canvasHomepage = document.querySelector('#canvasHomepage');
 
-    if (canvasHomepage) {
+    preloader.addEventListener('animationend', function() {
+        console.log('PRELOADER DONE')
         canvasHomepage.setAttribute('width', document.documentElement.offsetWidth);
         canvasHomepage.setAttribute('height', document.documentElement.offsetHeight);
 
@@ -276,5 +276,5 @@ if (homepage) {
                 })
             })
         }
-    }
+    });
 }

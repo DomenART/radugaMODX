@@ -10,7 +10,9 @@
 @breakpoint-medium: 1199px;
 @breakpoint-large: 1599px;
 @breakpoint-large: 1899px;
-    
+@container-padding-standard: 50px;
+@container-padding-small: 10px; 
+
 html {
     font-family: 'Noto Sans', sans-serif;
     font-size: 18px;
@@ -99,10 +101,10 @@ h6 {
 .container {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 @container-padding-standard;
     position: relative;
     @media (max-width: @breakpoint-xsmall) {
-        padding: 0 10px;
+        padding: 0 @container-padding-small;
     }
 }
 
@@ -479,7 +481,6 @@ h6 {
     z-index: 10;
     overflow: hidden;
     background-color: #243c73;
-    transition: height 1s;
     @media (max-width: @breakpoint-xsmall) {
         width: 60px;
         height: 360px;
@@ -760,9 +761,6 @@ h6 {
     font-size: 14px;
     line-height: 1;
     cursor: pointer;
-    svg {
-        transform: translateY(5px);
-    }
 }
 
 .comments {
@@ -770,9 +768,6 @@ h6 {
     font-size: 14px;
     line-height: 1;
     cursor: pointer;
-    svg {
-        transform: translateY(5px);
-    }
 }
 
 .box-decor {
@@ -2163,4 +2158,199 @@ a.footer__tel {
 
 .appereance{
     animation: 0.5s appereance normal 1;
+}
+/*
+.preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    background: #043f3f url('../img/intro.jpg') no-repeat 50% 50%;
+    background-size: cover;
+    color: #fff;
+    fill: #fff;
+    span {
+        position: relative;
+        top: 20px;
+        transform: rotate(8.4deg);
+        transform-origin: 50% 50%;
+        @media (max-width: @breakpoint-xsmall) {
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+    }
+    svg {
+        width: 500px;
+        height: 200px;
+        @media (max-width: @breakpoint-xsmall) {
+            width: 200px;
+            height: 100px;
+        }
+    }
+}
+
+*/
+
+.preloader {
+    span {
+       @media (max-width: @breakpoint-xsmall) {
+            top: 20px !important;
+            font-size: 11px !important;
+            margin-bottom: 10px !important;
+        } 
+    }
+    svg {
+        @media (max-width: @breakpoint-xsmall) {
+            height: 100px !important;
+        }
+    }
+}
+
+.preloader_hidden {
+    animation: 1s preloader-hide forwards;
+}
+
+.fingerprint-spinner, .fingerprint-spinner * { 
+    box-sizing: border-box; 
+} 
+
+.fingerprint-spinner { 
+    height: 124px; 
+    width: 124px; 
+    padding: 2px;
+    overflow: hidden; 
+    position: relative; 
+    margin-top: 40px;
+    @media (max-width: @breakpoint-xsmall) {
+        height: 64px; 
+        width: 64px;
+    }
+} 
+
+.fingerprint-spinner .spinner-ring { 
+    position: absolute; 
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #12f5f5; 
+    animation: fingerprint-spinner-animation 1500ms cubic-bezier(0.680, -0.750, 0.265, 1.750) infinite forwards; 
+    margin: auto; bottom: 0; left: 0; right: 0; top: 0; 
+ } 
+
+@spinner-size-l: 120px;
+@spinner-size-s: 60px;
+@spinner-rings: 9;  
+
+/*
+.generate-ring(@i: 1) when (@i =< @spinner-rings) {
+    .fingerprint-spinner .spinner-ring:nth-child(@{i}) {
+        height: ~"calc(@spinner-size-l / 9 + (@i-1) * @spinner-size-l / 9)"; 
+        width: ~"calc(@spinner-size-l / 9 + (@i-1) * @spinner-size-l / 9)"; 
+        animation-delay: ~"calc(50ms * @i)"; 
+    }
+   .generate-ring(@i + 1);
+}
+
+.generate-ring();
+*/
+
+@media (min-width: @breakpoint-xsmall) {
+    .fingerprint-spinner .spinner-ring:nth-child(1) { 
+        height: calc(@spinner-size-l / 9 + 0 * @spinner-size-l / 9); 
+        width: calc(@spinner-size-l / 9 + 0 * @spinner-size-l / 9); 
+        animation-delay: calc(50ms * 1); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(2) { 
+        height: calc(@spinner-size-l / 9 + 1 * @spinner-size-l / 9); 
+        width: calc(@spinner-size-l / 9 + 1 * @spinner-size-l / 9); 
+        animation-delay: calc(50ms * 2); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(3) { 
+        height: calc(@spinner-size-l / 9 + 2 * @spinner-size-l / 9); 
+        width: calc(@spinner-size-l / 9 + 2 * @spinner-size-l / 9); 
+        animation-delay: calc(50ms * 3); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(4) { 
+        height: calc(@spinner-size-l / 9 + 3 * @spinner-size-l / 9); 
+        width: calc(@spinner-size-l / 9 + 3 * @spinner-size-l / 9); 
+        animation-delay: calc(50ms * 4); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(5) { 
+        height: calc(@spinner-size-l / 9 + 4 * @spinner-size-l / 9); 
+        width: calc(@spinner-size-l / 9 + 4 * @spinner-size-l / 9); 
+        animation-delay: calc(50ms * 5); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(6) { 
+        height: calc(@spinner-size-l / 9 + 5 * @spinner-size-l / 9); 
+        width: calc(@spinner-size-l / 9 + 5 * @spinner-size-l / 9); 
+        animation-delay: calc(50ms * 6); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(7) { 
+        height: calc(@spinner-size-l / 9 + 6 * @spinner-size-l / 9); 
+        width: calc(@spinner-size-l / 9 + 6 * @spinner-size-l / 9); 
+        animation-delay: calc(50ms * 7); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(8) { 
+        height: calc(@spinner-size-l / 9 + 7 * @spinner-size-l / 9);
+        width: calc(@spinner-size-l / 9 + 7 * @spinner-size-l / 9); 
+        animation-delay: calc(50ms * 8); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(9) { 
+        height: calc(@spinner-size-l / 9 + 8 * @spinner-size-l / 9);
+        width: calc(@spinner-size-l / 9 + 8 * @spinner-size-l / 9); 
+        animation-delay: calc(50ms * 9); 
+    }
+}
+
+@media (max-width: @breakpoint-xsmall) {
+    .fingerprint-spinner .spinner-ring:nth-child(1) { 
+        height: calc(@spinner-size-s / 9 + 0 * @spinner-size-s / 9); 
+        width: calc(@spinner-size-s / 9 + 0 * @spinner-size-s / 9); 
+        animation-delay: calc(50ms * 1); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(2) { 
+        height: calc(@spinner-size-s / 9 + 1 * @spinner-size-s / 9); 
+        width: calc(@spinner-size-s / 9 + 1 * @spinner-size-s / 9); 
+        animation-delay: calc(50ms * 2); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(3) { 
+        height: calc(@spinner-size-s / 9 + 2 * @spinner-size-s / 9); 
+        width: calc(@spinner-size-s / 9 + 2 * @spinner-size-s / 9); 
+        animation-delay: calc(50ms * 3); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(4) { 
+        height: calc(@spinner-size-s / 9 + 3 * @spinner-size-s / 9); 
+        width: calc(@spinner-size-s / 9 + 3 * @spinner-size-s / 9); 
+        animation-delay: calc(50ms * 4); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(5) { 
+        height: calc(@spinner-size-s / 9 + 4 * @spinner-size-s / 9); 
+        width: calc(@spinner-size-s / 9 + 4 * @spinner-size-s / 9); 
+        animation-delay: calc(50ms * 5); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(6) { 
+        height: calc(@spinner-size-s / 9 + 5 * @spinner-size-s / 9); 
+        width: calc(@spinner-size-s / 9 + 5 * @spinner-size-s / 9); 
+        animation-delay: calc(50ms * 6); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(7) { 
+        height: calc(@spinner-size-s / 9 + 6 * @spinner-size-s / 9); 
+        width: calc(@spinner-size-s / 9 + 6 * @spinner-size-s / 9); 
+        animation-delay: calc(50ms * 7); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(8) { 
+        height: calc(@spinner-size-s / 9 + 7 * @spinner-size-s / 9);
+        width: calc(@spinner-size-s / 9 + 7 * @spinner-size-s / 9); 
+        animation-delay: calc(50ms * 8); 
+    } 
+    .fingerprint-spinner .spinner-ring:nth-child(9) { 
+        height: calc(@spinner-size-s / 9 + 8 * @spinner-size-s / 9);
+        width: calc(@spinner-size-s / 9 + 8 * @spinner-size-s/ 9); 
+        animation-delay: calc(50ms * 9); 
+    }
 }

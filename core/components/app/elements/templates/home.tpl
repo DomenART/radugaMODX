@@ -75,7 +75,7 @@
         <div class="link-box js-ensemble-links">
             <div>
                 <a href="{'tutors' | uri2id | url}" class="link-object link-object_first">
-                    <img src="{$.assets_url}web/img/home-tutor.jpg" class="ensemble__tutors-image" alt="">
+                    <img src="{$.assets_url}web/img/home-tutor.jpg" class="ensemble__tutors-image js-ensemble-tutors-image" alt="">
                     <span class="link-object__title ensemble__tutors-title">
                         Преподаватели
                         <svg width="4" height="28" class="link-object__border">
@@ -247,5 +247,14 @@
             </div>
         </section>
     </div>
+    <div class="preloader" style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 100%;height: 100%; position: fixed; top: 0; left: 0; z-index: 5000; background: #043f3f url('{$.assets_url}web/img/intro.jpg') no-repeat 50% 50%; background-size: cover; color: #fff; fill: #fff;">
+        <span style="position: relative; top: 20px; transform: rotate(8.4deg); transform-origin: 50% 50%;">
+        детский хореографический ансамбль</span>
+        <svg class="svg-logo" style="max-width: 500px; height: 200px;">
+            <use xlink:href="{$.assets_url}web/img/sprite.svg#logo"/>
+        </svg>
+        <div class="fingerprint-spinner"><div class="spinner-ring"></div> <div class="spinner-ring"></div> <div class="spinner-ring"></div> <div class="spinner-ring"></div> <div class="spinner-ring"></div> <div class="spinner-ring"></div> <div class="spinner-ring"></div> <div class="spinner-ring"></div> <div class="spinner-ring"></div></div>
+    </div>
 </main>
+ <canvas class="canvas-homepage" id="canvasHomepage"></canvas>
 {/block}

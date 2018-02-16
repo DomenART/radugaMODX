@@ -99,7 +99,7 @@
                             <div class="tutor-box__vacancy">
                                 {$row['position']}
                             </div>
-                            <div class="control-buttons">
+                            <div class="tutor-box__buttons">
                                 <button class="control-btn control-btn_left" uk-switcher-item="previous">
                                     <svg class="control-btn__arrow control-btn__arrow_left button-arrow-left" width="20" height="20">
                                         <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-left"/>
