@@ -39,13 +39,20 @@
             </div>
         </div>
         <div class="innerpage-aside__third">
-            <div class="vk-members"></div>
+            <script type="text/javascript" src="//vk.com/js/api/openapi.js?152"></script>
+            <!-- VK Widget -->
+            <div class="vk-members" id="vk_members"></div>
+            <script type="text/javascript">
+            VK.Widgets.Group("vk_members", { mode: 3, width: "auto", height: "280" }, 82976486);
+            </script>
         </div>
         <div class="innerpage-aside__fourth">
-            <div class="vk-group">
-                <h3 class="vk-group__title">МЫ ВКонтакте</h3>
-                <img src="assets/components/app/web/img/psevdo-vk.jpg" alt="" style="max-width: 100%;">
-            </div>
+            <h3 class="vk-group__title vk-group__title_aside">МЫ ВКонтакте</h3>
+            <!-- VK Widget -->
+            <div id="vk_groups"></div>
+            <script type="text/javascript">
+            VK.Widgets.Group("vk_groups", { mode: 4, width: "auto", height: "580" }, 82976486);
+            </script>
         </div>
     </aside>
 </div>

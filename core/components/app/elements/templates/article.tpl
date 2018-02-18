@@ -36,13 +36,13 @@
                 <div class="article__aside">
                     <div class="article__social">
                         <div class="likes likes_aside">
-                            <svg class="like-icon" width="24" height="21">
+                            <svg class="like-icon" width="35" height="21">
                                 <use xlink:href="{$.assets_url}web/img/sprite.svg#like"/> 
                             </svg>
                             147
                         </div>
                         <div class="comments">
-                            <svg class="comment-icon" width="28" height="22">
+                            <svg class="comment-icon" width="35" height="22">
                                 <use xlink:href="{$.assets_url}web/img/sprite.svg#comment"/> 
                             </svg>
                             12
@@ -71,13 +71,13 @@
             </div>
             <div class="article-control__social">
                 <div class="likes likes_control">
-                    <svg width="24" height="21" class="like-icon">
+                    <svg width="35" height="21" class="like-icon">
                         <use xlink:href="{$.assets_url}web/img/sprite.svg#like"/>
                     </svg>
                     147
                 </div>
                 <div class="comments">
-                    <svg width="28" height="22" class="comment-icon"> 
+                    <svg width="35" height="22" class="comment-icon"> 
                         <use xlink:href="{$.assets_url}web/img/sprite.svg#comment"/> 
                     </svg>
                     12
@@ -85,8 +85,8 @@
             </div>
             {'pdoNeighbors' | snippet : [
                 'tplPrev' => '@INLINE  
-                    <a href="/{#uri}" class="control-link control-link_left">
-                        <svg width="20" height="20" class="control-link__arrow control-link__arrow_left">
+                    <a href="/{$uri}" class="control-link control-link_left">
+                        <svg width="20" height="20" class="control-link__arrow control-link__arrow_left control-link__arrow_disabled">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-left"/>
                         </svg>
                         Предыдущая
@@ -116,6 +116,13 @@
                     'resources' => '-' ~ $_modx->resource.id
                 ]}
             </div>
+        </section>
+        <section class="comments-section">
+            {'!TicketComments' | snippet : [
+                'allowGuest' => 1,
+                'tplCommentFormGuest' => '@FILE chunks/comments/comment-form-guest.tpl',
+                'tplCommentForm' => '@FILE chunks/comments/comment-form-user.tpl'
+            ]}
         </section>
     </div>
 

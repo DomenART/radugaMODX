@@ -174,8 +174,13 @@
                 ]}
             </section>
             <div class="vk-group">
-                <h3 class="vk-group__title">МЫ ВКонтакте</h3>
-                <img src="{$.assets_url}web/img/psevdo-vk.jpg" alt="" style="max-width: 100%;">
+                <h3 class="vk-group__title vk-group__title_home">МЫ ВКонтакте</h3>
+                <script type="text/javascript" src="//vk.com/js/api/openapi.js?152"></script>
+                <!-- VK Widget -->
+                <div id="vk_groups"></div>
+                <script type="text/javascript">
+                VK.Widgets.Group("vk_groups", { mode: 4, width: "auto", height: "400" }, 82976486);
+                </script>
             </div>
         </div>
         <section class="parents clearfix">

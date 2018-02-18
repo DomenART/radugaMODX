@@ -23,3 +23,4 @@ import './reviews.js';
 import './header.js';
 import './enroll.js';
 import './preloader.js';
+import './ajaxform.js';

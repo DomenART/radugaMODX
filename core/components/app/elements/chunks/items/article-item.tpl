@@ -6,9 +6,9 @@
         {$pagetitle}
     </span>
     <span class="article-item__text">
-        {$intro}
+        {$introtext}
     </span>
     <span class="article-item__img">
-        <img src="{$image}" alt="">
+        <img src="{$article.image}" alt="">
     </span>
 </a>

@@ -23,5 +23,5 @@
 		</li>
 	</ul>
 	<a href="mailto:{'contacts.email' | config}" class="header__email" title="Электронная почта"><span>{'contacts.email' | config}</span></a>
-	<span class="header__phone" title="Телефон">{'contacts.tel' | config}</span>
+	<div class="header__tel" title="Телефон">{'contacts.tel' | config}</div>
 </header>

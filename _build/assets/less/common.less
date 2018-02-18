@@ -48,6 +48,9 @@ h2 {
     font-weight: 400;
     line-height: 1.125;
     text-transform: uppercase;
+    @media (max-width: @breakpoint-xsmall) {
+        font-size: 22px;
+    }
 }
 
 h3 {
@@ -253,7 +256,7 @@ h6 {
     }
 }
 
-.header__phone {
+.header__tel {
     display: flex;
     align-items: center;
     height: 57px;
@@ -281,7 +284,7 @@ h6 {
     }
 }
 
-.header__phone_fixed {
+.header__tel_fixed {
     color: #ffffff;
     background-color: #299798;
     &:hover {
@@ -648,7 +651,7 @@ h6 {
     left: 0;
     z-index: 1000;
     padding: 71px 0;
-    background: #1e2433 url('../img/bg-menu.png') 50% 200% no-repeat;
+    background: #1e2433 url('../img/bg-menu.png') 50% 100% no-repeat;
     transform: scale(0);
     transform-origin: left 50%;
     transition-property: transform;
@@ -1303,8 +1306,8 @@ button.enroll__submit {
 
 .vk-group__title {
     position: absolute;
-    top: 105px;
-    right: -145px;
+    top: 115px;
+    right: -100px;
     margin: 0;
     transform: rotate(90deg);
     opacity: 0.3;
@@ -1313,17 +1316,15 @@ button.enroll__submit {
     font-family: @font-alt;
     font-weight: 400;
     letter-spacing: 0.8px;
+    line-height: 1;
     @media (max-width: @breakpoint-medium) {
         position: static;
         transform: none;
     }
 }
 
-.vk-members {
-    height: 290px;
-    border: 2px solid #f4f4f4;
-    background: url('../img/vk-members.jpg') 50% 50% no-repeat;
-    background-size: cover;
+.vk-group__title_aside {
+    right: -100px;
 }
 
 .btn-more {
@@ -1992,7 +1993,7 @@ button.enroll__submit {
     }
 }
 
-a.footer__tel {
+div.footer__tel {
     margin-right: 39px;
     text-decoration: none;
     color: #999999;

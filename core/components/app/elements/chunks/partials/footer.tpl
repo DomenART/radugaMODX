@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer__menu">
             <div class="footer__contacts-flex">
-                <a href="tel:{'contacts.tel' | config}" class="footer__tel">{'contacts.tel' | config}</a>
+                <div class="footer__tel">{'contacts.tel' | config}</div>
                 <a href="{'social.vk' | config}" class="footer__vk">
                     <svg class="footer-vk" width="26" height="26">
                         <use xlink:href="assets/components/app/web/img/sprite.svg#vkontakte"/>

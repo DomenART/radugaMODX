@@ -178,7 +178,7 @@
     <div class="container"> 
         {'!AjaxForm@Form' | snippet : [
             'emailSubject'  => 'Запись на урок',
-            'validate'      => 'nomail:blank,tel:required',
+            'validate'      => 'nomail:blank,tel,agreement:required',
             'form'          => '@FILE chunks/forms/register_about.tpl'
         ]}
     </div>
