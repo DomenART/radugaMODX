@@ -41,13 +41,13 @@
             <!-- VK Widget -->
             <div class="vk-members" id="vk_members" style="box-sizing: border-box;"></div>
             <script type="text/javascript">
-            VK.Widgets.Group("vk_members", { mode: 3, width: "auto", height: "280" }, 82976486);
+            VK.Widgets.Group("vk_members", { mode: 3, width: "auto", height: "290" }, 82976486);
             </script>
         </div>
         <div class="innerpage-aside__fourth">
             <h3 class="vk-group__title vk-group__title_aside">МЫ ВКонтакте</h3>
             <!-- VK Widget -->
-            <div id="vk_groups" style="box-sizing: border-box;"></div>
+            <div  class="vk-groups" id="vk_groups" style=""></div>
             <script type="text/javascript">
             VK.Widgets.Group("vk_groups", { mode: 4, width: "auto", height: "580" }, 82976486);
             </script>

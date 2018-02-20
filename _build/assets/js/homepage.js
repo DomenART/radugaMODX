@@ -26,12 +26,12 @@ if (homepage) {
                     setTimeout(function() {
                         menuBar.style.animation = '2s menubar-rotate 0.5s';
                         menuBarText.style.animation = '1s appereance 2s forwards';
-                        menuBarText.addEventListener('animationend', function(){
+                        menuBarText.addEventListener('animationend', function() {
                             menuBarText.style.opacity = '1';
                             menuBarText.style.animation = '';
                         })
                         menuBarThresholdInner.style.animation = '1s font-scale 3s';
-                        menuBarThresholdInner.addEventListener('animationend', function(){
+                        menuBarThresholdInner.addEventListener('animationend', function() {
                             menuBarThresholdInner.style.animation = '';
                         })
                     }, 500);
@@ -76,8 +76,11 @@ if (homepage) {
         let videosTitle = ensembleLinks.querySelector('.ensemble__videos-title');
  
         window.addEventListener('scroll', function() {
-            let ensembleLinksCoords = ensembleLinks.getBoundingClientRect();
             let animated = false;
+            let ensembleLinksCoords;
+            if (animated == false) {
+                 ensembleLinksCoords = ensembleLinks.getBoundingClientRect();
+            }
             if ((ensembleLinksCoords.top < (document.documentElement.clientHeight / 2)) && (animated == false)) {
                 tutorsImage.style.animation = '1s slide-ltr both';
                 tutorsTitle.style.animation = '1s slide-ltr 1s both';
@@ -94,9 +97,11 @@ if (homepage) {
      
     if (costumedGirl) {
         window.addEventListener('scroll', function() {
-            let costumedGirlCoords = costumedGirl.getBoundingClientRect();
+            let costumedGirlCoords;
             let animated = false;
-     
+            if (animated == false) {
+                costumedGirlCoords = costumedGirl.getBoundingClientRect();
+            }
             if ((costumedGirlCoords.bottom <  document.documentElement.clientHeight) && (animated == false)) {
                 costumedGirl.style.animation = '1s slide-up forwards';
                 animated = true;  
@@ -108,9 +113,11 @@ if (homepage) {
      
     if (programCollective) {
         window.addEventListener('scroll', function() {
-            let programCollectiveCoords = programCollective.getBoundingClientRect();
+            let programCollectiveCoords;
             let animated = false;
-     
+            if (animated == false) {
+                programCollectiveCoords = programCollective.getBoundingClientRect();
+            }
             if ((programCollectiveCoords.bottom <  document.documentElement.clientHeight) && (animated == false)) {
                 programCollective.style.animation = '1s slide-up forwards';
                 animated = true;
@@ -125,8 +132,11 @@ if (homepage) {
         
     if (programFeatures) {
         window.addEventListener('scroll', function() {
-            let programFeaturesCoords = programFeatures.getBoundingClientRect();
+            let programFeaturesCoords;
             let animated = false;
+            if (animated == false) {
+                programFeaturesCoords = programFeatures.getBoundingClientRect();
+            }
             if ((programFeaturesCoords.top < (document.documentElement.clientHeight / 2)) && (animated == false)) {
                 programFeaturesYears.style.animation = '1s slide-ltr both';
                 programFeaturesInternational.style.animation = '1s slide-ltr 1s both';
@@ -141,8 +151,8 @@ if (homepage) {
             }
         })
     }
-
-    //Линии
+/*
+    
     let canvasHomepage = document.querySelector('#canvasHomepage');
 
     preloader.addEventListener('animationend', function() {
@@ -277,4 +287,5 @@ if (homepage) {
             })
         }
     });
+    */
 }

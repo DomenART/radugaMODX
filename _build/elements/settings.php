@@ -100,7 +100,7 @@ return [
     'contacts.vk' => [
         'key' => 'contacts.vk',
         'xtype' => 'textfield',
-        'value' => 'google.com',
+        'value' => 'https://vk.com/radugaotr',
         'area' => 'default',
         'namespace' => 'app',
     ],

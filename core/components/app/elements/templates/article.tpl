@@ -35,17 +35,15 @@
                 </div>
                 <div class="article__aside">
                     <div class="article__social">
-                        <div class="likes likes_aside">
-                            <svg class="like-icon" width="35" height="21">
-                                <use xlink:href="{$.assets_url}web/img/sprite.svg#like"/> 
-                            </svg>
-                            147
-                        </div>
+                        {'!xLike' | snippet : [
+                            'parent' => $_modx->resource.id,
+                            'tpl' => '@FILE chunks/xlike/xlike_aside.tpl'
+                        ]}
                         <div class="comments">
                             <svg class="comment-icon" width="35" height="22">
                                 <use xlink:href="{$.assets_url}web/img/sprite.svg#comment"/> 
                             </svg>
-                            12
+                            {$_modx->resource.comments}
                         </div>
                     </div>
                     <div class="article__share">
@@ -70,17 +68,15 @@
                 </div>
             </div>
             <div class="article-control__social">
-                <div class="likes likes_control">
-                    <svg width="35" height="21" class="like-icon">
-                        <use xlink:href="{$.assets_url}web/img/sprite.svg#like"/>
-                    </svg>
-                    147
-                </div>
+                {'!xLike' | snippet : [
+                    'parent' => $_modx->resource.id,
+                    'tpl' => '@FILE chunks/xlike/xlike_controlbar.tpl'
+                ]}
                 <div class="comments">
                     <svg width="35" height="22" class="comment-icon"> 
                         <use xlink:href="{$.assets_url}web/img/sprite.svg#comment"/> 
                     </svg>
-                    12
+                    {$_modx->resource.comments}
                 </div>
             </div>
             {'pdoNeighbors' | snippet : [

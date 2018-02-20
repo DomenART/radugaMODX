@@ -5,7 +5,7 @@
     @media (max-width: @breakpoint-medium) {
         column-count: 2;
     }
-    @media (max-width: @breakpoint-xsmall) {
+    @media (max-width: @breakpoint-small) {
         column-count: 1;
     }
 }
@@ -21,12 +21,18 @@
     padding: 31px 31px 41px 25px;
     border: 2px solid #f4f4f4;
     background-color: #f9f9f9;
+    @media (max-width: @breakpoint-small) {
+        width: 100%;
+    }
 }
 
 .review-item__header {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
+    @media (max-width: @breakpoint-small) {
+        flex-direction: column;
+    }
 }
 
 .review-item__social {
@@ -41,42 +47,37 @@
     &[href*="vk.com"] {
         background: url('../img/sprite.svg#vkontakte-link') 50% 50% no-repeat;
         background-size: 20px 20px;
-        &:hover {
-            background: url('../img/sprite.svg#vkontakte-link_hovered') 50% 50% no-repeat;
-            background-size: 20px 20px;
-        }
+    }
+    &[href*="vk.com"]:hover {
+        background-image: url('../img/sprite.svg#vkontakte-link_hovered');
     }
     &[href*="google.com"] {
         background:  url('../img/sprite.svg#google-link') 50% 50% no-repeat;
         background-size: 20px 20px;
     }
     &[href*="google.com"]:hover {
-        background: url('../img/sprite.svg#google-link_hovered') 50% 50% no-repeat;
-        background-size: 20px 20px;
+        background-image: url('../img/sprite.svg#google-link_hovered');
     }
     &[href*="ok.ru"] {
         background: url('../img/sprite.svg#odnoklassniki-link') 50% 50%  no-repeat;
         background-size: 20px 20px;
     }
     &[href*="ok.ru"]:hover {
-        background: url('../img/sprite.svg#odnoklassniki-link_hovered') 50% 50% no-repeat;
-        background-size: 20px 20px;
+        background-image: url('../img/sprite.svg#odnoklassniki-link_hovered');
     }
     &[href*="twitter.com"] {
         background: url('../img/sprite.svg#twitter-link') 50% 50% no-repeat;
         background-size: 20px 20px;
     }
     &[href*="twitter.com"]:hover {
-        background: url('../img/sprite.svg#twitter-link_hovered') 50% 50% no-repeat;
-        background-size: 20px 20px;
+         background-image: url('../img/sprite.svg#twitter-link_hovered');
     }
     &[href*="facebook.com"] {
         background: url('../img/sprite.svg#facebook-link') 50% 50% no-repeat;
         background-size: 20px 20px;
     }
     &[href*="facebook.com"]:hover {
-        background: url('../img/sprite.svg#facebook-link_hovered') 50% 50% no-repeat;
-        background-size: 20px 20px;
+        background-image: url('../img/sprite.svg#facebook-link_hovered');
     }
 }
 
@@ -88,6 +89,10 @@
     margin-right: 21px;
     img {
         border-radius: 50%;
+    }
+    @media (max-width: @breakpoint-small) {
+        margin-right: 0; 
+        margin-bottom: 20px;
     }
 }
 

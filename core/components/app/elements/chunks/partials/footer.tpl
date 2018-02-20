@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div>
-                <a href="#" class="footer__developer">
+                <a href="http://domenart-studio.ru/" class="footer__developer">
                     Разработка сайта<br>
                     ДоменАРТ
                 </a>

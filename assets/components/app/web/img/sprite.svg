@@ -84,26 +84,6 @@
         C0,82.881,7.116,90,15.001,90H45V56H34V41h11v-5.844C45,25.077,52.568,16,61.875,16H74v15H61.875C60.548,31,59,32.611,59,35.024V41
         h15v15H59v34h16c7.884,0,15-7.119,15-15.001V15.001z"/>
     </symbol>
-    <view id="google-link" viewBox="0 0 20 20" />
-	   <use href="#google" width="20" height="20" fill="#cccccc" x="0" y="0" />
-    <view id="twitter-link" viewBox="0 20 20 20" />
-   	   <use href="#twitter" width="20" height="20" fill="#cccccc" x="0" y="20" />
-    <view id="odnoklassniki-link" viewBox="0 40 20 20" />
-  	   <use href="#odnoklassniki" width="20" height="20" fill="#cccccc" x="0" y="40" />
-    <view id="vkontakte-link" viewBox="0 60 20 20" />
-	   <use href="#vkontakte" width="20" height="20" fill="#cccccc" x="0" y="60" />
-    <view id="facebook-link" viewBox="0 80 20 20" />
-        <use href="#facebook" width="20" height="20" fill="#cccccc" x="0" y="80" />
-    <view id="google-link_hovered" viewBox="0 100 20 20" />
- 	      <use href="#google" width="20" height="20" fill="#c5361f" x="0" y="100" />
-    <view id="twitter-link_hovered" viewBox="0 120 20 20" />
-        <use href="#twitter" width="20" height="20" fill="#00a1ed" x="0" y="120" />
-    <view id="odnoklassniki-link_hovered" viewBox="0 140 20 20" />
-        <use href="#odnoklassniki" width="20" height="20" fill="#f5953d" x="0" y="140" />
-    <view id="vkontakte-link_hovered" viewBox="0 160 20 20" />
-        <use href="#vkontakte" width="20" height="20" fill="#48759f" x="0" y="160" />
-    <view id="facebook-link_hovered" viewBox="0 180 20 20" />
-        <use href="#facebook" width="20" height="20" fill="#41518d" x="0" y="180" />
    <symbol id="three-circles">
         <circle cx="2" cy="2" r="2" />
         <circle cx="2" cy="10" r="2" />
@@ -143,4 +123,39 @@
     <symbol id="house" viewBox="0 0 784 770">
         <path class="fil0" d="M652 427l0 284c0,33 -26,59 -58,59l-50 0 0 -181c0,-16 -13,-28 -28,-28l-79 0c-15,0 -28,13 -28,28l0 181 -210   0c-32,0 -58,-27 -58,-59l0 -283 -21 21c-18,17 -46,17 -63,-1l-43 -45c-17,-18 -17,-46 1,-63 22,-22 77,-79 142,-143l0 -14 0 -120c0,-13 10,-23 23,-23l60 0c13,0 23,10 23,23l0 32c61,-55 114,-96 137,-94 50,4 323,292 372,342 17,17 17,46 0,63l-44 41c-18,17 -49,20 -63,0l-12 -18z"/>
     </symbol>
+    <symbol id="domenart" viewBox="0 0 811 749">
+       <circle class="fil0" cx="394" cy="116" r="116"/>
+       <circle class="fil0" cx="116" cy="265" r="116"/>
+       <circle class="fil0" cx="143" cy="637" r="112"/>
+       <circle class="fil0" cx="695" cy="260" r="116"/>
+       <circle class="fil0" cx="416" cy="454" r="142"/>
+       <path class="fil0" d="M361 213l79 0c-8,53 -16,85 30,130l-114 0c29,-47 24,-78 5,-130z"/>
+       <path class="fil0" d="M159 360l67 -82c28,48 63,66 115,82l-57 83c-14,-26 -26,-48 -48,-62 -22,-14 -46,-16 -76,-22z"/>
+       <path class="fil0" d="M598 288l53 76c-58,17 -99,16 -104,73l-76 -94c59,12 91,2 127,-55z"/>
+       <path class="fil0" d="M291 474l77 107c-58,-5 -108,19 -145,65l-41 -79c52,-14 101,-22 110,-94z"/>
+    </symbol>
+    <view id="google-link" viewBox="0 0 20 20" />
+       <use href="#google" width="20" height="20" fill="#cccccc" x="0" y="0" />
+    <view id="twitter-link" viewBox="0 20 20 20" />
+       <use href="#twitter" width="20" height="20" fill="#cccccc" x="0" y="20" />
+    <view id="odnoklassniki-link" viewBox="0 40 20 20" />
+       <use href="#odnoklassniki" width="20" height="20" fill="#cccccc" x="0" y="40" />
+    <view id="vkontakte-link" viewBox="0 60 20 20" />
+       <use href="#vkontakte" width="20" height="20" fill="#cccccc" x="0" y="60" />
+    <view id="facebook-link" viewBox="0 80 20 20" />
+        <use href="#facebook" width="20" height="20" fill="#cccccc" x="0" y="80" />
+    <view id="google-link_hovered" viewBox="0 100 20 20" />
+          <use href="#google" width="20" height="20" fill="#c5361f" x="0" y="100" />
+    <view id="twitter-link_hovered" viewBox="0 120 20 20" />
+        <use href="#twitter" width="20" height="20" fill="#00a1ed" x="0" y="120" />
+    <view id="odnoklassniki-link_hovered" viewBox="0 140 20 20" />
+        <use href="#odnoklassniki" width="20" height="20" fill="#f5953d" x="0" y="140" />
+    <view id="vkontakte-link_hovered" viewBox="0 160 20 20" />
+        <use href="#vkontakte" width="20" height="20" fill="#48759f" x="0" y="160" />
+    <view id="facebook-link_hovered" viewBox="0 180 20 20" />
+        <use href="#facebook" width="20" height="20" fill="#41518d" x="0" y="180" />
+    <view id="domenart-icon" viewBox="0 200 20 20" />
+        <use href="#domenart" width="20" height="20" fill="#cccccc" x="0" y="200" />
+    <view id="domenart-icon_hovered" viewBox="0 220 20 20" />
+        <use href="#domenart" width="20" height="20" fill="#0099cb" x="0" y="220" />
 </svg>

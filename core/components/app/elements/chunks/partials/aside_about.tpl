@@ -43,7 +43,7 @@
             <!-- VK Widget -->
             <div class="vk-members" id="vk_members"></div>
             <script type="text/javascript">
-            VK.Widgets.Group("vk_members", { mode: 3, width: "auto", height: "280" }, 82976486);
+            VK.Widgets.Group("vk_members", { mode: 3, width: "auto", height: "290" }, 82976486);
             </script>
         </div>
         <div class="innerpage-aside__fourth">

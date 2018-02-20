@@ -35,7 +35,5 @@
         </div>
     </div>
 </main>
-<div class="container">
-    {include 'file:chunks/partials/aside.tpl'}
-</div>
+{include 'file:chunks/partials/aside.tpl'}
 {/block}

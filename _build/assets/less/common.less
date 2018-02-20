@@ -105,7 +105,6 @@ h6 {
     max-width: 1120px;
     margin: 0 auto;
     padding: 0 @container-padding-standard;
-    position: relative;
     @media (max-width: @breakpoint-xsmall) {
         padding: 0 @container-padding-small;
     }
@@ -798,6 +797,7 @@ h6 {
     border: 4px solid rgba(153,153,153,0.5);
     background-color: rgba(255,255,255,0.5);
     cursor: pointer;
+    opacity: 0.8;
     &::after {
         content: '';
         height: 0;
@@ -808,6 +808,9 @@ h6 {
         border-left: 4px dotted #ccc;
         transition-duration: 0.2s;
         transition-property: opacity;
+    }
+    .to-top__arrow {
+        fill: rgba(153,153,153,0.8);
     }
     &:hover {
         .to-top__arrow {
@@ -822,6 +825,10 @@ h6 {
             opacity: 1;
             transition-duration: 0.2s;
         }
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        width: 46px;
+        height: 58px;
     }
 }
 
@@ -1968,7 +1975,6 @@ button.enroll__submit {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
     margin-top: 90px;
    // margin-top: 21px;
     margin-bottom: 63px;
@@ -1982,12 +1988,15 @@ button.enroll__submit {
             color: darken(#7e7e7e, 30%);
         }
     }
+    @media (max-width: @breakpoint-small) {
+        flex-direction: column;
+    }
 }
 
 .footer__contacts-flex {
     display: flex;
     align-items: center;
-    @media (max-width: @breakpoint-xsmall) {
+    @media (max-width: @breakpoint-small) {
         width: 100%;
         justify-content: space-around;
     }
@@ -1998,7 +2007,7 @@ div.footer__tel {
     text-decoration: none;
     color: #999999;
     font-family: @font-alt;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 1;
     letter-spacing: 0.14px;
@@ -2006,7 +2015,7 @@ div.footer__tel {
         text-decoration: none;
     }
     span {
-        font-size: 18px;
+        font-size: 14px;
         letter-spacing: 0.18px;
     }
     @media (max-width: @breakpoint-xsmall) {
@@ -2039,24 +2048,18 @@ div.footer__tel {
 .footer__info-flex {
     display: flex;
     align-items: center;
+    @media (max-width: @breakpoint-small) {
+        display: none;
+    }
 }
 
 .footer__agreement {
     margin-right: 19px;
-    @media (max-width: @breakpoint-xsmall) {
-        display: none;
-    }
-}
-
-.footer__confidence {
-    @media (max-width: @breakpoint-xsmall) {
-        display: none;
-    }
 }
 
 .footer__links-flex {
     display: flex;
-    @media (max-width: @breakpoint-xsmall) {
+    @media (max-width: @breakpoint-small) {
         justify-content: space-around;
         width: 100%;
         margin-top: 70px;
@@ -2115,16 +2118,20 @@ div.footer__tel {
 .footer__developer {
     display: block;
     padding-right: 31px;
-    background: url('../img/domenart.svg') 100% 50% no-repeat;
+    background: url('../img/sprite.svg#domenart-icon') 100% 50% no-repeat;
+    background-size: 20px 20px;
     text-align: right;
     color: #7e7e7e;
     font-size: 12px;
     font-weight: 400;
     line-height: 1;
     text-decoration: none;
+    transition: background 0.5s;
     &:hover {
         color: #7e7e7e;
         text-decoration: none;
+        background-image: url('../img/sprite.svg#domenart-icon_hovered');
+        transition: background 0.5s;
     }
 }
 
@@ -2202,6 +2209,7 @@ div.footer__tel {
     span {
        @media (max-width: @breakpoint-xsmall) {
             top: 20px !important;
+            right: 0 !important;
             font-size: 11px !important;
             margin-bottom: 10px !important;
         } 
@@ -2354,4 +2362,126 @@ div.footer__tel {
         width: calc(@spinner-size-s / 9 + 8 * @spinner-size-s/ 9); 
         animation-delay: calc(50ms * 9); 
     }
+}
+
+.likes__btn {
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.vk-groups {
+    box-sizing: border-box;
+    @media (max-width: @breakpoint-small) {
+        width: 100% !important;
+    }
+}
+
+.link-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 60px;
+    max-height: 755px;
+    box-sizing: border-box;
+    padding-top: 100px;
+    div:nth-child(1) {
+        grid-row: span 2;
+        text-align: right;
+        padding-left: 80px;
+        .link-object__title {
+            bottom: -280px;
+            left: 25px;
+            letter-spacing: 1.1px;
+            svg {
+                fill: #00ffff;
+            }
+        }
+        @media (max-width: @breakpoint-small) {
+            padding-left: 0;
+        }
+    }
+    div:nth-child(2) {
+        position: relative;
+        top: 100px;
+        .link-object__title {
+            top: -75px;
+            right: -125px;
+            transform: rotate(270deg);
+            letter-spacing: 0.6px;
+            svg {
+                fill: #f355b2;
+            }
+            @media (max-width: @breakpoint-xsmall) {
+                right: 0;
+            }
+        }
+    }
+    div:nth-child(3) {  
+        position: relative;
+        top: 100px;
+        .link-object__title {
+            top: 40px;
+            right: -95px;
+            letter-spacing: 3.5px;
+            svg {
+               fill: #8ae005
+            }
+        }
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        grid-template-columns: 1fr;
+        max-height: none;
+        div:nth-child(1) {
+            grid-row: 1;
+        }
+        div:nth-child(2) {
+            top: 0;
+        }
+        div:nth-child(3) {
+            top: 0;
+        }
+    }
+}
+
+.link-object {
+    position: relative;
+    z-index: 40;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.link-object__title {
+    position: absolute;
+    color: #ffffff;
+    font-family: @font-alt;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    @media (max-width: @breakpoint-small) {
+        padding-right: 6px;
+        font-size: 24px;
+        letter-spacing: 0.25px;
+    } 
+    @media (max-width: @breakpoint-small) {
+        position: static;
+    }  
+}
+
+.link-object__border {
+    margin-top: -5px;
+}
+
+.link-object__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
 }

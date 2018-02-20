@@ -11,25 +11,30 @@ let menuHide = document.querySelectorAll('.button-menu__hide');
 let menuHeaderButton = document.querySelector('.header-menu');
 let menuHeaderDecor = document.querySelector('.header-menu__decor');
 let homepageHeader = document.querySelector('.intro__container');
-
-var menuBarGlued;
+let menuBarGlued = false;
 
 if (homepage) {
     //фиксация меню при прокрутке
     window.addEventListener('scroll', function() {
         if (window.pageYOffset >= homepageHeader.offsetHeight) {
-            if (window.matchMedia('(min-width: 639px)').matches) {
-                menuBar.classList.add('menubar_glued');
+            if (menuBarGlued == false) {
+                if (window.matchMedia('(min-width: 639px)').matches) {
+                    menuBar.classList.add('menubar_glued');
+                }
+                menuBarGlued = true;
             }
-            return menuBarGlued = true;
-        } else {
+        } 
+        else {
             if (!menu.classList.contains('menu_opened')) {
-                menuBar.classList.remove('menubar_glued');
-                return menuBarGlued = false;
+                if (menuBarGlued == true) {
+                    menuBar.classList.remove('menubar_glued');
+                    menuBarGlued = false; 
+                }
+                
             }
         }
     });
-     //обработка переключения меню кнопками
+    //обработка переключения меню кнопками
     menuButtons.forEach(element => {    
         element.addEventListener('click', function() {
             if (!menu.classList.contains('menu_opened')) {

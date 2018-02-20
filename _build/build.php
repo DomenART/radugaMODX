@@ -14,7 +14,7 @@ class AppPackage
 
     const name = 'App';
     const name_lower = 'app';
-    const version = '1.1.1';
+    const version = '1.1.5';
     const release = 'pl';
 
 

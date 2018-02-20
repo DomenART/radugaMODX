@@ -73,8 +73,7 @@
             </div>
         </div>
         <div class="link-box js-ensemble-links">
-            <div>
-                <a href="{'tutors' | uri2id | url}" class="link-object link-object_first">
+                <div class="link-object link-object_first">
                     <img src="{$.assets_url}web/img/home-tutor.jpg" class="ensemble__tutors-image js-ensemble-tutors-image" alt="">
                     <span class="link-object__title ensemble__tutors-title">
                         Преподаватели
@@ -82,10 +81,9 @@
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                     </span>
-                </a>
-            </div>
-            <div>
-                <a href="{'photoalbum' | uri2id | url}" class="link-object link-object_second">
+                    <a class="link-object__link" href="{'tutors' | uri2id | url}"></a>
+                </div>
+                <div class="link-object link-object_second">
                     <img src="assets/components/app/web/img/home-album.jpg" class="ensemble__photoalbum-image" alt="">
                     <span class="link-object__title ensemble__photoalbum-title">
                         Фотоальбом
@@ -93,27 +91,22 @@
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                     </span>
-                </a>
-            </div>
-            <div>
-                <a href="{'videos' | uri2id | url}" class="link-object link-object_third">
+                    <a class="link-object__link" href="{'tutors' | uri2id | url}"></a>
+                </div>
+                <div class="link-object link-object_third">
                     <img src="{$.assets_url}web/img/home-video.jpg" class="ensemble__videos-image" alt="">
                     <span class="link-object__title ensemble__videos-title">
-                        Видео
-                        <svg width="4" height="28" class="link-object__border">
+                        Видео<svg width="4" height="28" class="link-object__border">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                     </span>
-                </a>
-            </div>
+                    <a class="link-object__link" href="{'tutors' | uri2id | url}"></a>
+                </div>
         </div>
     </section>
     <section class="program">
         <div class="container">
-            <div class="program__dancegirl">
-                <img src="{$.assets_url}web/img/dancegirl.png" alt="">
-            </div>
-            <h2 class="program__title">В <span>нашей</span> программе обучения</h2>
+            <h2 class="program__title"><span>В нашей программе обучения</span></h2>
             <div class="programm__intro clearfix">
                 Занятия способствуют развитию фантазии, воображения и творческого подхода, веру в собственные силы, приобщают ребенка к танцевальному искусству, раскрывая перед ним его многообразие и красоту.
             </div>
@@ -126,10 +119,11 @@
                 <li>Современная хореография</li>
             </ul>
         </div>
-        <div class="program__costumedgirl clearfix">
-            <img src="{$.assets_url}web/img/costumedgirl.jpg">
-        </div>
+
         <div class="container">
+            <div class="program__costumedgirl clearfix">
+                <img src="{$.assets_url}web/img/costumedgirl.jpg">
+            </div>
             <div class="program-features program-features_homepage">
                 <div class="program-features__years program-features__years_homepage">
                     <span class="program-features__number">12</span> лет работы
@@ -154,6 +148,7 @@
                 </div>
             </div>
         </div>
+
     </section>
     <div class="container">
         <div class="social-grid">
@@ -179,7 +174,7 @@
                 <!-- VK Widget -->
                 <div id="vk_groups"></div>
                 <script type="text/javascript">
-                VK.Widgets.Group("vk_groups", { mode: 4, width: "auto", height: "400" }, 82976486);
+                VK.Widgets.Group("vk_groups", { mode: 4, width: "auto", height: "580" }, 82976486);
                 </script>
             </div>
         </div>
@@ -252,8 +247,8 @@
             </div>
         </section>
     </div>
-    <div class="preloader" style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 100%;height: 100%; position: fixed; top: 0; left: 0; z-index: 5000; background: #043f3f url('{$.assets_url}web/img/intro.jpg') no-repeat 50% 50%; background-size: cover; color: #fff; fill: #fff;">
-        <span style="position: relative; top: 20px; transform: rotate(8.4deg); transform-origin: 50% 50%;">
+    <div class="preloader" style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 5000; background: #043f3f url('{$.assets_url}web/img/intro.jpg') no-repeat 50% 50%; background-size: cover; color: #fff; fill: #fff;">
+        <span style="position: relative; top: 60px; right: -30px; transform: rotate(8.4deg); transform-origin: 50% 50%; font-size: 15px;">
         детский хореографический ансамбль</span>
         <svg class="svg-logo" style="max-width: 500px; height: 200px;">
             <use xlink:href="{$.assets_url}web/img/sprite.svg#logo"/>

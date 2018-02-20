@@ -2,72 +2,6 @@
     margin-bottom: 55px;
 }
 
-.link-box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 60px;
-    max-height: 755px;
-    box-sizing: border-box;
-    padding-top: 100px;
-    div:nth-child(1) {
-        grid-row: span 2;
-        text-align: right;
-        padding-left: 80px;
-        .link-object__title {
-            bottom: -280px;
-            left: 25px;
-            letter-spacing: 1.1px;
-            svg {
-                fill: #00ffff;
-            }
-        }
-        @media (max-width: @breakpoint-xsmall) {
-            padding-left: 0;
-        }
-    }
-    div:nth-child(2) {
-        position: relative;
-        top: 100px;
-        .link-object__title {
-            top: -75px;
-            right: -125px;
-            transform: rotate(270deg);
-            letter-spacing: 0.6px;
-            svg {
-                fill: #f355b2;
-            }
-            @media (max-width: @breakpoint-xsmall) {
-                right: 0;
-            }
-        }
-    }
-    div:nth-child(3) {  
-        position: relative;
-        top: 100px;
-        .link-object__title {
-            top: 40px;
-            right: -95px;
-            letter-spacing: 3.5px;
-            svg {
-               fill: #8ae005
-            }
-        }
-    }
-    @media (max-width: @breakpoint-xsmall) {
-        grid-template-columns: 1fr;
-        max-height: none;
-        div:nth-child(1) {
-            grid-row: 1;
-        }
-        div:nth-child(2) {
-            top: 0;
-        }
-        div:nth-child(3) {
-            top: 0;
-        }
-    }
-}
-
 .link-box_photoalbum {
     margin-bottom: 160px;
     &::before {
@@ -84,39 +18,7 @@
     }
 }
 
-.link-object {
-    position: relative;
-    z-index: 50;
-    text-decoration: none;
-}
 
-.link-object__title {
-    position: absolute;
-    color: #ffffff;
-    font-family: @font-alt;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 1;
-    text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
-    @media (max-width: @breakpoint-small) {
-        padding-right: 6px;
-        font-size: 24px;
-        letter-spacing: 0.25px;
-    } 
-    @media (max-width: @breakpoint-small) {
-        position: static;
-    }  
-}
-
-.link-object__border {
-    position: absolute;
-    top: 50%;
-    right: -15px;
-    transform: translateY(-50%);
-}
-    
 .photoalbum__pool {
     display: grid;
     grid-template-columns: 1fr 1fr;
