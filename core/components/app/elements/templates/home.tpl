@@ -126,7 +126,7 @@
             </div>
             <div class="program-features program-features_homepage">
                 <div class="program-features__years program-features__years_homepage">
-                    <span class="program-features__number">12</span> лет работы
+                    <span class="program-features__number">12</span><span class="program-features__text">лет работы</span>
                 </div>
                 <div class="program-features__international program-features__international_homepage">
                     Участие в международных конкурсах
