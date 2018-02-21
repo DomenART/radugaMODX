@@ -5,7 +5,7 @@
             <div class="enroll">
                 {'!AjaxForm@Form' | snippet : [
                     'emailSubject'  => 'Запись на урок',
-                    'validate'      => 'nomail:blank,tel:required',
+                    'validate'      => 'nomail:blank,tel,agreement:required',
                     'form'          => '@FILE chunks/forms/enroll.tpl'
                 ]}
             </div>
@@ -45,9 +45,10 @@
             </script>
         </div>
         <div class="innerpage-aside__fourth">
-            <h3 class="vk-group__title vk-group__title_aside">МЫ ВКонтакте</h3>
             <!-- VK Widget -->
-            <div  class="vk-groups" id="vk_groups" style=""></div>
+            <div  class="vk-groups" id="vk_groups" style="">
+                <h3 class="vk-group__title vk-group__title_aside">МЫ ВКонтакте</h3>
+            </div>
             <script type="text/javascript">
             VK.Widgets.Group("vk_groups", { mode: 4, width: "auto", height: "580" }, 82976486);
             </script>

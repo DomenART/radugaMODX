@@ -22,9 +22,10 @@
             </script>
         </div>
         <div class="innerpage-aside__fourth">
-            <h3 class="vk-group__title vk-group__title_aside">МЫ ВКонтакте</h3>
             <!-- VK Widget -->
-            <div id="vk_groups"></div>
+            <div class="vk-groups" id="vk_groups">
+                <h3 class="vk-group__title vk-group__title_aside">МЫ ВКонтакте</h3>
+            </div>
             <script type="text/javascript">
             VK.Widgets.Group("vk_groups", { mode: 4, width: "auto", height: "580" }, 82976486);
             </script>

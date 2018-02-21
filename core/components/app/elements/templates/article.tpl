@@ -8,15 +8,21 @@
         {'pdoNeighbors' | snippet : [
             'tplPrev' => '@INLINE  
                 <a href="/{$uri}" class="control-link control-link_left">
-                    <svg width="20" height="20" class="control-link__arrow control-link__arrow_left control-link__arrow_disabled">
+                    <svg class="control-link__arrow control-link__arrow_left control-link__arrow_disabled" width="20" height="20">
                         <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-left"/>
+                    </svg>
+                    <svg class="control-link__tail control-link__tail_left" width="10" height="8">
+                        <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
                     </svg>
                     Предыдущая
                 </a>',
             'tplNext' => '@INLINE  
                 <a href="/{$uri}" class="control-link control-link_right">
                     Следующая
-                    <svg width="20" height="20" class="control-link__arrow control-link__arrow_right">
+                    <svg class="control-link__tail control-link__tail_right" width="10" height="8">
+                        <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
+                    </svg>
+                    <svg class="control-link__arrow control-link__arrow_right" width="20" height="20">
                         <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
                     </svg>
                 </a>',
@@ -82,15 +88,21 @@
             {'pdoNeighbors' | snippet : [
                 'tplPrev' => '@INLINE  
                     <a href="/{$uri}" class="control-link control-link_left">
-                        <svg width="20" height="20" class="control-link__arrow control-link__arrow_left control-link__arrow_disabled">
+                        <svg class="control-link__arrow control-link__arrow_left control-link__arrow_disabled" width="20" height="20">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-left"/>
+                        </svg>
+                        <svg class="control-link__tail control-link__tail_left" width="10" height="8">
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
                         </svg>
                         Предыдущая
                     </a>',
                 'tplNext' => '@INLINE  
                     <a href="/{$uri}" class="control-link control-link_right">
                         Следующая
-                        <svg width="20" height="20" class="control-link__arrow control-link__arrow_right">
+                        <svg class="control-link__tail control-link__tail_right" width="10" height="8">
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
+                        </svg>
+                        <svg class="control-link__arrow control-link__arrow_right" width="20" height="20">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
                         </svg>
                     </a>',

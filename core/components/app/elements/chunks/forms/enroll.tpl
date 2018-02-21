@@ -21,7 +21,10 @@
         </label>
     </div>
     <button type="submit" class="enroll__submit btn-more submit">
-        <span>Записаться</span>
+        Записаться
+        <svg class="btn-more__tail" width="10" height="8" fill="#ffffff">
+            <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
+        </svg>
         <svg class="btn-more__arrow " width="20" height="20">
             <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
         </svg>

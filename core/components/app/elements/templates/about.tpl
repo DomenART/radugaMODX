@@ -49,20 +49,20 @@
             <div class="reward-box">
                 <ul class="uk-switcher reward-box__content">
                     {foreach $_modx->resource['about_rewards.slider'] | fromJSON as $row}
-                    <li>
-                        <div class="reward-box__year">{$row['year']}</div>
-                        <div class="reward-box__flex">
-                            <div class="reward-box__title">
-                                {$row['title']}
+                        <li>
+                            <div class="reward-box__year">{$row['year']}</div>
+                            <div class="reward-box__flex">
+                                <div class="reward-box__title">
+                                    {$row['title']}
+                                </div>
+                                <div class="reward-box__img">
+                                    <img src="{$row['image']}" alt="">
+                                </div>
+                                <div class="reward-box__desc">
+                                    {$row['text']}
+                                </div>
                             </div>
-                            <div class="reward-box__img">
-                                <img src="{$row['image']}" alt="">
-                            </div>
-                            <div class="reward-box__desc">
-                                {$row['text']}
-                            </div>
-                        </div>
-                    </li>
+                        </li>
                     {/foreach}
                 </ul>  
                 <div class="reward-box__control">

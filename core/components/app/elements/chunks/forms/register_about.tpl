@@ -12,7 +12,10 @@
             <input type="text" class="input input_register" name="name" placeholder="Имя:">
             <input type="tel" class="input input_register" name="tel" pattern="^[0-9]+$" minlength="8" placeholder="Телефон*:" required>
             <button type="submit" class="btn-more submit btn-more_register">
-                <span>Записаться</span>
+                Записаться
+                <svg class="btn-more__tail" width="10" height="8" fill="#ffffff">
+                    <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
+                </svg>
                 <svg class="btn-more__arrow " width="20" height="20">
                     <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
                 </svg>

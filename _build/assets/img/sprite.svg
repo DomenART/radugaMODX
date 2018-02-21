@@ -134,6 +134,10 @@
        <path class="fil0" d="M598 288l53 76c-58,17 -99,16 -104,73l-76 -94c59,12 91,2 127,-55z"/>
        <path class="fil0" d="M291 474l77 107c-58,-5 -108,19 -145,65l-41 -79c52,-14 101,-22 110,-94z"/>
     </symbol>
+    <symbol id="two-dot-hor" viewBox="0 0 372 125">
+       <circle  cx="310" cy="63" r="63"/>
+       <circle  cx="62" cy="63" r="63"/>
+    </symbol>
     <view id="google-link" viewBox="0 0 20 20" />
        <use href="#google" width="20" height="20" fill="#cccccc" x="0" y="0" />
     <view id="twitter-link" viewBox="0 20 20 20" />
@@ -158,4 +162,6 @@
         <use href="#domenart" width="20" height="20" fill="#cccccc" x="0" y="200" />
     <view id="domenart-icon_hovered" viewBox="0 220 20 20" />
         <use href="#domenart" width="20" height="20" fill="#0099cb" x="0" y="220" />
+    <view id="btn-arrow-tail" viewBox="0 230 20 20" />
+        <use href="#two-dot-hor" width="23" height="6" fill="#ffffff" x="0" y="230" />
 </svg>
