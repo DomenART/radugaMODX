@@ -42,22 +42,4 @@ document.querySelectorAll('.js-schedule').forEach(wrap => {
             lesson.el.style.height = lesson.height + '%'
         })
     })
-    
-    // lessons.forEach(lesson => {
-        // let left = day * cellWidth - cellWidth;
-        // let width = cellWidth;
-        // lesson.style.display = 'block'
-        // lesson.style.left = left + '%'
-        // lesson.style.width = width + '%'
-
-        // let from = lesson.dataset.from.split(':')
-        // let fromMinutes = from[0] * 60 + Number(from[1])
-        // let top = (fromMinutes - dayFrom) / totalMinutes * 100
-        // lesson.style.top = top + '%'
-
-        // let to = lesson.dataset.to.split(':')
-        // let toMinutes = to[0] * 60 + Number(to[1])
-        // let height = (toMinutes - fromMinutes) / totalMinutes * 100
-        // lesson.style.height = height + '%'
-    // })
 })
