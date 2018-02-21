@@ -18,8 +18,11 @@
             {include 'file:chunks/partials/footer.tpl'}
         {/block}
         <div class="to-top" hidden>
-            <svg class="to-top__arrow" width="18px" height="30px">
-                <use xlink:href="assets/components/app/web/img/sprite.svg#to-top"/>
+            <svg class="to-top__arrow" width="20" height="30">
+                <use xlink:href="{$.assets_url}web/img/sprite.svg#to-top"/>
+            </svg>
+            <svg class="to-top__tail" width="4" height="30">
+                <use xlink:href="{$.assets_url}web/img/sprite.svg#two-circles"/>
             </svg>
         </div>
         {include 'file:chunks/popups/enroll-popup.tpl'}

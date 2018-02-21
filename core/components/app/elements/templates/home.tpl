@@ -76,7 +76,8 @@
             </div>
         </div>
         <div class="link-box js-ensemble-links">
-                <div class="link-object link-object_first">
+            <div class="link-object link-object_first">
+                <a class="link-object__link" href="{'tutors' | uri2id | url}">
                     <img src="{$.assets_url}web/img/home-tutor.jpg" class="ensemble__tutors-image js-ensemble-tutors-image" alt="">
                     <span class="link-object__title ensemble__tutors-title">
                         Преподаватели
@@ -84,9 +85,10 @@
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                     </span>
-                    <a class="link-object__link" href="{'tutors' | uri2id | url}"></a>
-                </div>
-                <div class="link-object link-object_second">
+                </a>
+            </div>
+            <div class="link-object link-object_second">
+                <a class="link-object__link" href="{'photoalbum' | uri2id | url}">
                     <img src="assets/components/app/web/img/home-album.jpg" class="ensemble__photoalbum-image" alt="">
                     <span class="link-object__title ensemble__photoalbum-title">
                         Фотоальбом
@@ -94,17 +96,19 @@
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                     </span>
-                    <a class="link-object__link" href="{'tutors' | uri2id | url}"></a>
-                </div>
-                <div class="link-object link-object_third">
+                </a>
+            </div>
+            <div class="link-object link-object_third">
+                <a class="link-object__link" href="{'video' | uri2id | url}">
                     <img src="{$.assets_url}web/img/home-video.jpg" class="ensemble__videos-image" alt="">
                     <span class="link-object__title ensemble__videos-title">
-                        Видео<svg width="4" height="28" class="link-object__border">
+                        Видео
+                        <svg width="4" height="28" class="link-object__border">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                     </span>
-                    <a class="link-object__link" href="{'tutors' | uri2id | url}"></a>
-                </div>
+                </a>
+            </div>
         </div>
     </section>
     <section class="program">
