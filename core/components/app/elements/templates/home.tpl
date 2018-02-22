@@ -81,8 +81,11 @@
                     <img src="{$.assets_url}web/img/home-tutor.jpg" class="ensemble__tutors-image js-ensemble-tutors-image" alt="">
                     <span class="link-object__title ensemble__tutors-title">
                         Преподаватели
-                        <svg width="4" height="28" class="link-object__border">
+                        <svg class="link-object__border">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
+                        </svg>
+                        <svg class="link-object__arrow">
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#long-arrow"/>
                         </svg>
                     </span>
                 </a>
@@ -92,8 +95,11 @@
                     <img src="assets/components/app/web/img/home-album.jpg" class="ensemble__photoalbum-image" alt="">
                     <span class="link-object__title ensemble__photoalbum-title">
                         Фотоальбом
-                        <svg width="4" height="28" class="link-object__border">
+                        <svg class="link-object__border">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
+                        </svg>
+                        <svg class="link-object__arrow">
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#long-arrow"/>
                         </svg>
                     </span>
                 </a>
@@ -103,8 +109,11 @@
                     <img src="{$.assets_url}web/img/home-video.jpg" class="ensemble__videos-image" alt="">
                     <span class="link-object__title ensemble__videos-title">
                         Видео
-                        <svg width="4" height="28" class="link-object__border">
+                        <svg class="link-object__border">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
+                        </svg>
+                        <svg class="link-object__arrow">
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#long-arrow"/>
                         </svg>
                     </span>
                 </a>

@@ -24,15 +24,16 @@
                 </div>
             </div>
         </div>
+        <div id="player"></div>
+        <script></script>
         <div class="routes__pool">
             {'pdoResources' | snippet : [
                 'tpl' => '@FILE chunks/items/route-item.tpl',
-                'sortby' => 'menuindex',
-                'sortdir' => 'ASC',
-
+                'sortby' => 'id',
+                'sortdir' => 'DESC'
              ]}
         </div>
     </div>
-</main>
+</main> 
 {include 'file:chunks/partials/aside.tpl'}
 {/block}

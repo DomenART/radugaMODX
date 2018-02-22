@@ -25,3 +25,4 @@ import './enroll.js';
 import './preloader.js';
 import './ajaxform.js';
 import './schedule.js';
+import './youtube.js';
