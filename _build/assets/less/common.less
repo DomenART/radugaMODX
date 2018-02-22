@@ -903,16 +903,17 @@ h6 {
 .control-btn_disabled {
     border: 4px solid rgba(153, 153, 153, 0.3);
     cursor: default;
-    .control-btn__arrow_disabled {
+    .control-btn__arrow {
         fill: #cccccc;
     }
     &:hover {
         background-color: #fff;
         .control-btn__arrow {
             fill: #cccccc;
+            transform: translate(0,-50%);
         }
-        .control-btn__arrow {
-            transform: translateY(-50%);
+        .control-btn__tail {
+            opacity: 0;
         }
     }
 }
@@ -1025,12 +1026,14 @@ h6 {
 }
 
 .control-link_left {
+    margin-left: 10px;
     &::before {
         left: -10px;
     }
 }
 
 .control-link_right {
+    margin-right: 10px;
     &::before {
         right: -10px;
     }

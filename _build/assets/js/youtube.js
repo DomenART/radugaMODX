@@ -10,7 +10,12 @@ window.onYouTubeIframeAPIReady = function() {
     el.player = new YT.Player(video, {
       playerVars: {
         controls: 0,
-        showinfo: 0
+        showinfo: 0,
+        disablekb: 1,
+        loop: 1,
+        modestbranding: 1,
+        rel: 0,
+        mute: 1
       },
       videoId: video.dataset.video
     })
