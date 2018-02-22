@@ -1,11 +1,7 @@
 <div class="route-item">
-    <button type="button" class="play-btn play-btn_route">
-        <svg width="17" height="20">
-            <use xlink:href="assets/components/app/web/img/sprite.svg#triangle"/> 
-        </svg>
-    </button>
-    <div class="route-item__bg">
-        <div id="player"></div>
+    <button type="button" class="play-btn play-btn_route"></button>
+    <div class="route-item__bg" data-video="BODyJ-yrJB0">
+        
     </div>
     <div class="route-item__title">
         {$pagetitle}

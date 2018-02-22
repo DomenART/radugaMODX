@@ -1,38 +1,25 @@
- 
-      var tag = document.createElement('script');
-  
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
+let tag = document.createElement('script')
+tag.src = "https://www.youtube.com/iframe_api"
+let firstScriptTag = document.getElementsByTagName('script')[0]
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+window.onYouTubeIframeAPIReady = function() {
+  document.querySelectorAll('.route-item').forEach(el => {
+    let video = el.querySelector('.route-item__bg')
+    let button = el.querySelector('.play-btn_route')
+    el.player = new YT.Player(video, {
+      playerVars: {
+        controls: 0,
+        showinfo: 0
+      },
+      videoId: video.dataset.video
+    })
 
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '360',
-          width: '640',
-          videoId: 'M7lc1UVf-VE',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-
-
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-
-
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
- 
+    button.addEventListener('mouseover', () => {
+      el.player.playVideo()
+    })
+    button.addEventListener('mouseout', () => {
+      el.player.stopVideo()
+    })
+  })
+}
