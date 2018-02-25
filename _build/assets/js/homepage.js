@@ -15,8 +15,7 @@ if (homepage) {
         let introMajorDivider = document.querySelector('.intro-nav__dot-vertical');
         let introMajorLast = document.querySelector('.intro-nav__major li:last-child');
         let introMenuItems = document.querySelectorAll('.intro-nav__minor li');
-        let menuBarThresholdInner = document.querySelector('.menubar__threshold');
-        let menuBarDivider = document.querySelector('.menubar__divider');
+        let menuBarThresholdInner = document.querySelector('.menubar__threshold span');
  
         introLogo.style.animation = '1s appereance forwards';
         introLogo.addEventListener('animationend', function() {

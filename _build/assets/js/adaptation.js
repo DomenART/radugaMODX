@@ -7,7 +7,6 @@ if (window.matchMedia('(max-width: 639px)').matches) {
     let menuButtons = document.querySelectorAll('.button-menu');
     let menuBar = document.querySelectorAll('.menubar');
     let menuBarThreshold = document.querySelector('.menubar__threshold');
-    let menuBarDivider = document.querySelector('.menubar__divider');
     let menuBarLogo = document.querySelector('.menubar__logo');
     let introContainer = document.querySelector('.intro__container');
     let programIntro = document.querySelector('.programm__intro');
@@ -49,7 +48,6 @@ if (window.matchMedia('(max-width: 639px)').matches) {
         */
     }
 
-    menuBarThreshold.appendChild(menuBarDivider);
     footerBottom.appendChild(counterSite);
     menuButtons.forEach(element => {    
         element.addEventListener('click', function() {

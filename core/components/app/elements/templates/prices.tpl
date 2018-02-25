@@ -2,18 +2,17 @@
 {block 'content'}
 <main class="prices innerpage">
     <div class="container">
-        <div class="box-decor"></div>
         <h1 class="pagetitle pagetitle_prices">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
-        {foreach $_modx->resource.tutors_slider | fromJSON as $row}
+        {foreach $_modx->resource['banners'] | fromJSON as $row}
             <div class="prices__action">
-                {$row['banner']}
+                <img src="{$row['banner']}" alt="">
             </div>
         {/foreach}
         <div class="tab-bar" uk-switcher>
             <div class="tab-bar__item  js-price-control-usman">
                 <span>Новая Усмань</span>
             </div>
-            <div class="tab-bar__item  js-price-control-otradnoe">
+            <div class="tab-bar__item js-price-control-otradnoe">
                 <span>Отрадное</span>
             </div>
         </div>

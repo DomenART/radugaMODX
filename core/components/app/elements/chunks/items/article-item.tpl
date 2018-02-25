@@ -9,6 +9,6 @@
         {$introtext}
     </span>
     <span class="article-item__img">
-        <img src="{$article.image}" alt="">
+        <img src="{$_pls['article.image']}" alt="">
     </span>
 </a>

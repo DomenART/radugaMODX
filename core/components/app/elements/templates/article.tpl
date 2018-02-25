@@ -46,7 +46,7 @@
                             'tpl' => '@FILE chunks/xlike/xlike_aside.tpl'
                         ]}
                         <div class="comments">
-                            <svg class="comment-icon" width="35" height="22">
+                            <svg class="comment-icon" width="36" height="22">
                                 <use xlink:href="{$.assets_url}web/img/sprite.svg#comment"/> 
                             </svg>
                             {$_modx->resource.comments}
@@ -79,7 +79,7 @@
                     'tpl' => '@FILE chunks/xlike/xlike_controlbar.tpl'
                 ]}
                 <div class="comments">
-                    <svg width="35" height="22" class="comment-icon"> 
+                    <svg width="36" height="22" class="comment-icon"> 
                         <use xlink:href="{$.assets_url}web/img/sprite.svg#comment"/> 
                     </svg>
                     {$_modx->resource.comments}
@@ -119,7 +119,7 @@
                     'limit' => 3,
                     'sortby' => 'RAND()',
                     'tpl' => '@FILE chunks/items/article-item.tpl',
-                    'includeTVs' => 'article_image',
+                    'includeTVs' => 'article.image',
                     'tvPrefix' => '',
                     'resources' => '-' ~ $_modx->resource.id
                 ]}

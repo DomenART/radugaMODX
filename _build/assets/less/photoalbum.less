@@ -4,6 +4,9 @@
 
 .link-box_photoalbum {
     margin-bottom: 160px;
+    img {
+        max-height: 100%;
+    }
     &::before {
         content: '';
         width: 100%;
@@ -17,7 +20,6 @@
         }
     }
 }
-
 
 .photoalbum__pool {
     display: grid;
@@ -100,7 +102,7 @@
             }
         }
         @media (max-width: @breakpoint-small) {
-             top: 0;
+            top: 0;
         }
     }
     @media (max-width: @breakpoint-small) {

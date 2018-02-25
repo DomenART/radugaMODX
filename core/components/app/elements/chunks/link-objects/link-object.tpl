@@ -1,5 +1,5 @@
-<div>
-    <a href="{$uri}" class="link-object">
+<div class="link-object">
+    <a href="{$uri}" class="link-object__link">
         <img src="{$_pls['530x']}" alt="">
         <span class="link-object__title">
             {$pagetitle}
@@ -8,4 +8,4 @@
             </svg>
         </span>
     </a>
-</div>    
+ </div>

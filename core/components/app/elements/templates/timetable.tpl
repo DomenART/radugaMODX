@@ -84,139 +84,40 @@
                     </div>
                 </li>
                 <li>
-                    <table class="timetable__table">
-                        <tr>
-                            <th></th>
-                            <th>Понедельник</th>
-                            <th>Вторник</th>
-                            <th>Среда</th>
-                            <th>Четверг</th>
-                            <th>Пятница</th>
-                            <th>Суббота</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                11:00
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                12:00
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                13:00
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                14:00
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                15:00
-                            </td> 
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                16:00
-                            </td> 
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                17:00
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr> 
-                        <tr>
-                            <td>
-                                18:00
-                            </td>  
-                            <td>
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                19:00
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                20:00
-                            </td> 
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                21:00
-                            </td> 
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
+                    {var $hours = ['11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00']}
+                    <div class="uk-overflow-auto">
+                        <div class="schedule js-schedule">
+                            <div class="schedule__spacer"></div>
+                            <div class="schedule__days">
+                                <div>Понедельник</div>
+                                <div>Вторник</div>
+                                <div>Среда</div>
+                                <div>Четверг</div>
+                                <div>Пятница</div>
+                                <div>Суббота</div>
+                            </div>
+                            <div class="schedule__hours">
+                                {foreach $hours as $hour}
+                                    <div>{$hour}</div>
+                                {/foreach}
+                            </div>
+                            <div class="schedule__grid">
+                                {for $counter=1 to=count($hours)*6}
+                                    <div class="schedule__cell"></div>
+                                {/for}
+                                {foreach $_modx->resource.timetable | fromJSON as $row}
+                                <div class="schedule-lesson js-schedule-lesson" style="background-color: {$row['color']}" 
+                                data-day="{$row['day']}"
+                                data-from="{$row['time_start']}"
+                                data-to="{$row['time_end']}">
+                                    <div class="schedule-lesson__time">{$row['time_start']}-{$row['time_end']}</div>
+                                    <div class="schedule-lesson__title">{$row['title']}</div>
+                                    <div class="schedule-lesson__place">{$row['place']}</div>
+                                </div>
+                                {/foreach}
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>

@@ -76,7 +76,7 @@
             </div>
         </div>
         <div class="link-box js-ensemble-links">
-            <div class="link-object link-object_first">
+            <div class="link-object">
                 <a class="link-object__link" href="{'tutors' | uri2id | url}">
                     <img src="{$.assets_url}web/img/home-tutor.jpg" class="ensemble__tutors-image js-ensemble-tutors-image" alt="">
                     <span class="link-object__title ensemble__tutors-title">
@@ -90,7 +90,7 @@
                     </span>
                 </a>
             </div>
-            <div class="link-object link-object_second">
+            <div class="link-object">
                 <a class="link-object__link" href="{'photoalbum' | uri2id | url}">
                     <img src="assets/components/app/web/img/home-album.jpg" class="ensemble__photoalbum-image" alt="">
                     <span class="link-object__title ensemble__photoalbum-title">
@@ -104,8 +104,8 @@
                     </span>
                 </a>
             </div>
-            <div class="link-object link-object_third">
-                <a class="link-object__link" href="{'video' | uri2id | url}">
+            <div class="link-object">
+                <a class="link-object__link" href="{'videos' | uri2id | url}">
                     <img src="{$.assets_url}web/img/home-video.jpg" class="ensemble__videos-image" alt="">
                     <span class="link-object__title ensemble__videos-title">
                         Видео

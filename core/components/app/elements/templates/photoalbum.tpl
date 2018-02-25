@@ -11,14 +11,12 @@
             {'ms2galleryResources' | snippet: [
                 'includeThumbs' => '530x',
                 'includeOriginal' => true,
-                'sortby' => 'menuindex',
+                'sortby' => 'id',
                 'sortdir' => 'ASC',
                 'limit' => 3,
                 'depth' => 0,
                 'sortby' => 'menuindex',
-                'tpl_1' => '@FILE chunks/link-objects/link-object_first.tpl',
-                'tpl_2' => '@FILE chunks/link-objects/link-object_second.tpl',
-                'tpl_3' => '@FILE chunks/link-objects/link-object_third.tpl'
+                'tpl' => '@FILE chunks/link-objects/link-object.tpl',
             ]}    
         </div>
         <div class="container">
@@ -28,7 +26,7 @@
                     'includeOriginal' => true,
                     'offset' => 3,
                     'depth' => 0,
-                    'sortby' => 'menuindex',
+                    'sortby' => 'id',
                     'sortdir' => 'ASC',
                     'tpl' => '@FILE chunks/link-objects/link-object.tpl'
                 ]}
@@ -36,7 +34,5 @@
         </div>
     </div>
 </main>
-<div class="container">
-    {include 'file:chunks/partials/aside.tpl'}
-</div>
+{include 'file:chunks/partials/aside.tpl'}
 {/block}

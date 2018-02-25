@@ -18,18 +18,21 @@
                     </div>
                     <div class="address__age">
                         от 4 лет
+                        <svg class="decor-dots" width="26" height="4">
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#three-dot-hor"/>
+                        </svg> 
                     </div>
                 </header>
                 <div>
                     <div class="address-text address-text_aside">
                         <svg class="map-pin-icon" width="16" height="24">
-                            <use xlink:href="assets/components/app/web/img/sprite.svg#map-pin"/>
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#map-pin"/>
                         </svg>
                         {'contacts.address_first' | config}
                     </div>
                     <div class="address-text address-text_aside">
                         <svg class="map-pin-icon" width="16" height="24">
-                            <use xlink:href="assets/components/app/web/img/sprite.svg#map-pin"/>
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#map-pin"/>
                         </svg>
                         {'contacts.address_second' | config}
                     </div>

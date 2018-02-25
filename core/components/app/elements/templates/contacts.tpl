@@ -5,7 +5,6 @@
         Наша команда
     </div>
     <div class="container">
-            <div class="box-decor box-decor_contacts"></div> 
         <h1 class="pagetitle">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
         <div class="contacts__grid">
             <div class="contacts__map">
@@ -39,6 +38,7 @@
                     </div>
                 </div>
             </div>
+            <div class="box-decor box-decor_contacts"></div> 
         </div>
     </div>
 </main>

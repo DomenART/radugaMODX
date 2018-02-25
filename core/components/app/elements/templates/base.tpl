@@ -24,6 +24,9 @@
             <svg class="to-top__tail" width="4" height="30">
                 <use xlink:href="{$.assets_url}web/img/sprite.svg#two-circles"/>
             </svg>
+            <svg class="to-top__arrow-small" width="16" height="28">
+                <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-top"/>
+            </svg>
         </div>
         {include 'file:chunks/popups/enroll-popup.tpl'}
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

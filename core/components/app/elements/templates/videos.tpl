@@ -8,7 +8,7 @@
         <h1 class="pagetitle pagetitle_videos">Видео</h1>
         <div class="resources-count">Загружено <b>РУСЛАН, ВЫВЕДИ МЕНЯ!</b> видео</div>
         {'pdoResources' | snippet: [
-            'includeTVs' => 'article.image, favorite',
+            'includeTVs' => 'favorite',
             'includeContent' => '1',
             'tvPrefix' => '',
             'tpl' => '@FILE chunks/favorites/videos-favorite.tpl',
@@ -24,7 +24,7 @@
                         'element' => 'pdoResources',
                         'sortby' => 'id',
                         'sortdir' => 'DESC',
-                        'limit' => 20,
+                        'limit' => 2,
                         'includeTVs' => '',
                         'includeContent' => 1,
                         'tvPrefix' => '',

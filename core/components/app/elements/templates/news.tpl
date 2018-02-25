@@ -20,7 +20,7 @@
                         'element' => 'pdoResources',
                         'sortby' => 'id',
                         'sortdir' => 'DESC',
-                        'limit' => 10,
+                        'limit' => 2,
                         'includeTVs' => 'article.image',
                         'tvPrefix' => '',
                         'tpl' => '@FILE chunks/items/article-item.tpl',
@@ -39,4 +39,5 @@
         </div>
     </div>
 </main>
+{include 'file:chunks/partials/aside.tpl'}
 {/block}

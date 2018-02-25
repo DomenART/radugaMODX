@@ -25,7 +25,7 @@
             </div>
             <div class="program-features program-features_about">
                 <div class="program-features__years">
-                    <span class="program-features__number">12</span> лет работы
+                    <span class="program-features__number">12</span><span class="program-features__text">лет работы</span>
                 </div>
                 <div class="program-features__international">
                     Участие в международных конкурсах
