@@ -76,12 +76,12 @@
             </div>
         </div>
         <div class="link-box js-ensemble-links">
-            <div class="link-object">
-                <a class="link-object__link" href="{'tutors' | uri2id | url}">
-                    <img src="{$.assets_url}web/img/home-tutor.jpg" class="ensemble__tutors-image js-ensemble-tutors-image" alt="">
+            <div>
+                <a href="{'tutors' | uri2id | url}" class="link-object uk-cover">
+                    <img src="{$.assets_url}web/img/home-tutor.jpg" class="ensemble__tutors-image js-ensemble-tutors-image" alt="" uk-cover>
                     <span class="link-object__title ensemble__tutors-title">
                         Преподаватели
-                        <svg class="link-object__border">
+                        <svg width="4" height="28" class="link-object__border"> 
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                         <svg class="link-object__arrow">
@@ -90,12 +90,12 @@
                     </span>
                 </a>
             </div>
-            <div class="link-object">
-                <a class="link-object__link" href="{'photoalbum' | uri2id | url}">
-                    <img src="assets/components/app/web/img/home-album.jpg" class="ensemble__photoalbum-image" alt="">
+            <div>
+                <a href="{'photoalbum' | uri2id | url}" class="link-object uk-cover">
+                    <img src="{$.assets_url}web/img/home-album.jpg" class="ensemble__photoalbum-image js-ensemble-photoalbum-image" alt="" uk-cover>
                     <span class="link-object__title ensemble__photoalbum-title">
                         Фотоальбом
-                        <svg class="link-object__border">
+                        <svg width="4" height="28" class="link-object__border"> 
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                         <svg class="link-object__arrow">
@@ -104,12 +104,12 @@
                     </span>
                 </a>
             </div>
-            <div class="link-object">
-                <a class="link-object__link" href="{'videos' | uri2id | url}">
-                    <img src="{$.assets_url}web/img/home-video.jpg" class="ensemble__videos-image" alt="">
+            <div>
+                <a href="{'videos' | uri2id | url}" class="link-object uk-cover">
+                    <img src="{$.assets_url}web/img/home-video.jpg" class="ensemble__videos-image" alt="" uk-cover>
                     <span class="link-object__title ensemble__videos-title">
                         Видео
-                        <svg class="link-object__border">
+                        <svg width="4" height="28" class="link-object__border"> 
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                         <svg class="link-object__arrow">

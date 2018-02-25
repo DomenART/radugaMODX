@@ -15,7 +15,7 @@
                 'sortdir' => 'ASC',
                 'limit' => 3,
                 'depth' => 0,
-                'sortby' => 'menuindex',
+                'sortby' => 'id',
                 'tpl' => '@FILE chunks/link-objects/link-object.tpl',
             ]}    
         </div>

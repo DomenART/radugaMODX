@@ -64,6 +64,7 @@ if (homepage) {
     });
 
     //анимации главной
+
     let ensembleLinks = document.querySelector('.js-ensemble-links');
     
     if (ensembleLinks) {
@@ -91,7 +92,7 @@ if (homepage) {
             };
         });
     }
- 
+
     let costumedGirl = document.querySelector('.program__costumedgirl');
      
     if (costumedGirl) {
