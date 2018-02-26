@@ -77,8 +77,10 @@
         </div>
         <div class="link-box js-ensemble-links">
             <div>
-                <a href="{'tutors' | uri2id | url}" class="link-object uk-cover">
-                    <img src="{$.assets_url}web/img/home-tutor.jpg" class="ensemble__tutors-image js-ensemble-tutors-image" alt="" uk-cover>
+                <a href="{'tutors' | uri2id | url}" class="link-object">
+                    <span class="link-object__image uk-cover-container ensemble__tutors-image">
+                        <img src="{$.assets_url}web/img/home-tutor.jpg" class=" js-ensemble-tutors-image" alt="" uk-cover>
+                    </span>
                     <span class="link-object__title ensemble__tutors-title">
                         Преподаватели
                         <svg width="4" height="28" class="link-object__border"> 
@@ -91,8 +93,10 @@
                 </a>
             </div>
             <div>
-                <a href="{'photoalbum' | uri2id | url}" class="link-object uk-cover">
-                    <img src="{$.assets_url}web/img/home-album.jpg" class="ensemble__photoalbum-image js-ensemble-photoalbum-image" alt="" uk-cover>
+                <a href="{'photoalbum' | uri2id | url}" class="link-object">
+                    <span class="link-object__image uk-cover-container uk-cover-container ensemble__photoalbum-image">
+                        <img src="{$.assets_url}web/img/home-album.jpg" class="js-ensemble-photoalbum-image" alt="" uk-cover>
+                    </span>
                     <span class="link-object__title ensemble__photoalbum-title">
                         Фотоальбом
                         <svg width="4" height="28" class="link-object__border"> 
@@ -105,8 +109,10 @@
                 </a>
             </div>
             <div>
-                <a href="{'videos' | uri2id | url}" class="link-object uk-cover">
-                    <img src="{$.assets_url}web/img/home-video.jpg" class="ensemble__videos-image" alt="" uk-cover>
+                <a href="{'videos' | uri2id | url}" class="link-object">
+                    <span class="link-object__image uk-cover-container uk-cover-container ensemble__videos-image">
+                        <img src="{$.assets_url}web/img/home-video.jpg" class="" alt="" uk-cover>
+                    </span>
                     <span class="link-object__title ensemble__videos-title">
                         Видео
                         <svg width="4" height="28" class="link-object__border"> 

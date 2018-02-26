@@ -2,11 +2,11 @@
     <div class="photo-popup popup-content">
         <button type="button" class="close-btn"></button>
         <div class="photo-popup__img">
-            <img src="{$photo.url}" alt="">
+            <img src="{$_pls['photo.url']}" alt="">
         </div>
         <div class="photo-popup__desc">
             <div class="photo-popup__counter">
-                <span>{$photo.rank + 1}}</span> 
+                <span>{{$_pls['photo.rank']} + 1}}</span> 
                 из 
                 <span>{$total}</span>
             </div>
@@ -14,18 +14,17 @@
                 <div class="photo-popup__date">
                     <time>{$photo.createdon | strtotime | date_format : '%d.%m.%Y'}</time>
                 </div>
-                <div class="likes">
-                    <svg width="24" height="21">
-                        <use href="#like"/> 
-                    </svg>
-                    147
-                </div>
+                {'!xLike' | snippet : [
+                    'parent' => $_modx->resource.id,
+                    'tpl' => '@FILE chunks/xlike/xlike_aside.tpl'
+                ]}
             </div>
             <div class="photo-popup__title">
-                {$photo.name}
+                {$_pls['photo.name']}
             </div>
             <div class="photo-popup__text">
-                {$photo.description}                </div>
+                {$photo.description}               
+            </div>
             <div class="photo-popup__share">
                 <script src="http://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
                 <script src="http://yastatic.net/share2/share.js"></script>

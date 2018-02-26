@@ -1,13 +1,13 @@
 {extends 'file:templates/base.tpl'}
 {block 'content'}
-<main class="routes innerpage">
+<main class="courses innerpage">
     <div class="background-title" uk-scrollspy="cls: uk-animation-slide-right; offset-top: -200">
         В программе<br>
         обучения
     </div>
     <div class="container">
         <h1 class="pagetitle">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
-        <div class="routes__favorite favorite">
+        <div class="courses__favorite favorite">
             <div>
                 <img src="{$_modx->resource['about_page.image']}" alt="">
                 <div class="box-decor"></div> 
@@ -24,11 +24,9 @@
                 </div>
             </div>
         </div>
-        <div id="player"></div>
-        <script></script>
-        <div class="routes__pool">
+        <div class="courses__pool">
             {'pdoResources' | snippet : [
-                'tpl' => '@FILE chunks/items/route-item.tpl',
+                'tpl' => '@FILE chunks/items/course-item.tpl',
                 'sortby' => 'id',
                 'sortdir' => 'DESC'
              ]}

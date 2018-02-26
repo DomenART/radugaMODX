@@ -32,7 +32,7 @@
                 'includeThumbs' => '370x310'
             ]}
         </div>
-    </div>
+    </div>  
     <div class="popup hidden"> 
         <div class="photo-popup popup-content">
             <button type="button" class="close-btn"></button>
@@ -78,6 +78,6 @@
                 <button class="photo-popup__control photo-popup__control_right" data-id="{$next.id}"></button>
             {/if}
         </div>
-    </div>   
+    </div> 
 </main>
 {/block}

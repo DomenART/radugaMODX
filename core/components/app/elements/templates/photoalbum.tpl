@@ -18,21 +18,18 @@
                 'sortby' => 'id',
                 'tpl' => '@FILE chunks/link-objects/link-object.tpl',
             ]}    
+        </div>          
+        <div class="photoalbum__pool">
+            {'ms2galleryResources' | snippet: [
+                'includeThumbs' => '530x',
+                'includeOriginal' => true,
+                'offset' => 3,
+                'depth' => 0,
+                'sortby' => 'id',
+                'sortdir' => 'ASC',
+                'tpl' => '@FILE chunks/link-objects/link-object.tpl'
+            ]}
         </div>
-        <div class="container">
-            <div class="photoalbum__pool">
-                {'ms2galleryResources' | snippet: [
-                    'includeThumbs' => '530x',
-                    'includeOriginal' => true,
-                    'offset' => 3,
-                    'depth' => 0,
-                    'sortby' => 'id',
-                    'sortdir' => 'ASC',
-                    'tpl' => '@FILE chunks/link-objects/link-object.tpl'
-                ]}
-            </div>
-        </div>
-    </div>
 </main>
 {include 'file:chunks/partials/aside.tpl'}
 {/block}

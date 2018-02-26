@@ -26,3 +26,4 @@ import './preloader.js';
 import './ajaxform.js';
 import './schedule.js';
 import './youtube.js';
+import './courses.js';

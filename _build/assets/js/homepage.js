@@ -151,7 +151,7 @@ if (homepage) {
             }
         })
     }
-/*
+
     
     let canvasHomepage = document.querySelector('#canvasHomepage');
 
@@ -287,5 +287,4 @@ if (homepage) {
             })
         }
     });
-    */
 }
