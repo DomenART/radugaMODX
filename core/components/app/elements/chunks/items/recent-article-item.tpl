@@ -12,6 +12,6 @@
 	    {$introtext}
 	</span>
 	<span class="recent-article__img">
-	    <img src="{$article.image}" alt="">
+	    <img src="{$_pls['article.image']}" alt="">
 	</span>
 </a>

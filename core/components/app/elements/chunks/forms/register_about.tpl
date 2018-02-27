@@ -11,14 +11,16 @@
         <div class="register__inputs">
             <input type="text" class="input input_register" name="name" placeholder="Имя:">
             <input type="tel" class="input input_register" name="tel" pattern="^[0-9]+$" minlength="8" placeholder="Телефон*:" required>
-            <button type="submit" class="btn-more submit btn-more_register">
-                Записаться
-                <svg class="btn-more__tail" width="10" height="8" fill="#ffffff">
-                    <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
-                </svg>
-                <svg class="btn-more__arrow " width="20" height="20">
-                    <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
-                </svg>
+            <button type="submit" class="btn-more btn-more_right submit btn-more_register">
+                <span>
+                    Записаться
+                    <svg class="btn-more__tail btn-more__tail_right" width="10" height="8" fill="#ffffff">
+                        <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
+                    </svg>
+                    <svg class="btn-more__arrow btn-more__arrow_right" width="20" height="20">
+                        <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
+                    </svg>
+                </span>
             </button>
         </div>
         <div class="register__agreement">

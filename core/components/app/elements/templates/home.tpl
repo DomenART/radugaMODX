@@ -56,14 +56,16 @@
                         <li>{$row['item']}</li>
                         {/foreach}
                     </ul>
-                    <a href="{'about' | uri2id | url}" class="btn-more btn-more_ensemble">
-                        Подробнее
-                        <svg class="btn-more__tail" width="10" height="8" fill="#ffffff">
-                            <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
-                        </svg>
-                        <svg class="btn-more__arrow " width="20" height="20">
-                            <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
-                        </svg>
+                    <a href="{'about' | uri2id | url}" class="btn-more btn-more_right btn-more_ensemble">
+                        <span>
+                            Подробнее
+                            <svg class="btn-more__tail btn-more__tail_right" width="10" height="8">
+                                <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
+                            </svg>
+                            <svg class="btn-more__arrow btn-more__arrow_right" width="20" height="20">
+                                <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
+                            </svg>
+                        </span>
                     </a>
                 </div>
                 <div>
@@ -83,7 +85,7 @@
                     </span>
                     <span class="link-object__title ensemble__tutors-title">
                         Преподаватели
-                        <svg width="4" height="28" class="link-object__border"> 
+                        <svg width="4" height="28" class="link-object__border">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                         <svg class="link-object__arrow">
@@ -99,7 +101,7 @@
                     </span>
                     <span class="link-object__title ensemble__photoalbum-title">
                         Фотоальбом
-                        <svg width="4" height="28" class="link-object__border"> 
+                        <svg width="4" height="28" class="link-object__border">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                         <svg class="link-object__arrow">
@@ -115,7 +117,7 @@
                     </span>
                     <span class="link-object__title ensemble__videos-title">
                         Видео
-                        <svg width="4" height="28" class="link-object__border"> 
+                        <svg width="4" height="28" class="link-object__border">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#four-circles"/>
                         </svg>
                         <svg class="link-object__arrow">
@@ -201,7 +203,7 @@
             </div>
         </div>
         <section class="parents clearfix">
-            <div class="parents-box parents-box_about">
+            <div class="parents-box">
                 <div class="parents-box__heading">
                     А также наша команда професионалов приглашает родителей на тренировки:
                 </div>
@@ -242,14 +244,16 @@
                 <div class="parents-box__more">
                     + индивидуальные тренировки по всем направлениям
                 </div>
-                <button type="button" class="btn-more js-enroll-btn js-parents-button-more">
+                <button type="button" class="btn-more btn-more_right js-enroll-btn js-parents-button-more">
+                    <span>
                     Записаться
-                    <svg class="btn-more__tail" width="10" height="8" fill="#ffffff">
-                        <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
-                    </svg>
-                    <svg class="btn-more__arrow " width="20" height="20">
-                        <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
-                    </svg>
+                        <svg class="btn-more__tail btn-more__tail_right" width="10" height="8" fill="#ffffff">
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
+                        </svg>
+                        <svg class="btn-more__arrow btn-more__arrow_right" width="20" height="20">
+                            <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
+                        </svg>
+                    </span>
                 </button>
             </div>
         </section>

@@ -20,14 +20,16 @@
             и соглашаюсь на <a href="#">обработку своих <br>персональных данных</a>
         </label>
     </div>
-    <button type="submit" class="enroll__submit btn-more submit">
+    <button type="submit" class="enroll__submit btn-more btn-more_right submit">
+        <span>
         Записаться
-        <svg class="btn-more__tail" width="10" height="8" fill="#ffffff">
-            <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
-        </svg>
-        <svg class="btn-more__arrow " width="20" height="20">
-            <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
-        </svg>
+            <svg class="btn-more__tail btn-more__tail_right" width="10" height="8" fill="#ffffff">
+                <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
+            </svg>
+            <svg class="btn-more__arrow btn-more__arrow_right" width="20" height="20">
+                <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-right"/>
+            </svg>
+        </span>
     </button>
     <div class="agreement__tip">
         Поля, отмеченные *, обязательны для заполнения

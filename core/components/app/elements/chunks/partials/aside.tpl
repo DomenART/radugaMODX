@@ -17,7 +17,7 @@
                         Детский хореографический ансамбль “Радуга”
                     </div>
                     <div class="address__age">
-                        от 4 лет
+                        <span>от 4 лет</span>
                         <svg class="decor-dots" width="26" height="4">
                             <use xlink:href="{$.assets_url}web/img/sprite.svg#three-dot-hor"/>
                         </svg> 

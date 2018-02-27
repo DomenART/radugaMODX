@@ -13,11 +13,16 @@
 			</div>
 		</div>
 		<div class="lost__control">
-			<a href="{$.server['HTTP_REFERER']}" class="btn-more">
-				<svg class="button-arrow-left btn-more__arrow " width="24" height="20">
-	                <use xlink:href="{$.assets_url}web/img/sprite.svg#button-arrow-left"/>
-	            </svg>
-				Возвращаюсь
+			<a href="{$.server['HTTP_REFERER']}" class="btn-more btn-more_left">
+				<span>
+					<svg class="btn-more__arrow btn-more__arrow_left" width="20" height="20">
+	                    <use xlink:href="{$.assets_url}web/img/sprite.svg#arrow-left"/>
+	                </svg>
+	                <svg class="btn-more__tail btn-more__tail_left" width="10" height="8">
+	                    <use xlink:href="{$.assets_url}web/img/sprite.svg#two-dot-hor"/>
+	                </svg>
+					Возвращаюсь
+				</span>
 			</a>
 			<a href="{'site_url' | config}" class="lost__btn-home btn-home">
 				<svg class="btn-home__icon" width="24" height="20">
